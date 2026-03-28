@@ -395,11 +395,11 @@ width: 100%;
 height: 100%;
 overflow: hidden;
 top: 0;
--webkit-transition: all 1000ms ease;
-   -moz-transition: all 1000ms ease;
-    -ms-transition: all 1000ms ease;
-     -o-transition: all 1000ms ease;
-        transition: all 1000ms ease;
+-webkit-transition: all 500ms ease;
+   -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+     -o-transition: all 500ms ease;
+        transition: all 500ms ease;
 -webkit-transform: scale(1);
    -moz-transform: scale(1);
     -ms-transform: scale(1);
@@ -442,11 +442,11 @@ filter: alpha(opacity=0);
     -ms-transform: scale(0.25);
      -o-transform: scale(0.25);
         transform: scale(0.25);
--webkit-transition: all 1s ease;
-   -moz-transition: all 1s ease;
-	-ms-transition: all 1s ease;
-     -o-transition: all 1s ease;
-        transition: all 1s ease;
+-webkit-transition: all 500ms ease;
+   -moz-transition: all 500ms ease;
+	-ms-transition: all 500ms ease;
+     -o-transition: all 500ms ease;
+        transition: all 500ms ease;
 }
 
 .logo {
@@ -458,12 +458,13 @@ width: 80px;
 height: 80px;
 left: 25px;
 top: 11px;
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;
 z-index: 500;
+will-change: transform;
 }
 
 .logo.top-position {
@@ -472,11 +473,11 @@ z-index: 500;
     -ms-transform: translateY(-200px);
      -o-transform: translateY(-200px);
         transform: translateY(-200px);
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;
 }
 
 .line-left {
@@ -504,12 +505,13 @@ width: 325px;
 left: 36px;
 top: 50%;
 margin-top: 151px;
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;	
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;	
 z-index: 500;
+will-change: transform;
 }
 
 .line-left.left-position {
@@ -518,11 +520,11 @@ z-index: 500;
     -ms-transform: translateX(-200px) rotate(-90deg);
      -o-transform: translateX(-200px) rotate(-90deg);
         transform: translateX(-200px) rotate(-90deg);
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;
 }
 
 .line-left a {
@@ -541,12 +543,13 @@ display: block;
 position: fixed;
 right: 3%;
 bottom: 28px;
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;
 z-index: 500;
+will-change: transform;
 }
 
 .lang.lang-position {
@@ -555,11 +558,11 @@ z-index: 500;
     -ms-transform: translateY(200px);
      -o-transform: translateY(200px);
         transform: translateY(200px);
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;
 }
 
 
@@ -640,12 +643,13 @@ width: 350px;
 right: 35px;
 top: 50%;
 margin-top: -174px;
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;	
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;	
 z-index: 500;
+will-change: transform;
 }
 
 .line-right.right-position {
@@ -654,11 +658,11 @@ z-index: 500;
     -ms-transform: translateX(200px) rotate(-90deg);
      -o-transform: translateX(200px) rotate(-90deg);
         transform: translateX(200px) rotate(-90deg);
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;
 }
 
 .line-right a {
@@ -749,12 +753,13 @@ width: 80px;
 height: 80px;
 right: 14px;
 top: 4px;
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;
 z-index: 1004;
+will-change: transform;
 }
 
 #menu.top-position {
@@ -763,11 +768,11 @@ z-index: 1004;
     -ms-transform: translateY(-200px);
      -o-transform: translateY(-200px);
         transform: translateY(-200px);
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;
 }
 
 .menu-toggle {
@@ -799,11 +804,11 @@ height: 100%;
 right: -200%;
 top: 0;
 margin: auto;
--webkit-transition: right .4s ease-in-out;
-   -moz-transition: right .4s ease-in-out;
-    -ms-transition: right .4s ease-in-out;
-     -o-transition: right .4s ease-in-out;
-        transition: right .4s ease-in-out;
+-webkit-transition: right 0.2s ease-in-out;
+   -moz-transition: right 0.2s ease-in-out;
+    -ms-transition: right 0.2s ease-in-out;
+     -o-transition: right 0.2s ease-in-out;
+        transition: right 0.2s ease-in-out;
 -webkit-transform: skew(-25deg, 0deg);
    -moz-transform: skew(-25deg, 0deg);
     -ms-transform: skew(-25deg, 0deg);
@@ -1201,11 +1206,11 @@ filter: alpha(opacity=0);
     -ms-transform: scale(0.75);
      -o-transform: scale(0.75);
         transform: scale(0.75);
--webkit-transition: all 1s ease;
-   -moz-transition: all 1s ease;
-	-ms-transition: all 1s ease;
-     -o-transition: all 1s ease;
-        transition: all 1s ease;
+-webkit-transition: all 0.3s ease;
+   -moz-transition: all 0.3s ease;
+	-ms-transition: all 0.3s ease;
+     -o-transition: all 0.3s ease;
+        transition: all 0.3s ease;
 z-index: 1005;
 }
 
@@ -1571,12 +1576,13 @@ display: block;
 position: fixed;
 left: 3%;
 bottom: 28px;
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;
 z-index: 500;
+will-change: transform;
 }
 
 .social-icons-wrapper.bottom-position {
@@ -1585,11 +1591,11 @@ z-index: 500;
     -ms-transform: translateY(200px);
      -o-transform: translateY(200px);
         transform: translateY(200px);
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;
 }
 
 .social-icons-wrapper ul {
@@ -1651,12 +1657,13 @@ display: block;
 position: fixed;
 right: 33px;
 bottom: 24px;
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;
 z-index: 500;
+will-change: transform;
 }
 
 .launcher.bottom-position {
@@ -1665,11 +1672,11 @@ z-index: 500;
     -ms-transform: translateY(200px);
      -o-transform: translateY(200px);
         transform: translateY(200px);
--webkit-transition: all 0.7s;
-   -moz-transition: all 0.7s;
-    -ms-transition: all 0.7s;
-     -o-transition: all 0.7s;
-        transition: all 0.7s;
+-webkit-transition: all 0.3s;
+   -moz-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+     -o-transition: all 0.3s;
+        transition: all 0.3s;
 }
 
 #countdown-wrapper {
@@ -2058,11 +2065,11 @@ background-image: url(../img/background/hero-bg-zoom-4-2.jpg);
 /* hero bg */
 .hero-bg {
 position: fixed;
--webkit-transition: -webkit-transform 3s ease;
-   -moz-transition: -moz-transform 3s ease-out;
-	-ms-transition: -ms-transform 3s ease-out;
-     -o-transition: -o-transform 3s ease-out;
-        transition: transform 3s ease;
+-webkit-transition: -webkit-transform 1.5s ease;
+   -moz-transition: -moz-transform 1.5s ease-out;
+	-ms-transition: -ms-transform 1.5s ease-out;
+     -o-transition: -o-transform 1.5s ease-out;
+        transition: transform 1.5s ease;
 -webkit-transform: scale(1.8);
    -moz-transform: scale(1.8);
     -ms-transform: scale(1.8);
