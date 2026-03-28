@@ -35,6 +35,55 @@
 		<!-- Гугл шрифты -->
 		<link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Oswald:200,300,400,500,600,700|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
 		
+		<!-- Ускорение анимаций в 2 раза -->
+		<style>
+			/* Общее ускорение переходов и анимаций */
+			#kenburnsy-bg img {
+				animation-duration: 8s !important;
+			}
+			.preloader-effect span {
+				animation-duration: 0.5s !important;
+			}
+			.es-slides li {
+				animation-duration: 0.3s !important;
+			}
+			.menu-toggle .lines,
+			.menu-toggle .lines:before,
+			.menu-toggle .lines:after {
+				transition-duration: 0.2s !important;
+			}
+			#menu-wrapper {
+				transition-duration: 0.2s !important;
+			}
+			.social-icons a,
+			.lang-icons a {
+				transition-duration: 0.15s !important;
+			}
+			.line-left, .line-right {
+				transition-duration: 0.2s !important;
+			}
+			.fin-heading h1,
+			.fin-heading {
+				transition-duration: 0.2s !important;
+			}
+			.center-block-home .upper-content {
+				transition-duration: 0.25s !important;
+			}
+			.es-donat-wrapper .es-slides li {
+				animation-duration: 0.4s !important;
+			}
+			a, button, .click, .social-icons li a, .lang-icons li a {
+				transition-duration: 0.15s !important;
+			}
+			/* Ускорение карусели фото */
+			.photos-gallery-slider.owl-carousel .owl-item {
+				transition-duration: 0.2s !important;
+			}
+			.owl-carousel .owl-stage-outer {
+				transition-duration: 0.2s !important;
+			}
+		</style>
+		
 		<!-- Гугл аналитика -->
 		<!-- Global site tag (gtag.js) - Google Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-150455057-1"></script>
@@ -79,7 +128,7 @@
             <div class="preload-content"></div>
         </div>
 
-		<!-- Иконки соц сетей -->
+		<!-- Иконки соц сетей (PayPal и Patreon заменены на DonationAlerts) -->
         <div class="social-icons-wrapper bottom-position">
                 <ul class="social-icons click">
                     <li>
@@ -99,16 +148,12 @@
 					</li>
 					<li>				</li>
 					<li>
-						<a class="fab fa-1-5x fa-paypal" href="https://www.paypal.me/elitiumdesign" target="_blank"></a>
-					</li>
-					<li>				</li>
-					<li>
-						<a class="fab fa-1-5x fa-patreon" href="https://www.patreon.com/elitiumstudios" target="_blank"></a>
+						<a class="fas fa-1-5x fa-donate" href="https://www.donationalerts.com/r/xoperiys" target="_blank"></a>
 					</li>
 				</ul>
 		</div>
 		
-		<!-- Выбор языка -->
+		<!-- Выбор языка (удалён украинский) -->
 		<div class="lang lang-position click">
 			<ul class="lang-icons">
 				<li>
@@ -116,9 +161,6 @@
 				</li>
 				<li>
 					<a href="../rus/home.html" target="">RUS <img src="../img/lang/rus.png" alt="ru"></img></a>
-				</li>
-				<li>
-					<a href="../ukr/home.html" target="">UKR <img src="../img/lang/ukr.png" alt="ukr"></img></a>
 				</li>						
 			</ul>
 		</div>
@@ -159,7 +201,7 @@
                                     <a title="All our contacts, social networks and communication with us." class="menu-state" href="contact.html">Contact</a>
                                 </li>
                                 <li class="menu credits">
-                                    <a href="#">&copy;2019 All Rights Reserved.</a>
+                                    <a href="#">&copy;2019-2026 All Rights Reserved.</a>
                                 </li>
                             </ul>
                         </nav>
@@ -168,12 +210,12 @@
             </div>
         </div>
 		
-        <!-- Packs -->
+        <!-- Content -->
         <div class="upper-page current">
 
             <!-- Правая линия Копирайт -->
             <div class="line-right right-position">
-                <a href="#">&copy;2019 Elitium Studios. All Rights Reserved.</a>
+                <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
             </div>
 
             <!-- Начало страницы -->
