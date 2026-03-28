@@ -21,6 +21,50 @@
     <!-- Гугл шрифты -->
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Oswald:200,300,400,500,600,700|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     
+    <!-- Ускорение анимаций в 2 раза (все переходы и анимации работают быстрее) -->
+    <style>
+        /* Общее ускорение переходов и анимаций для ключевых элементов сайта */
+        #kenburnsy-bg img {
+            animation-duration: 8s !important;          /* было 16s → 8s */
+        }
+        .preloader-effect span {
+            animation-duration: 0.5s !important;        /* было 1s → 0.5s */
+        }
+        .es-slides li {
+            animation-duration: 0.3s !important;        /* стандартно 0.6s → 0.3s */
+        }
+        .menu-toggle .lines,
+        .menu-toggle .lines:before,
+        .menu-toggle .lines:after {
+            transition-duration: 0.2s !important;       /* ускорение анимации кнопки меню */
+        }
+        #menu-wrapper {
+            transition-duration: 0.2s !important;       /* появление/скрытие меню */
+        }
+        .social-icons a,
+        .lang-icons a {
+            transition-duration: 0.15s !important;      /* иконки соцсетей */
+        }
+        .line-left, .line-right {
+            transition-duration: 0.2s !important;
+        }
+        .fin-heading h1,
+        .fin-heading {
+            transition-duration: 0.2s !important;
+        }
+        .center-block-home .upper-content {
+            transition-duration: 0.25s !important;
+        }
+        /* дополнительные анимации слайдов донатеров */
+        .es-donat-wrapper .es-slides li {
+            animation-duration: 0.4s !important;
+        }
+        /* эффекты наведения и прочие transition */
+        a, button, .click, .social-icons li a, .lang-icons li a {
+            transition-duration: 0.15s !important;
+        }
+    </style>
+
     <!-- Гугл аналитика -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150455057-1"></script>
     <script>
@@ -53,29 +97,19 @@
         <div class="preload-content"></div>
     </div>
 
-    <!-- Иконки соц сетей (PayPal и Patreon удалены, добавлен DonationAlerts) -->
+    <!-- Иконки соц сетей: PayPal и Patreon заменены на DonationAlerts -->
     <div class="social-icons-wrapper bottom-position">
         <ul class="social-icons click">
-            <li>
-                <a class="fab fa-1-5x fa-vk" href="https://vk.com/elitiumstudios" target="_blank"></a>
-            </li>
+            <li><a class="fab fa-1-5x fa-vk" href="https://vk.com/elitiumstudios" target="_blank"></a></li>
             <li></li>
-            <li>
-                <a class="fab fa-1-5x fa-discord" href="https://discordapp.com/invite/8xTAn6A" target="_blank"></a>
-            </li>
+            <li><a class="fab fa-1-5x fa-discord" href="https://discordapp.com/invite/8xTAn6A" target="_blank"></a></li>
             <li></li>
-            <li>
-                <a class="fab fa-1-5x fa-youtube" href="https://www.youtube.com/channel/UCWPKMLhGCq4qo-KXN-c9zGw" target="_blank"></a>
-            </li>
+            <li><a class="fab fa-1-5x fa-youtube" href="https://www.youtube.com/channel/UCWPKMLhGCq4qo-KXN-c9zGw" target="_blank"></a></li>
             <li></li>
-            <li>
-                <a class="fas fa-1-5x fa-globe" href="https://www.planetminecraft.com/member/elitium_studios" target="_blank"></a>
-            </li>
+            <li><a class="fas fa-1-5x fa-globe" href="https://www.planetminecraft.com/member/elitium_studios" target="_blank"></a></li>
             <li></li>
             <!-- DonationAlerts вместо PayPal и Patreon -->
-            <li>
-                <a class="fas fa-1-5x fa-donate" href="https://www.donationalerts.com/r/xoperiys" target="_blank"></a>
-            </li>
+            <li><a class="fas fa-1-5x fa-donate" href="https://www.donationalerts.com/r/xoperiys" target="_blank"></a></li>
         </ul>
     </div>
     
@@ -141,7 +175,7 @@
                                     <h1 id="blink" class="fin-heading">Elitium Studios</h1>
                                 </div>
                                 
-                                <!-- Donators блок (оставлен, ссылки на DonationAlerts уже присутствуют) -->
+                                <!-- Donators блок с единой ссылкой на DonationAlerts -->
                                 <div class="click">
                                     <h6 class="es-donat-wrapper">Donators</h6>
                                 </div>
