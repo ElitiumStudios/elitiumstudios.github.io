@@ -24,7 +24,7 @@
     </script>
 </head>
 <body>
-    <!-- Preloader, background, social icons, language, menu (unchanged) -->
+    <!-- Preloader, background, social icons, language, menu (unchanged from original structure) -->
     <div id="preloader"><div id="preloader-status"><div class="preloader-position preloader-effect"><span></span></div></div></div>
     <div class="hero-fullscreen hero-bg">
         <div id="kenburnsy-bg">
@@ -75,7 +75,7 @@
         </div>
     </div>
 
-    <!-- Main Content - GUI only -->
+    <!-- ONE BIG BLOCK: GUI PACKS -->
     <div class="upper-page current">
         <div class="line-right right-position"><a href="#">&copy;2019 Elitium Studios. All Rights Reserved.</a></div>
         <div class="center-container-home">
@@ -88,182 +88,207 @@
                             <h2>EScraft GUI <span class="get-behind">Transparent • RGB • 512x</span></h2>
                         </div>
 
-                        <!-- Global description and image -->
-                        <div class="row mb40">
-                            <div class="col-md-6">
-                                <div class="gui-intro">
-                                    <h3><i class="fas fa-palette"></i> Minimalistic interface</h3>
-                                    <p>In different colors, 2 languages (ENG/RUS). Improved fonts. Transparent background. Resolution 512x512.</p>
-                                    <p><strong>Specifications:</strong> Minecraft 1.8 – 1.15+, transparent UI, 512x resolution, particles support (1.13+).</p>
-                                    <p>Follow development on <a href="https://discordapp.com/invite/8xTAn6A" target="_blank">Discord</a>.</p>
+                        <!-- MAIN BIG BLOCK -->
+                        <div class="gui-mega-block">
+                            <!-- HEADER WITH DESCRIPTION AND MAIN IMAGE -->
+                            <div class="block-header text-center">
+                                <img src="https://i.imgur.com/fJppuXr.png" alt="EScraft GUI Preview" class="main-preview">
+                                <p class="mt20">Minimalistic interface for Minecraft. In different colors, 2 languages (ENG/RUS). Improved fonts. Transparent background. Resolution 512x512.</p>
+                                <div class="specs">
+                                    <span><i class="fas fa-cube"></i> Minecraft 1.8 – 1.15+</span>
+                                    <span><i class="fas fa-fill-drip"></i> Transparent</span>
+                                    <span><i class="fas fa-expand-alt"></i> 512x512</span>
+                                    <span><i class="fas fa-language"></i> ENG/RUS</span>
+                                </div>
+                                <div class="discord-link">
+                                    <i class="fab fa-discord"></i> Follow development on <a href="https://discordapp.com/invite/8xTAn6A" target="_blank">Discord server</a>
                                 </div>
                             </div>
-                            <div class="col-md-6 text-center">
-                                <img src="https://i.imgur.com/fJppuXr.png" alt="EScraft GUI Preview" class="img-fluid gui-preview">
-                            </div>
-                        </div>
 
-                        <!-- ========== GUI CARDS ========== -->
-                        <div class="row gui-cards">
-                            <!-- Minecraft 1.8+ -->
-                            <div class="col-md-6 col-lg-4 mb30">
-                                <div class="pack-card">
-                                    <div class="card-header">
-                                        <img src="https://static.planetminecraft.com/files/image/minecraft/texture-pack/2024/03/24031111_escraft-gui-transparent-rgb-v0-2-1-reload-1-8_800x.jpg?f9cacf7a" alt="EScraft GUI 1.8+">
-                                        <h4>Minecraft 1.8+</h4>
-                                        <span class="version-badge">v0.2.1</span>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>Transparent GUI, 8 colors. Particles support. Lite version.</p>
-                                        <div class="color-grid">
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-btn" style="background:#0ff;">TEAL</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-btn" style="background:#00f;">BLUE</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-btn" style="background:#000;">BLACK</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-btn" style="background:#0f0;">GREEN</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-btn" style="background:#f0f;">PURPLE</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-btn" style="background:#f00;">RED</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-btn" style="background:#fff; color:#000;">WHITE</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-btn" style="background:#fc0;">YELLOW</a>
+                            <!-- VERSIONS CARDS (all in one block) -->
+                            <div class="versions-grid">
+                                <!-- 1.8+ -->
+                                <div class="version-card">
+                                    <div class="version-header">
+                                        <img src="https://static.planetminecraft.com/files/image/minecraft/texture-pack/2024/03/24031111_escraft-gui-transparent-rgb-v0-2-1-reload-1-8_800x.jpg?f9cacf7a" alt="1.8 preview">
+                                        <div class="version-title">
+                                            <h3>Minecraft 1.8+</h3>
+                                            <span class="ver">v0.2.1</span>
                                         </div>
-                                        <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="btn-download" target="_blank"><i class="fas fa-download"></i> Download (PMC)</a>
                                     </div>
-                                </div>
-                            </div>
-
-                            <!-- Minecraft 1.12+ (with direct Google Drive links from provided source) -->
-                            <div class="col-md-6 col-lg-4 mb30">
-                                <div class="pack-card">
-                                    <div class="card-header">
-                                        <img src="https://static.planetminecraft.com/files/image/minecraft/texture-pack/2024/03/24031115_escraft-gui-transparent-rgb-v0-4-1-reload-1-12_800x.jpg?f9cacf7a" alt="EScraft GUI 1.12+">
-                                        <h4>Minecraft 1.12+</h4>
-                                        <span class="version-badge">v0.4.1</span>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>Full color set available. Transparent, improved fonts.</p>
-                                        <div class="color-grid">
-                                            <a href="https://drive.google.com/file/d/1BNFSjdzOwBpAm7nRyE5rgjP5-oDsrOS9/view?usp=drive_link" class="color-drive" style="background:#0ff;">TEAL</a>
-                                            <a href="https://drive.google.com/file/d/1kRqhvECA71XXVW7lnuVa859igUsHK-yU/view?usp=drive_link" class="color-drive" style="background:#00f;">BLUE</a>
-                                            <a href="https://drive.google.com/file/d/19sTjCyhJlNSiBJgvtu65i9SW__FQkViU/view?usp=drive_link" class="color-drive" style="background:#000;">BLACK</a>
-                                            <a href="https://drive.google.com/file/d/1FRqpLbp8npe1zvF74s79e7URiQcEu8KC/view?usp=drive_link" class="color-drive" style="background:#0f0;">GREEN</a>
-                                            <a href="https://drive.google.com/file/d/1Alf5MINA5EmymR_NCGaE5Yw27GkZhxE2/view?usp=drive_link" class="color-drive" style="background:#f0f;">PURPLE</a>
-                                            <a href="https://drive.google.com/file/d/1BQ9UIgoXVOHsf9mnifkEN9vQrcez43qZ/view?usp=drive_link" class="color-drive" style="background:#f00;">RED</a>
-                                            <a href="https://drive.google.com/file/d/1fgUn9rmEQKV1EluPuHl8uEiJYIYPJqRA/view?usp=drive_link" class="color-drive" style="background:#fff; color:#000;">WHITE</a>
-                                            <a href="https://drive.google.com/file/d/10aSznFpHiKVpMnl5AsyaJqe1ZNHU4a6f/view?usp=drive_link" class="color-drive" style="background:#fc0;">YELLOW</a>
-                                            <a href="https://drive.google.com/file/d/1jeWDGFh660tkDL_2g3AKA7qGYAmkEc4Y/view?usp=drive_link" class="color-drive all-colors">ALL COLORS</a>
+                                    <div class="version-body">
+                                        <p>Particles support, Lite version.</p>
+                                        <div class="color-strip">
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-chip" style="background:#0ff; border-color:#fff;">TEAL</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-chip" style="background:#00f; border-color:#fff;">BLUE</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-chip" style="background:#000; border-color:#fff;">BLACK</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-chip" style="background:#0f0; border-color:#fff;">GREEN</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-chip" style="background:#f0f; border-color:#fff;">PURPLE</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-chip" style="background:#f00; border-color:#fff;">RED</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-chip" style="background:#fff; color:#000; border-color:#000;">WHITE</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="color-chip" style="background:#fc0; border-color:#fff;">YELLOW</a>
                                         </div>
-                                        <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-v0-0-1-gui-rgb/" class="btn-download" target="_blank"><i class="fas fa-info-circle"></i> Details on PMC</a>
+                                        <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="btn-download" target="_blank"><i class="fas fa-download"></i> Download on PMC</a>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Minecraft 1.13+ -->
-                            <div class="col-md-6 col-lg-4 mb30">
-                                <div class="pack-card">
-                                    <div class="card-header">
-                                        <img src="https://static.planetminecraft.com/files/image/minecraft/texture-pack/2024/03/24031118_escraft-gui-transparent-rgb-v0-5-1-reload-1-13_800x.jpg?f9cacf7a" alt="EScraft GUI 1.13+">
-                                        <h4>Minecraft 1.13+</h4>
-                                        <span class="version-badge">v0.5.1</span>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>Particles support, improved compatibility. Some colors marked "SOON".</p>
-                                        <div class="color-grid">
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-btn" style="background:#0ff;">TEAL</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-btn" style="background:#00f;">BLUE</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-btn" style="background:#000;">BLACK</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-btn" style="background:#0f0;">GREEN</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-btn" style="background:#f0f;">PURPLE</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-btn" style="background:#f00;">RED</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-btn" style="background:#fff; color:#000;">WHITE</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-btn" style="background:#fc0;">YELLOW</a>
+                                <!-- 1.12+ (with direct Google Drive links) -->
+                                <div class="version-card">
+                                    <div class="version-header">
+                                        <img src="https://static.planetminecraft.com/files/image/minecraft/texture-pack/2024/03/24031115_escraft-gui-transparent-rgb-v0-4-1-reload-1-12_800x.jpg?f9cacf7a" alt="1.12 preview">
+                                        <div class="version-title">
+                                            <h3>Minecraft 1.12+</h3>
+                                            <span class="ver">v0.4.1</span>
                                         </div>
-                                        <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="btn-download" target="_blank"><i class="fas fa-download"></i> Download (PMC)</a>
                                     </div>
-                                </div>
-                            </div>
-
-                            <!-- Minecraft 1.14+ -->
-                            <div class="col-md-6 col-lg-4 mb30">
-                                <div class="pack-card">
-                                    <div class="card-header">
-                                        <img src="https://static.planetminecraft.com/files/image/minecraft/texture-pack/2024/03/24031121_escraft-gui-transparent-rgb-v0-6-5-reload-1-14_800x.jpg?f9cacf7a" alt="EScraft GUI 1.14+">
-                                        <h4>Minecraft 1.14+</h4>
-                                        <span class="version-badge">v0.6.5</span>
-                                    </div>
-                                    <div class="card-body">
-                                        <p>Latest features, all colors available. Updated textures.</p>
-                                        <div class="color-grid">
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-btn" style="background:#0ff;">TEAL</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-btn" style="background:#00f;">BLUE</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-btn" style="background:#000;">BLACK</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-btn" style="background:#0f0;">GREEN</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-btn" style="background:#f0f;">PURPLE</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-btn" style="background:#f00;">RED</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-btn" style="background:#fff; color:#000;">WHITE</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-btn" style="background:#fc0;">YELLOW</a>
+                                    <div class="version-body">
+                                        <p>Full color set, transparent, improved fonts.</p>
+                                        <div class="color-strip">
+                                            <a href="https://drive.google.com/file/d/1BNFSjdzOwBpAm7nRyE5rgjP5-oDsrOS9/view?usp=drive_link" class="color-chip" style="background:#0ff; border-color:#fff;">TEAL</a>
+                                            <a href="https://drive.google.com/file/d/1kRqhvECA71XXVW7lnuVa859igUsHK-yU/view?usp=drive_link" class="color-chip" style="background:#00f; border-color:#fff;">BLUE</a>
+                                            <a href="https://drive.google.com/file/d/19sTjCyhJlNSiBJgvtu65i9SW__FQkViU/view?usp=drive_link" class="color-chip" style="background:#000; border-color:#fff;">BLACK</a>
+                                            <a href="https://drive.google.com/file/d/1FRqpLbp8npe1zvF74s79e7URiQcEu8KC/view?usp=drive_link" class="color-chip" style="background:#0f0; border-color:#fff;">GREEN</a>
+                                            <a href="https://drive.google.com/file/d/1Alf5MINA5EmymR_NCGaE5Yw27GkZhxE2/view?usp=drive_link" class="color-chip" style="background:#f0f; border-color:#fff;">PURPLE</a>
+                                            <a href="https://drive.google.com/file/d/1BQ9UIgoXVOHsf9mnifkEN9vQrcez43qZ/view?usp=drive_link" class="color-chip" style="background:#f00; border-color:#fff;">RED</a>
+                                            <a href="https://drive.google.com/file/d/1fgUn9rmEQKV1EluPuHl8uEiJYIYPJqRA/view?usp=drive_link" class="color-chip" style="background:#fff; color:#000; border-color:#000;">WHITE</a>
+                                            <a href="https://drive.google.com/file/d/10aSznFpHiKVpMnl5AsyaJqe1ZNHU4a6f/view?usp=drive_link" class="color-chip" style="background:#fc0; border-color:#fff;">YELLOW</a>
+                                            <a href="https://drive.google.com/file/d/1jeWDGFh660tkDL_2g3AKA7qGYAmkEc4Y/view?usp=drive_link" class="color-chip all-colors" style="background:linear-gradient(90deg,#f00,#ff0,#0f0,#0ff,#00f,#f0f); border-color:#fff;">ALL COLORS</a>
                                         </div>
-                                        <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="btn-download" target="_blank"><i class="fas fa-download"></i> Download (PMC)</a>
+                                        <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-v0-0-1-gui-rgb/" class="btn-download" target="_blank"><i class="fas fa-info-circle"></i> More info on PMC</a>
                                     </div>
                                 </div>
-                            </div>
 
-                            <!-- Minecraft 1.15+ -->
-                            <div class="col-md-6 col-lg-4 mb30">
-                                <div class="pack-card">
-                                    <div class="card-header">
-                                        <img src="https://static.planetminecraft.com/files/image/minecraft/texture-pack/2024/03/24031123_escraft-gui-transparent-rgb-v0-7-reload-1-15_800x.jpg?f9cacf7a" alt="EScraft GUI 1.15+">
-                                        <h4>Minecraft 1.15+</h4>
-                                        <span class="version-badge">v0.7 (soon)</span>
+                                <!-- 1.13+ -->
+                                <div class="version-card">
+                                    <div class="version-header">
+                                        <img src="https://static.planetminecraft.com/files/image/minecraft/texture-pack/2024/03/24031118_escraft-gui-transparent-rgb-v0-5-1-reload-1-13_800x.jpg?f9cacf7a" alt="1.13 preview">
+                                        <div class="version-title">
+                                            <h3>Minecraft 1.13+</h3>
+                                            <span class="ver">v0.5.1</span>
+                                        </div>
                                     </div>
-                                    <div class="card-body">
+                                    <div class="version-body">
+                                        <p>Particles support, improved compatibility. Some colors "SOON".</p>
+                                        <div class="color-strip">
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-chip" style="background:#0ff; border-color:#fff;">TEAL</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-chip" style="background:#00f; border-color:#fff;">BLUE</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-chip" style="background:#000; border-color:#fff;">BLACK</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-chip" style="background:#0f0; border-color:#fff;">GREEN</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-chip" style="background:#f0f; border-color:#fff;">PURPLE</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-chip" style="background:#f00; border-color:#fff;">RED</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-chip" style="background:#fff; color:#000; border-color:#000;">WHITE</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="color-chip" style="background:#fc0; border-color:#fff;">YELLOW</a>
+                                        </div>
+                                        <a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="btn-download" target="_blank"><i class="fas fa-download"></i> Download on PMC</a>
+                                    </div>
+                                </div>
+
+                                <!-- 1.14+ -->
+                                <div class="version-card">
+                                    <div class="version-header">
+                                        <img src="https://static.planetminecraft.com/files/image/minecraft/texture-pack/2024/03/24031121_escraft-gui-transparent-rgb-v0-6-5-reload-1-14_800x.jpg?f9cacf7a" alt="1.14 preview">
+                                        <div class="version-title">
+                                            <h3>Minecraft 1.14+</h3>
+                                            <span class="ver">v0.6.5</span>
+                                        </div>
+                                    </div>
+                                    <div class="version-body">
+                                        <p>Latest features, all colors available.</p>
+                                        <div class="color-strip">
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-chip" style="background:#0ff; border-color:#fff;">TEAL</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-chip" style="background:#00f; border-color:#fff;">BLUE</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-chip" style="background:#000; border-color:#fff;">BLACK</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-chip" style="background:#0f0; border-color:#fff;">GREEN</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-chip" style="background:#f0f; border-color:#fff;">PURPLE</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-chip" style="background:#f00; border-color:#fff;">RED</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-chip" style="background:#fff; color:#000; border-color:#000;">WHITE</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="color-chip" style="background:#fc0; border-color:#fff;">YELLOW</a>
+                                        </div>
+                                        <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="btn-download" target="_blank"><i class="fas fa-download"></i> Download on PMC</a>
+                                    </div>
+                                </div>
+
+                                <!-- 1.15+ -->
+                                <div class="version-card">
+                                    <div class="version-header">
+                                        <img src="https://static.planetminecraft.com/files/image/minecraft/texture-pack/2024/03/24031123_escraft-gui-transparent-rgb-v0-7-reload-1-15_800x.jpg?f9cacf7a" alt="1.15 preview">
+                                        <div class="version-title">
+                                            <h3>Minecraft 1.15+</h3>
+                                            <span class="ver">v0.7 (soon)</span>
+                                        </div>
+                                    </div>
+                                    <div class="version-body">
                                         <p>Work in progress. All colors coming soon.</p>
-                                        <div class="color-grid">
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-btn" style="background:#0ff;">TEAL</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-btn" style="background:#00f;">BLUE</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-btn" style="background:#000;">BLACK</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-btn" style="background:#0f0;">GREEN</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-btn" style="background:#f0f;">PURPLE</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-btn" style="background:#f00;">RED</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-btn" style="background:#fff; color:#000;">WHITE</a>
-                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-btn" style="background:#fc0;">YELLOW</a>
+                                        <div class="color-strip">
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-chip" style="background:#0ff; border-color:#fff;">TEAL</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-chip" style="background:#00f; border-color:#fff;">BLUE</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-chip" style="background:#000; border-color:#fff;">BLACK</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-chip" style="background:#0f0; border-color:#fff;">GREEN</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-chip" style="background:#f0f; border-color:#fff;">PURPLE</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-chip" style="background:#f00; border-color:#fff;">RED</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-chip" style="background:#fff; color:#000; border-color:#000;">WHITE</a>
+                                            <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="color-chip" style="background:#fc0; border-color:#fff;">YELLOW</a>
                                         </div>
-                                        <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="btn-download" target="_blank"><i class="fas fa-download"></i> Download (PMC)</a>
+                                        <a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="btn-download" target="_blank"><i class="fas fa-download"></i> Download on PMC</a>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <!-- Installation instructions & license (based on original source) -->
-                        <div class="row mt40">
-                            <div class="col-md-12">
-                                <div class="install-box">
-                                    <h4><i class="fas fa-cogs"></i> How to install</h4>
-                                    <ol>
-                                        <li>Install <strong>OptiFine</strong> (recommended for better performance).</li>
-                                        <li>Download the pack (Google Drive or via PMC).</li>
-                                        <li>Move the <code>.zip</code> file to the <code>resourcepacks</code> folder of Minecraft.</li>
-                                        <li>Launch the game, go to <em>Options → Resource Packs</em>, select the pack and move it to the top.</li>
-                                        <li>If using with BLOCKS modules, place GUI <strong>below</strong> BLOCKS (GUI should be lower).</li>
-                                        <li>Select language: English(US) or Russian for correct font rendering.</li>
-                                    </ol>
-                                    <div class="license mt20">
-                                        <details>
-                                            <summary><i class="fas fa-balance-scale"></i> License agreement (click to expand)</summary>
-                                            <p><strong>Prohibited:</strong> copying for financial gain, reassembly or any changes without permission, using files in other packs under your name.</p>
-                                            <p><strong>Allowed:</strong> copying for personal use, using files on your website with a link to <a href="https://vk.com/elitiumstudios" target="_blank">VK</a> or <a href="https://www.planetminecraft.com/member/elitium_studios" target="_blank">Planet Minecraft</a>.</p>
-                                            <p>© 2019-2026 Elitium Studios. Licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a>.</p>
-                                        </details>
-                                    </div>
+                            <!-- COLLECTIONS SECTION (using images from original source) -->
+                            <div class="collections-block">
+                                <h4><i class="fas fa-layer-group"></i> Part of collections</h4>
+                                <div class="collection-logos">
+                                    <a href="https://www.planetminecraft.com/collection/42048/modular-edcraft-pack/" target="_blank"><img src="https://static.planetminecraft.com/files/collection_icon/42048_1.png" alt="EScraft"> <span>EScraft</span></a>
+                                    <a href="https://www.planetminecraft.com/collection/43162/edcraft-gui/" target="_blank"><img src="https://static.planetminecraft.com/files/collection_icon/43162_1.png" alt="EScraft GUI"> <span>EScraft: GUI</span></a>
+                                    <a href="https://www.planetminecraft.com/collection/42349/edcraft-blocks-coarse/" target="_blank"><img src="https://static.planetminecraft.com/files/collection_icon/42349_1.png" alt="Coarse"> <span>BLOCKS Coarse</span></a>
+                                    <a href="https://www.planetminecraft.com/collection/42442/edcraft-blocks-smooth/" target="_blank"><img src="https://static.planetminecraft.com/files/collection_icon/42442_1.png" alt="Smooth"> <span>BLOCKS Smooth</span></a>
+                                    <a href="https://www.planetminecraft.com/collection/42044/inventory-animation/" target="_blank"><img src="https://static.planetminecraft.com/files/collection_icon/42044_1.png" alt="Animation"> <span>Inventory Animation</span></a>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="row"><div class="dividerOT mt40"></div></div>
-                        <div class="row text-center mt20">
-                            <div class="col-md-12">
-                                <p><i class="fab fa-discord"></i> Join our <a href="https://discordapp.com/invite/8xTAn6A" target="_blank">Discord</a> for updates | <i class="fab fa-vk"></i> <a href="https://vk.com/elitiumstudios" target="_blank">VK</a> | <i class="fas fa-globe"></i> <a href="https://elitiumstudios.github.io/" target="_blank">Official Site</a></p>
-                                <p class="small">Version Submissions design 2.2 | Designed by XopeRiys & Rodoto</p>
+                            <!-- DONATION BUTTON (from original source) -->
+                            <div class="donate-block text-center">
+                                <p><strong>On the development of the project!</strong></p>
+                                <a href="https://www.donationalerts.com/r/xoperiys" target="_blank">
+                                    <img src="https://i.imgur.com/FH8JTg9.png" alt="Donate">
+                                </a>
                             </div>
-                        </div>
+
+                            <!-- INSTALLATION & LICENSE (with original icons) -->
+                            <div class="install-block">
+                                <div class="install-header">
+                                    <img src="https://i.imgur.com/NGEEib2.png" alt="Install steps" class="install-icon">
+                                    <h4>How to install</h4>
+                                </div>
+                                <ol>
+                                    <li>Install <strong>OptiFine</strong> (latest version).</li>
+                                    <li>Move the file from archive to <code>resourcepacks</code> folder.</li>
+                                    <li>Start the game, select the resource pack (putting it on top of the others).</li>
+                                    <li><span class="warning">Warning:</span> this module must be located <strong>below</strong> the modules: BLOCKS.</li>
+                                    <li>Go to the language selection menu and select the desired language (ENG/RUS).</li>
+                                    <li>Done!</li>
+                                </ol>
+                                <div class="license-info">
+                                    <details>
+                                        <summary><i class="fas fa-balance-scale"></i> License agreement (click to reveal)</summary>
+                                        <p><strong>Prohibited:</strong> copying resource pack for financial gain; reassembly or any changes without permission; use files in other bundles under your name.</p>
+                                        <p><strong>Allowed:</strong> copying for personal use; use of files on your website with link to source: <a href="https://vk.com/elitiumstudios" target="_blank">VK</a> / <a href="https://www.planetminecraft.com/member/elitium_studios" target="_blank">PMC</a>.</p>
+                                        <p>Elitium Studios is not responsible for any damage. © 2019-2026 Elitium Studios. Licensed under <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank">CC BY-NC-ND 4.0</a> <img src="https://licensebuttons.net/l/by-nc-nd/4.0/80x15.png" alt="CC"></p>
+                                    </details>
+                                </div>
+                            </div>
+
+                            <!-- FOOTER LINKS (from original) -->
+                            <div class="block-footer text-center">
+                                <a href="https://vk.com/elitiumstudios" target="_blank"><i class="fab fa-vk"></i> VK</a> | 
+                                <a href="https://elitiumstudios.github.io/" target="_blank"><i class="fas fa-globe"></i> Site</a> | 
+                                <a href="https://discordapp.com/invite/8xTAn6A" target="_blank"><i class="fab fa-discord"></i> Discord</a>
+                                <p class="small mt10">Version Submissions design 2.2 | Designed by XopeRiys & Rodoto</p>
+                                <p class="small">© 2019-2026 Elitium Studios. All Rights Reserved.</p>
+                            </div>
+                        </div> <!-- end gui-mega-block -->
+
+                        <div class="row"><div class="dividerOT"></div></div>
                     </div>
                 </div>
             </div>
@@ -277,160 +302,235 @@
     <script src="../js/style.js" type="text/javascript"></script>
 
     <style>
-        /* Additional styles for GUI page */
-        .gui-intro {
-            background: rgba(0,0,0,0.4);
-            padding: 20px;
-            border-radius: 10px;
-            border-left: 4px solid #ffc107;
+        /* Mega block styles */
+        .gui-mega-block {
+            background: rgba(0,0,0,0.65);
+            border-radius: 20px;
+            padding: 30px 25px;
+            margin: 30px 0;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
-        .gui-preview {
+        .block-header .main-preview {
             max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
-        .pack-card {
-            background: rgba(0,0,0,0.6);
             border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.2s, box-shadow 0.2s;
-            height: 100%;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+        }
+        .specs {
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin: 20px 0;
+            font-size: 15px;
         }
-        .pack-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+        .specs span i {
+            margin-right: 8px;
+            color: #ffc107;
         }
-        .card-header {
+        .discord-link {
+            background: rgba(114,137,218,0.2);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            margin-top: 10px;
+        }
+        .versions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+        .version-card {
+            background: rgba(20,20,30,0.8);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .version-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,193,7,0.4);
+        }
+        .version-header {
             position: relative;
         }
-        .card-header img {
+        .version-header img {
             width: 100%;
-            height: 180px;
+            height: 160px;
             object-fit: cover;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
         }
-        .card-header h4 {
+        .version-title {
             position: absolute;
             bottom: 10px;
             left: 15px;
-            margin: 0;
+            right: 15px;
             background: rgba(0,0,0,0.7);
-            padding: 5px 12px;
-            border-radius: 20px;
+            padding: 6px 12px;
+            border-radius: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+        }
+        .version-title h3 {
+            margin: 0;
             font-size: 18px;
             font-weight: bold;
         }
-        .version-badge {
-            position: absolute;
-            top: 10px;
-            right: 10px;
+        .ver {
             background: #ffc107;
             color: #000;
-            padding: 3px 10px;
+            padding: 2px 10px;
             border-radius: 20px;
             font-size: 12px;
             font-weight: bold;
         }
-        .card-body {
-            padding: 15px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
+        .version-body {
+            padding: 18px;
         }
-        .color-grid {
+        .color-strip {
             display: flex;
             flex-wrap: wrap;
-            gap: 6px;
-            margin: 15px 0;
+            gap: 8px;
+            margin: 18px 0;
         }
-        .color-btn, .color-drive {
+        .color-chip {
             display: inline-block;
-            width: 50px;
-            text-align: center;
-            padding: 5px 0;
-            border-radius: 20px;
+            padding: 5px 12px;
+            border-radius: 30px;
             font-size: 11px;
             font-weight: bold;
             text-decoration: none;
-            color: white;
             transition: 0.2s;
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 2px solid;
+            text-align: center;
+            min-width: 55px;
+            color: white;
+            text-shadow: 0 0 1px black;
         }
-        .color-btn:hover, .color-drive:hover {
+        /* ensure readability */
+        .color-chip[style*="background:#fff"] {
+            color: #000 !important;
+            text-shadow: none;
+            border-color: #aaa !important;
+        }
+        .color-chip.all-colors {
+            background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f);
+            color: white;
+            border-color: white;
+        }
+        .color-chip:hover {
             transform: scale(1.05);
             filter: brightness(1.1);
             text-decoration: none;
-            color: white;
-        }
-        .all-colors {
-            background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f);
-            color: white;
-            width: auto;
-            padding: 5px 12px;
         }
         .btn-download {
             display: inline-block;
             background: #00bcd4;
-            padding: 8px 15px;
-            border-radius: 30px;
-            color: #fff;
+            padding: 8px 16px;
+            border-radius: 40px;
+            color: white;
             font-weight: bold;
-            text-align: center;
-            margin-top: auto;
-            transition: 0.2s;
             text-decoration: none;
+            transition: 0.2s;
+            width: 100%;
+            text-align: center;
         }
         .btn-download:hover {
             background: #0097a7;
-            color: #fff;
+            color: white;
             text-decoration: none;
         }
-        .install-box {
-            background: rgba(0,0,0,0.5);
+        .collections-block {
+            margin: 30px 0 20px;
             padding: 20px;
-            border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-        .install-box ol {
-            margin-bottom: 0;
-        }
-        .install-box code {
-            background: #000;
-            padding: 2px 6px;
-            border-radius: 4px;
-            color: #ffc107;
-        }
-        .license details {
-            cursor: pointer;
             background: rgba(0,0,0,0.3);
-            padding: 10px;
-            border-radius: 8px;
+            border-radius: 20px;
         }
-        .license summary {
+        .collection-logos {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 15px;
+        }
+        .collection-logos a {
+            text-align: center;
+            color: #ddd;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .collection-logos a:hover {
+            color: #ffc107;
+            transform: translateY(-2px);
+        }
+        .collection-logos img {
+            width: 70px;
+            height: 70px;
+            border-radius: 12px;
+            display: block;
+            margin-bottom: 6px;
+        }
+        .donate-block {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+        }
+        .donate-block img {
+            max-width: 200px;
+        }
+        .install-block {
+            background: rgba(0,0,0,0.3);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .install-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 15px;
+        }
+        .install-icon {
+            width: 40px;
+        }
+        .install-block ol {
+            margin-left: 20px;
+        }
+        .warning {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .license-info details {
+            margin-top: 20px;
+            cursor: pointer;
+        }
+        .license-info summary {
             font-weight: bold;
             color: #ffc107;
         }
-        .mb30 {
-            margin-bottom: 30px;
+        .block-footer {
+            margin-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
         }
-        .mb40 {
-            margin-bottom: 40px;
-        }
-        .mt40 {
-            margin-top: 40px;
-        }
-        .mt20 {
-            margin-top: 20px;
+        .small {
+            font-size: 12px;
+            opacity: 0.8;
         }
         @media (max-width: 768px) {
-            .color-btn, .color-drive {
-                width: 40px;
-                font-size: 9px;
+            .gui-mega-block {
+                padding: 20px 15px;
             }
-            .all-colors {
-                width: auto;
+            .versions-grid {
+                grid-template-columns: 1fr;
+            }
+            .specs {
+                gap: 12px;
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
