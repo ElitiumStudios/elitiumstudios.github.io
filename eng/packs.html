@@ -77,7 +77,7 @@
 
     <!-- MAIN CONTENT: GUI PACKS -->
     <div class="upper-page current">
-        <!-- Удалён дублирующийся копирайт в line-right, оставлен только тот, что в preloader -->
+        <!-- Удалён дублирующийся копирайт в line-right -->
         <div class="center-container-home">
             <div class="center-block-home">
                 <div class="upper-content">
@@ -85,8 +85,12 @@
                         <div class="row"><div class="dividerOT"></div></div>
                         <div class="row">
                             <h4>//</h4>
-                            <!-- Оригинальный заголовок с подписью -->
-                            <h2>EScraft GUI <span class="get-behind">Transparent • RGB • 512x</span></h2>
+                            <!-- Изменённый заголовок: добавлен уменьшенный текст Transparent Multicolor -->
+                            <h2>
+                                EScraft GUI 
+                                <span class="multicolor-sub">Transparent Multicolor</span>
+                                <span class="get-behind">Transparent • RGB • 512x</span>
+                            </h2>
                         </div>
 
                         <!-- MAIN BIG BLOCK -->
@@ -148,7 +152,7 @@
                                 <div class="table-responsive">
                                     <table class="packs-table">
                                         <thead>
-                                            <tr><th>Minecraft Version</th><th>Pack Version</th><th>Download all colors</th></tr>
+                                            <tr><th>Minecraft Version</th><th>Pack Version</th><th>Download all colors</th> </tr>
                                         </thead>
                                         <tbody>
                                             <tr><td class="version-name"><i class="fas fa-cube"></i> 1.8+</td><td>v0.2.1</td><td><a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td></tr>
@@ -514,6 +518,30 @@
             z-index: 100;
             pointer-events: none;
         }
+
+        /* Новый стиль для уменьшенного текста Transparent Multicolor */
+        .multicolor-sub {
+            font-size: 0.55em;
+            font-weight: 400;
+            color: #ffc107;
+            margin-left: 12px;
+            letter-spacing: 1px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        /* Заголовок h2 общий стиль, чтобы подзаголовок get-behind оставался как раньше */
+        .upper-content h2 {
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .get-behind {
+            display: block;
+            font-size: 0.45em;
+            font-weight: 300;
+            color: rgba(255,255,255,0.7);
+            letter-spacing: 2px;
+            margin-top: 8px;
+        }
         @media (max-width: 768px) {
             .gui-mega-block { padding: 20px 15px; }
             .packs-table, .packs-table tbody, .packs-table tr, .packs-table td {
@@ -544,6 +572,10 @@
                 bottom: 10px;
                 right: 10px;
                 font-size: 10px;
+            }
+            .multicolor-sub {
+                font-size: 0.5em;
+                margin-left: 6px;
             }
         }
     </style>
