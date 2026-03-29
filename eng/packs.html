@@ -75,13 +75,9 @@
         </div>
     </div>
 
-    <!-- STATIC COPYRIGHT (FIXED) -->
-    <div class="line-right right-position static-copyright">
-        <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
-    </div>
-
     <!-- MAIN CONTENT: GUI PACKS -->
     <div class="upper-page current">
+        <div class="line-right right-position"><a href="#">&copy;2019 Elitium Studios. All Rights Reserved.</a></div>
         <div class="center-container-home">
             <div class="center-block-home">
                 <div class="upper-content">
@@ -238,7 +234,7 @@
                                 </div>
                             </div>
 
-                            <!-- INSTALLATION BLOCK (updated instructions) -->
+                            <!-- INSTALLATION BLOCK -->
                             <div class="install-block">
                                 <div class="install-centered-image">
                                     <img src="https://i.imgur.com/NGEEib2.png" alt="Installation steps" class="install-big-img">
@@ -246,11 +242,11 @@
                                 <div class="install-text-full">
                                     <h4><i class="fas fa-wrench"></i> How to install</h4>
                                     <ol>
-                                        <li>Install Optifine <strong>or</strong> <strong>[ESF] Entity Sound Features</strong>, <strong>[EMF] Entity Model Features</strong>, <strong>[ETF] Entity Texture Features</strong> if you are not using OPTIFINE.</li>
-                                        <li>Move file from archive to resource folder.</li>
+                                        <li>Install <strong>OptiFine</strong> (latest version).</li>
+                                        <li>Move the file from archive to <code>resourcepacks</code> folder.</li>
                                         <li>Start the game, select the resource pack (putting it on top of the others).</li>
                                         <li><span class="warning">Warning:</span> this module must be located <strong>below</strong> the modules: BLOCKS.</li>
-                                        <li>Go to the language selection menu and select the desired language.</li>
+                                        <li>Go to the language selection menu and select the desired language (ENG/RUS).</li>
                                         <li>Done!</li>
                                     </ol>
                                 </div>
@@ -287,27 +283,6 @@
     <script src="../js/style.js" type="text/javascript"></script>
 
     <style>
-        /* Static copyright */
-        .static-copyright {
-            position: fixed;
-            right: 20px;
-            bottom: 20px;
-            z-index: 1000;
-            background: rgba(0,0,0,0.6);
-            padding: 6px 15px;
-            border-radius: 30px;
-            font-size: 12px;
-            letter-spacing: 1px;
-            backdrop-filter: blur(4px);
-            border-left: 3px solid #ffc107;
-        }
-        .static-copyright a {
-            color: rgba(255,255,255,0.8);
-            text-decoration: none;
-        }
-        .static-copyright a:hover {
-            color: #ffc107;
-        }
         /* Make subtitle more visible */
         .get-behind {
             background: linear-gradient(135deg, #ffc107, #ff8c00);
@@ -367,6 +342,9 @@
         }
         .gui-mega-block {
             background: rgba(0,0,0,0.7);
+            border-radius: 20px;
+            padding: 30px 25px;
+            margin: 30px 0;
         }
         .specs span i {
             color: #ffc107;
@@ -377,18 +355,31 @@
         .btn-download:hover {
             background: #008c9e;
         }
+        .versions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+        .install-block {
+            background: rgba(0,0,0,0.4);
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .install-centered-image {
+            text-align: center;
+            margin-bottom: 20px;
+        }
         @media (max-width: 768px) {
-            .static-copyright {
-                right: 10px;
-                bottom: 10px;
-                font-size: 9px;
-                padding: 4px 10px;
-            }
             .version-title h3 {
                 font-size: 14px;
             }
             .version-header img {
                 height: 140px;
+            }
+            .versions-grid {
+                grid-template-columns: 1fr;
             }
         }
     </style>
