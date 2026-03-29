@@ -75,7 +75,7 @@
 
     <!-- MAIN CONTENT: GUI PACKS -->
     <div class="upper-page current">
-        <!-- Копирайт: теперь position: fixed, чтобы не скроллился -->
+        <!-- Копирайт: фиксированное позиционирование, чтобы не скроллился -->
         <div class="line-right right-position" style="position: fixed;">
             <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
         </div>
@@ -227,13 +227,14 @@
     </script>
 
     <style>
-        /* Поправка отступа для заголовка, чтобы "Transparent • RGB • 512x" не уходил за верх */
+        /* Увеличенный отступ сверху, чтобы заголовок не уходил за экран */
         .upper-page .upper-content .container.sections {
-            padding-top: 60px;
+            padding-top: 100px;
         }
+        /* Дополнительно уменьшаем отступ на мобильных */
         @media (max-width: 768px) {
             .upper-page .upper-content .container.sections {
-                padding-top: 40px;
+                padding-top: 70px;
             }
         }
 
