@@ -88,7 +88,7 @@
                             <h2>EScraft GUI <span class="get-behind">Transparent • RGB • 512x</span></h2>
                         </div>
 
-                        <!-- MAIN BLOCK (рамка teal, потолще) -->
+                        <!-- MAIN BLOCK (transparent-borders как в index) -->
                         <div class="gui-mega-block">
                             <div class="block-header text-center">
                                 <img src="https://i.imgur.com/fJppuXr.png" alt="EScraft GUI Preview" class="main-preview">
@@ -238,18 +238,17 @@
             }
         }
 
-        /* ОСНОВНОЙ БЛОК – рамка teal, потолще */
+        /* ОСНОВНОЙ БЛОК – как в index: без видимой рамки, прозрачные границы */
         .gui-mega-block {
             background: transparent;
-            border: 4px solid teal;           /* 4px толщина и цвет teal */
-            border-radius: 24px;
+            border: none;               /* убираем любую видимую рамку */
+            border-radius: 0;          /* убираем скругление, как в index (опционально) */
             padding: 30px 25px;
             margin: 30px 0;
-            backdrop-filter: none;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            box-shadow: none;          /* убираем тень, чтобы соответствовать index */
             transition: all 0.2s ease;
         }
-        /* Внутренние секции с лёгким фоном */
+        /* Внутренние секции оставляем с лёгким фоном для читаемости */
         .gallery-section,
         .packs-table-section,
         .install-block {
