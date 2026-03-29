@@ -75,8 +75,8 @@
 
     <!-- MAIN CONTENT: GUI PACKS -->
     <div class="upper-page current">
-        <!-- Копирайт в точности как в content.html (без дополнительных стилей) -->
-        <div class="line-right right-position">
+        <!-- Копирайт: теперь position: fixed, чтобы не скроллился -->
+        <div class="line-right right-position" style="position: fixed;">
             <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
         </div>
         <div class="center-container-home">
@@ -227,7 +227,17 @@
     </script>
 
     <style>
-        /* Только стили, которые нужны для карусели и таблицы (не переопределяем line-right) */
+        /* Поправка отступа для заголовка, чтобы "Transparent • RGB • 512x" не уходил за верх */
+        .upper-page .upper-content .container.sections {
+            padding-top: 60px;
+        }
+        @media (max-width: 768px) {
+            .upper-page .upper-content .container.sections {
+                padding-top: 40px;
+            }
+        }
+
+        /* Галерея без тёмных полос */
         .gallery-section {
             margin: 30px 0;
             padding: 20px;
@@ -319,6 +329,8 @@
             background: #ffc107;
             transform: scale(1.2);
         }
+
+        /* Таблица */
         .packs-table-section {
             margin: 30px 0 20px;
             padding: 20px;
@@ -376,6 +388,8 @@
             font-size: 13px;
             color: #ccc;
         }
+
+        /* Основные блоки */
         .gui-mega-block {
             background: rgba(0,0,0,0.65);
             border-radius: 20px;
