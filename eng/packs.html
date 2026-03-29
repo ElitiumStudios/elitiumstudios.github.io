@@ -75,10 +75,10 @@
 
     <!-- MAIN CONTENT: GUI PACKS -->
     <div class="upper-page current">
-            <!-- Правая линия Копирайт -->
-            <div class="line-right right-position">
-                <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
-            </div>
+        <!-- Копирайт в точности как в content.html -->
+        <div class="line-right right-position">
+            <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
+        </div>
         <div class="center-container-home">
             <div class="center-block-home">
                 <div class="upper-content">
@@ -130,7 +130,7 @@
                                 <h4><i class="fas fa-table"></i> Available versions</h4>
                                 <div class="table-responsive">
                                     <table class="packs-table">
-                                        <thead>大学<th>Minecraft Version</th><th>Pack Version</th><th>Download all colors</th> </thead>
+                                        <thead><tr><th>Minecraft Version</th><th>Pack Version</th><th>Download all colors</th></tr></thead>
                                         <tbody>
                                             <tr><td class="version-name"><i class="fas fa-cube"></i> 1.8+</td><td>v0.2.1</td><td><a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td></tr>
                                             <tr><td class="version-name"><i class="fas fa-cube"></i> 1.12+</td><td>v0.4.1</td><td><a href="https://drive.google.com/file/d/1jeWDGFh660tkDL_2g3AKA7qGYAmkEc4Y/view?usp=drive_link" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td></tr>
@@ -227,7 +227,7 @@
     </script>
 
     <style>
-        /* Оригинальный вертикальный копирайт (в точности как в исходном файле) */
+        /* Копирайт в точности как в content.html (стили из общего CSS, но для гарантии дублируем) */
         .line-right {
             position: fixed;
             right: 20px;
@@ -249,7 +249,7 @@
             color: #ffc107;
         }
 
-        /* Галерея без тёмных полос */
+        /* Остальные стили (галерея, таблица, блоки) — как в предыдущей версии */
         .gallery-section {
             margin: 30px 0;
             padding: 20px;
@@ -341,8 +341,6 @@
             background: #ffc107;
             transform: scale(1.2);
         }
-
-        /* Таблица */
         .packs-table-section {
             margin: 30px 0 20px;
             padding: 20px;
@@ -400,8 +398,6 @@
             font-size: 13px;
             color: #ccc;
         }
-
-        /* Основные стили */
         .gui-mega-block {
             background: rgba(0,0,0,0.65);
             border-radius: 20px;
@@ -482,8 +478,6 @@
             font-size: 12px;
             opacity: 0.8;
         }
-
-        /* Заголовок (оригинальный) */
         .get-behind {
             display: block;
             font-size: 0.45em;
@@ -492,7 +486,6 @@
             letter-spacing: 2px;
             margin-top: 8px;
         }
-
         @media (max-width: 768px) {
             .gui-mega-block { padding: 20px 15px; }
             .packs-table, .packs-table tbody, .packs-table tr, .packs-table td { display: block; width: 100%; }
