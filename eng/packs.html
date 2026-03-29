@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Elitium Studios – EScraft GUI Transparent мультиколор</title>
+    <title>Elitium Studios – EScraft GUI Packs</title>
     <link rel="shortcut icon" href="img/logo.png">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,7 +24,7 @@
     </script>
 </head>
 <body>
-    <!-- Preloader, background, social icons, language, menu -->
+    <!-- Preloader, background, social icons, language, menu (unchanged) -->
     <div id="preloader"><div id="preloader-status"><div class="preloader-position preloader-effect"><span></span></div></div></div>
     <div class="hero-fullscreen hero-bg">
         <div id="kenburnsy-bg">
@@ -75,7 +75,7 @@
         </div>
     </div>
 
-    <!-- MAIN CONTENT: GUI PACKS -->
+    <!-- ONE BIG BLOCK: GUI PACKS -->
     <div class="upper-page current">
         <div class="line-right right-position"><a href="#">&copy;2019 Elitium Studios. All Rights Reserved.</a></div>
         <div class="center-container-home">
@@ -85,7 +85,7 @@
                         <div class="row"><div class="dividerOT"></div></div>
                         <div class="row">
                             <h4>//</h4>
-                            <h2>EScraft GUI Transparent мультиколор <span class="get-behind">Transparent • RGB • 512x</span></h2>
+                            <h2>EScraft GUI <span class="get-behind">Transparent • RGB • 512x</span></h2>
                         </div>
 
                         <!-- MAIN BIG BLOCK -->
@@ -105,7 +105,7 @@
                                 </div>
                             </div>
 
-                            <!-- VERSIONS CARDS -->
+                            <!-- VERSIONS CARDS (all in one block) -->
                             <div class="versions-grid">
                                 <!-- 1.8+ -->
                                 <div class="version-card">
@@ -132,7 +132,7 @@
                                     </div>
                                 </div>
 
-                                <!-- 1.12+ (direct Google Drive links) -->
+                                <!-- 1.12+ (with direct Google Drive links) -->
                                 <div class="version-card">
                                     <div class="version-header">
                                         <img src="https://static.planetminecraft.com/files/image/minecraft/texture-pack/2024/03/24031115_escraft-gui-transparent-rgb-v0-4-1-reload-1-12_800x.jpg?f9cacf7a" alt="1.12 preview">
@@ -234,7 +234,7 @@
                                 </div>
                             </div>
 
-                            <!-- INSTALLATION BLOCK -->
+                            <!-- INSTALLATION BLOCK with big centered image -->
                             <div class="install-block">
                                 <div class="install-centered-image">
                                     <img src="https://i.imgur.com/NGEEib2.png" alt="Installation steps" class="install-big-img">
@@ -266,6 +266,7 @@
                                 <a href="https://elitiumstudios.github.io/" target="_blank"><i class="fas fa-globe"></i> Site</a> | 
                                 <a href="https://discordapp.com/invite/8xTAn6A" target="_blank"><i class="fab fa-discord"></i> Discord</a>
                                 <p class="small mt10">Version Submissions design 2.2 | Designed by XopeRiys & Rodoto</p>
+                                <p class="small">© 2019-2026 Elitium Studios. All Rights Reserved.</p>
                             </div>
                         </div> <!-- end gui-mega-block -->
 
@@ -283,77 +284,39 @@
     <script src="../js/style.js" type="text/javascript"></script>
 
     <style>
-        /* Make subtitle more visible */
-        .get-behind {
-            background: linear-gradient(135deg, #ffc107, #ff8c00);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            text-shadow: 0 0 10px rgba(0,0,0,0.3);
-            font-weight: bold;
-        }
-        h2 {
-            margin-bottom: 15px;
-        }
-        /* Remove black borders from gallery images (cards) */
-        .version-card {
-            border: none;
-            background: rgba(20,20,30,0.9);
-        }
-        .version-header img {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
-            margin: 0;
-            padding: 0;
-        }
-        .version-title {
-            background: linear-gradient(90deg, rgba(0,0,0,0.9), rgba(0,0,0,0.7));
-            border-radius: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            backdrop-filter: blur(3px);
-            padding: 10px 15px;
-        }
-        .version-title h3 {
-            font-size: 18px;
-            margin: 0;
-            color: #fff;
-            text-shadow: 0 1px 2px black;
-        }
-        .version-title h3 i {
-            color: #ffc107;
-            margin-right: 5px;
-        }
-        .color-chip {
-            border-width: 2px;
-            transition: 0.2s;
-        }
-        .color-chip:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-        }
-        .install-big-img {
-            max-width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 0 20px rgba(0,0,0,0.5);
-        }
+        /* Mega block styles */
         .gui-mega-block {
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.65);
             border-radius: 20px;
             padding: 30px 25px;
             margin: 30px 0;
+            backdrop-filter: blur(2px);
+            border: 1px solid rgba(255,255,255,0.15);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .block-header .main-preview {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+        }
+        .specs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+            margin: 20px 0;
+            font-size: 15px;
         }
         .specs span i {
+            margin-right: 8px;
             color: #ffc107;
         }
-        .btn-download {
-            background: #00bcd4;
-        }
-        .btn-download:hover {
-            background: #008c9e;
+        .discord-link {
+            background: rgba(114,137,218,0.2);
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 40px;
+            margin-top: 10px;
         }
         .versions-grid {
             display: grid;
@@ -361,25 +324,186 @@
             gap: 25px;
             margin: 35px 0;
         }
+        .version-card {
+            background: rgba(20,20,30,0.85);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.2s;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+        .version-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255,193,7,0.4);
+        }
+        .version-header {
+            position: relative;
+        }
+        .version-header img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+        .version-title {
+            position: absolute;
+            bottom: 12px;
+            left: 15px;
+            right: 15px;
+            background: rgba(0,0,0,0.85);
+            padding: 8px 15px;
+            border-radius: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(4px);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+        }
+        .version-title h3 {
+            margin: 0;
+            font-size: 18px;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .version-title h3 i {
+            font-size: 18px;
+            color: #ffc107;
+        }
+        .ver {
+            background: #ffc107;
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: bold;
+            white-space: nowrap;
+        }
+        .version-body {
+            padding: 18px;
+        }
+        .color-strip {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 18px 0;
+        }
+        .color-chip {
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 30px;
+            font-size: 11px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.2s;
+            border: 2px solid;
+            text-align: center;
+            min-width: 55px;
+            color: white;
+            text-shadow: 0 0 1px black;
+        }
+        .color-chip[style*="background:#fff"] {
+            color: #000 !important;
+            text-shadow: none;
+            border-color: #aaa !important;
+        }
+        .color-chip.all-colors {
+            background: linear-gradient(90deg, #f00, #ff0, #0f0, #0ff, #00f, #f0f);
+            color: white;
+            border-color: white;
+        }
+        .color-chip:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+            text-decoration: none;
+        }
+        .btn-download {
+            display: inline-block;
+            background: #00bcd4;
+            padding: 8px 16px;
+            border-radius: 40px;
+            color: white;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.2s;
+            width: 100%;
+            text-align: center;
+        }
+        .btn-download:hover {
+            background: #0097a7;
+            color: white;
+            text-decoration: none;
+        }
+        /* Installation block with big centered image */
         .install-block {
             background: rgba(0,0,0,0.4);
             border-radius: 20px;
-            padding: 20px;
+            padding: 25px;
             margin: 20px 0;
         }
         .install-centered-image {
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+        }
+        .install-big-img {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+            display: inline-block;
+        }
+        .install-text-full h4 {
+            color: #ffc107;
+            margin-bottom: 15px;
+        }
+        .install-text-full ol {
+            margin-left: 20px;
+        }
+        .warning {
+            color: #ffc107;
+            font-weight: bold;
+        }
+        .license-info details {
+            margin-top: 20px;
+            cursor: pointer;
+            background: rgba(0,0,0,0.3);
+            padding: 10px;
+            border-radius: 12px;
+        }
+        .license-info summary {
+            font-weight: bold;
+            color: #ffc107;
+        }
+        .block-footer {
+            margin-top: 25px;
+            border-top: 1px solid rgba(255,255,255,0.2);
+            padding-top: 20px;
+        }
+        .small {
+            font-size: 12px;
+            opacity: 0.8;
         }
         @media (max-width: 768px) {
-            .version-title h3 {
-                font-size: 14px;
-            }
-            .version-header img {
-                height: 140px;
+            .gui-mega-block {
+                padding: 20px 15px;
             }
             .versions-grid {
                 grid-template-columns: 1fr;
+            }
+            .specs {
+                gap: 12px;
+                flex-direction: column;
+                align-items: center;
+            }
+            .version-title h3 {
+                font-size: 15px;
+            }
+            .version-title h3 i {
+                font-size: 14px;
+            }
+            .ver {
+                font-size: 10px;
+                padding: 2px 8px;
             }
         }
     </style>
