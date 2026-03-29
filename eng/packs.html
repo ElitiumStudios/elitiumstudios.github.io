@@ -75,7 +75,7 @@
 
     <!-- MAIN CONTENT: GUI PACKS -->
     <div class="upper-page current">
-        <!-- Копирайт: фиксированное позиционирование, чтобы не скроллился -->
+        <!-- Копирайт: фиксированное позиционирование -->
         <div class="line-right right-position" style="position: fixed;">
             <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
         </div>
@@ -227,14 +227,26 @@
     </script>
 
     <style>
-        /* Увеличенный отступ сверху, чтобы заголовок не уходил за экран */
+        /* Увеличенный отступ сверху и уменьшенный размер шрифта заголовка */
         .upper-page .upper-content .container.sections {
-            padding-top: 100px;
+            padding-top: 140px;
         }
-        /* Дополнительно уменьшаем отступ на мобильных */
+        .upper-page .upper-content h2 {
+            font-size: 3rem; /* уменьшаем с 3.5rem (оригинал) */
+        }
+        .upper-page .upper-content .get-behind {
+            font-size: 0.8rem; /* уменьшаем подзаголовок */
+            margin-top: 4px;
+        }
         @media (max-width: 768px) {
             .upper-page .upper-content .container.sections {
-                padding-top: 70px;
+                padding-top: 100px;
+            }
+            .upper-page .upper-content h2 {
+                font-size: 2rem;
+            }
+            .upper-page .upper-content .get-behind {
+                font-size: 0.7rem;
             }
         }
 
@@ -470,14 +482,6 @@
         .small {
             font-size: 12px;
             opacity: 0.8;
-        }
-        .get-behind {
-            display: block;
-            font-size: 0.45em;
-            font-weight: 300;
-            color: rgba(255,255,255,0.9);
-            letter-spacing: 2px;
-            margin-top: 8px;
         }
         @media (max-width: 768px) {
             .gui-mega-block { padding: 20px 15px; }
