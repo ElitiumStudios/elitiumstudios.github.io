@@ -75,7 +75,6 @@
 
     <!-- MAIN CONTENT: GUI PACKS -->
     <div class="upper-page current">
-        <!-- Копирайт: фиксированное позиционирование -->
         <div class="line-right right-position" style="position: fixed;">
             <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
         </div>
@@ -89,7 +88,7 @@
                             <h2>EScraft GUI <span class="get-behind">Transparent • RGB • 512x</span></h2>
                         </div>
 
-                        <!-- MAIN BIG BLOCK -->
+                        <!-- MAIN BLOCK (рамка как в index) -->
                         <div class="gui-mega-block">
                             <div class="block-header text-center">
                                 <img src="https://i.imgur.com/fJppuXr.png" alt="EScraft GUI Preview" class="main-preview">
@@ -105,7 +104,7 @@
                                 </div>
                             </div>
 
-                            <!-- GALLERY (без тёмных полос) -->
+                            <!-- GALLERY -->
                             <div class="gallery-section">
                                 <h4><i class="fas fa-images"></i> Screenshots</h4>
                                 <div class="carousel-container">
@@ -130,7 +129,9 @@
                                 <h4><i class="fas fa-table"></i> Available versions</h4>
                                 <div class="table-responsive">
                                     <table class="packs-table">
-                                        <thead>大学<th>Minecraft Version</th><th>Pack Version</th><th>Download all colors</th> </thead>
+                                        <thead>
+                                            <tr><th>Minecraft Version</th><th>Pack Version</th><th>Download all colors</th></tr>
+                                        </thead>
                                         <tbody>
                                             <tr><td class="version-name"><i class="fas fa-cube"></i> 1.8+</td><td>v0.2.1</td><td><a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td></tr>
                                             <tr><td class="version-name"><i class="fas fa-cube"></i> 1.12+</td><td>v0.4.1</td><td><a href="https://drive.google.com/file/d/1jeWDGFh660tkDL_2g3AKA7qGYAmkEc4Y/view?usp=drive_link" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td></tr>
@@ -151,7 +152,7 @@
                                 <div class="install-text-full">
                                     <h4><i class="fas fa-wrench"></i> How to install</h4>
                                     <ol>
-                                        <li>Install Optfile or [ESF] Entity Sound Features, [EMF] Entity Model Features, [ETF] Entity Texture Features if you are not using OPTIFINE.</li>
+                                        <li>Install Optifine or [ESF] Entity Sound Features, [EMF] Entity Model Features, [ETF] Entity Texture Features if you are not using OPTIFINE.</li>
                                         <li>Move file from archive to resource folder.</li>
                                         <li>Start the game, select the resource pack (putting it on top of the others).</li>
                                         <li><span class="warning">Warning:</span> this module must be located <strong>below</strong> the modules: BLOCKS.</li>
@@ -227,7 +228,7 @@
     </script>
 
     <style>
-        /* Отступ сверху, чтобы подзаголовок не уходил за экран (шрифт оставлен исходным) */
+        /* Отступ сверху */
         .upper-page .upper-content .container.sections {
             padding-top: 140px;
         }
@@ -237,14 +238,32 @@
             }
         }
 
-        /* Галерея без тёмных полос */
-        .gallery-section {
+        /* ОСНОВНОЙ БЛОК – рамка как в index (прозрачный, без заливки) */
+        .gui-mega-block {
+            background: transparent;      /* убрали сплошной фон */
+            border: 1px solid rgba(255, 255, 255, 0.25);  /* тонкая рамка */
+            border-radius: 24px;
+            padding: 30px 25px;
             margin: 30px 0;
-            padding: 20px;
+            backdrop-filter: none;       /* убрали размытие */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.2s ease;
+        }
+        /* Внутренние секции оставим с лёгким фоном для читаемости */
+        .gallery-section,
+        .packs-table-section,
+        .install-block {
             background: rgba(0,0,0,0.3);
             border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
         }
-        .gallery-section h4 {
+        .install-block {
+            margin-bottom: 0;
+        }
+        /* Остальные стили без изменений */
+        .gallery-section h4,
+        .packs-table-section h4 {
             color: #ffc107;
             margin-bottom: 20px;
             text-align: center;
@@ -329,19 +348,6 @@
             background: #ffc107;
             transform: scale(1.2);
         }
-
-        /* Таблица */
-        .packs-table-section {
-            margin: 30px 0 20px;
-            padding: 20px;
-            background: rgba(0,0,0,0.3);
-            border-radius: 20px;
-        }
-        .packs-table-section h4 {
-            color: #ffc107;
-            margin-bottom: 20px;
-            text-align: center;
-        }
         .packs-table {
             width: 100%;
             background: rgba(0,0,0,0.6);
@@ -388,17 +394,6 @@
             font-size: 13px;
             color: #ccc;
         }
-
-        /* Основные блоки */
-        .gui-mega-block {
-            background: rgba(0, 128, 128, 0.3); /* Teal с прозрачностью 30% */
-            border-radius: 20px;
-            padding: 30px 25px;
-            margin: 30px 0;
-            backdrop-filter: blur(2px);
-            border: 1px solid rgba(255,255,255,0.15);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
         .block-header .main-preview {
             max-width: 100%;
             border-radius: 12px;
@@ -422,12 +417,6 @@
             padding: 8px 20px;
             border-radius: 40px;
             margin-top: 10px;
-        }
-        .install-block {
-            background: rgba(0,0,0,0.4);
-            border-radius: 20px;
-            padding: 25px;
-            margin: 20px 0;
         }
         .install-centered-image {
             text-align: center;
