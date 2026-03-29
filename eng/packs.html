@@ -89,7 +89,7 @@
                             <h2>EScraft GUI <span class="get-behind">Transparent • RGB • 512x</span></h2>
                         </div>
 
-                        <!-- MAIN BIG BLOCK -->
+                        <!-- MAIN BIG BLOCK (стиль заменён на стиль выдвижного меню) -->
                         <div class="gui-mega-block">
                             <div class="block-header text-center">
                                 <img src="https://i.imgur.com/fJppuXr.png" alt="EScraft GUI Preview" class="main-preview">
@@ -132,13 +132,13 @@
                                     <table class="packs-table">
                                         <thead>大学<th>Minecraft Version</th><th>Pack Version</th><th>Download all colors</th> </thead>
                                         <tbody>
-                                            <tr><td class="version-name"><i class="fas fa-cube"></i> 1.8+</td><td>v0.2.1</td><td><a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td></tr>
-                                            <tr><td class="version-name"><i class="fas fa-cube"></i> 1.12+</td><td>v0.4.1</td><td><a href="https://drive.google.com/file/d/1jeWDGFh660tkDL_2g3AKA7qGYAmkEc4Y/view?usp=drive_link" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td></tr>
-                                            <tr><td class="version-name"><i class="fas fa-cube"></i> 1.13+</td><td>v0.5.1</td><td><a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td></tr>
-                                            <tr><td class="version-name"><i class="fas fa-cube"></i> 1.14+</td><td>v0.6.5</td><td><a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td></tr>
-                                            <tr><td class="version-name"><i class="fas fa-cube"></i> 1.15+</td><td>v0.7 (soon)</td><td><a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td></tr>
+                                            <tr><td class="version-name"><i class="fas fa-cube"></i> 1.8+</td><td>v0.2.1</td><td><a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td> </tr>
+                                            <tr><td class="version-name"><i class="fas fa-cube"></i> 1.12+</td><td>v0.4.1</td><td><a href="https://drive.google.com/file/d/1jeWDGFh660tkDL_2g3AKA7qGYAmkEc4Y/view?usp=drive_link" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td> </tr>
+                                            <tr><td class="version-name"><i class="fas fa-cube"></i> 1.13+</td><td>v0.5.1</td><td><a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-13/" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td> </tr>
+                                            <tr><td class="version-name"><i class="fas fa-cube"></i> 1.14+</td><td>v0.6.5</td><td><a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-14/" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td> </tr>
+                                            <tr><td class="version-name"><i class="fas fa-cube"></i> 1.15+</td><td>v0.7 (soon)</td><td><a href="https://www.planetminecraft.com/texture-pack/elitiumstudios-gui-rgb-1-15/" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td> </tr>
                                         </tbody>
-                                    </table>
+                                     </table>
                                 </div>
                                 <p class="note-text text-center mt20"><i class="fas fa-info-circle"></i> Clicking "Download all color" will give you the complete set of all colors (if available) or take you to the project page where you can select individual colors.</p>
                             </div>
@@ -389,40 +389,32 @@
             color: #ccc;
         }
 
-        /* Основные блоки */
+        /* ⭐⭐⭐ НОВЫЙ СТИЛЬ ЦЕНТРАЛЬНОГО БЛОКА — ТОЧНО КАК У ВЫДВИЖНОГО МЕНЮ ⭐⭐⭐ */
         .gui-mega-block {
-            background: rgba(0,0,0,0.65);
-            border-radius: 20px;
+            background: rgba(12, 12, 20, 0.75);        /* тёмный фон, как у меню */
+            backdrop-filter: blur(14px);                /* сильное размытие, стеклянный эффект */
+            border-radius: 28px;                       /* скругление как у современных меню */
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
             padding: 30px 25px;
             margin: 30px 0;
-            backdrop-filter: blur(2px);
-            border: 1px solid rgba(255,255,255,0.15);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            transition: all 0.3s cubic-bezier(0.2, 0.9, 0.4, 1.1);
         }
-        .block-header .main-preview {
-            max-width: 100%;
-            border-radius: 12px;
-            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+        /* Лёгкая анимация при наведении, как у интерактивных элементов меню */
+        .gui-mega-block:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.35);
         }
-        .specs {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 25px;
-            margin: 20px 0;
-            font-size: 15px;
+
+        /* Дополнительные внутренние блоки остались без изменений, но фон таблиц и галереи
+           слегка осветлён, чтобы читалось на новом фоне блока */
+        .gallery-section, .packs-table-section, .install-block {
+            background: rgba(0, 0, 0, 0.45);
+            backdrop-filter: blur(4px);
         }
-        .specs span i {
-            margin-right: 8px;
-            color: #ffc107;
-        }
-        .discord-link {
-            background: rgba(114,137,218,0.2);
-            display: inline-block;
-            padding: 8px 20px;
-            border-radius: 40px;
-            margin-top: 10px;
-        }
+
+        /* Основные блоки */
         .install-block {
             background: rgba(0,0,0,0.4);
             border-radius: 20px;
