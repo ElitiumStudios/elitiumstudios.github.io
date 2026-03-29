@@ -35,6 +35,8 @@
         </div>
         <div id="stars-1"></div><div id="stars-2"></div><div id="stars-3"></div>
         <div class="preload-content"></div>
+        <!-- Добавленный копирайт внутри блока preloader -->
+        <div class="preloader-copyright">©2019-2026 Elitium Studios. All Rights Reserved.</div>
     </div>
     <div class="social-icons-wrapper bottom-position">
         <ul class="social-icons click">
@@ -83,7 +85,8 @@
                         <div class="row"><div class="dividerOT"></div></div>
                         <div class="row">
                             <h4>//</h4>
-                            <h2>EScraft GUI Transparent Multicolor</h2>
+                            <!-- Возвращён оригинальный заголовок с подписью -->
+                            <h2>EScraft GUI <span class="get-behind">Transparent • RGB • 512x</span></h2>
                         </div>
 
                         <!-- MAIN BIG BLOCK -->
@@ -103,7 +106,7 @@
                                 </div>
                             </div>
 
-                            <!-- ENLARGED GALLERY CAROUSEL (no black borders, smooth arrows) -->
+                            <!-- ENLARGED GALLERY CAROUSEL (без тёмных полос) -->
                             <div class="gallery-section">
                                 <h4><i class="fas fa-images"></i> Screenshots</h4>
                                 <div class="carousel-container">
@@ -145,7 +148,7 @@
                                 <div class="table-responsive">
                                     <table class="packs-table">
                                         <thead>
-                                            大学
+                                            <tr>
                                                 <th>Minecraft Version</th>
                                                 <th>Pack Version</th>
                                                 <th>Download all colors</th>
@@ -183,10 +186,11 @@
                                 <p class="note-text text-center mt20"><i class="fas fa-info-circle"></i> Clicking "Download all color" will give you the complete set of all colors (if available) or take you to the project page where you can select individual colors.</p>
                             </div>
 
-                            <!-- INSTALLATION BLOCK (updated text & image) -->
+                            <!-- INSTALLATION BLOCK (обновлённая картинка) -->
                             <div class="install-block">
                                 <div class="install-centered-image">
-                                    <img src="https://imgur.com/WnWjGQl.png" alt="Installation steps" class="install-big-img" onerror="this.onerror=null; this.src='https://i.imgur.com/NGEEib2.png';">
+                                    <!-- Прямая ссылка на изображение, без onerror -->
+                                    <img src="https://i.imgur.com/WnWjGQl.png" alt="Installation steps" class="install-big-img">
                                 </div>
                                 <div class="install-text-full">
                                     <h4><i class="fas fa-wrench"></i> How to install</h4>
@@ -286,7 +290,7 @@
     </script>
 
     <style>
-        /* Carousel - larger, no black borders, smooth arrows */
+        /* Carousel — без тёмных полос */
         .gallery-section {
             margin: 30px 0 30px;
             padding: 20px;
@@ -304,12 +308,13 @@
             margin: 0 auto;
             overflow: hidden;
             border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            background: transparent;
         }
         .carousel-slides {
             position: relative;
+            width: 100%;
             height: 0;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%; /* 16:9 — сохраняем пропорции, но изображения будут покрывать */
         }
         .carousel-slide {
             position: absolute;
@@ -330,8 +335,8 @@
         .carousel-slide img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
-            background: #0a0a0a;
+            object-fit: cover;      /* Заполняет контейнер, обрезая края — нет полос */
+            background: transparent;
         }
         .carousel-prev, .carousel-next {
             position: absolute;
@@ -527,6 +532,17 @@
             font-size: 12px;
             opacity: 0.8;
         }
+        /* Стиль для копирайта внутри preloader */
+        .preloader-copyright {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            color: rgba(255,255,255,0.5);
+            font-size: 12px;
+            font-family: 'Montserrat', sans-serif;
+            z-index: 100;
+            pointer-events: none;
+        }
         @media (max-width: 768px) {
             .gui-mega-block { padding: 20px 15px; }
             .packs-table, .packs-table tbody, .packs-table tr, .packs-table td {
@@ -552,6 +568,11 @@
             .btn-download-all {
                 padding: 6px 16px;
                 font-size: 13px;
+            }
+            .preloader-copyright {
+                bottom: 10px;
+                right: 10px;
+                font-size: 10px;
             }
         }
     </style>
