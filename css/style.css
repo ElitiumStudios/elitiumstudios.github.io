@@ -23,7 +23,7 @@ strong{font-weight:bold}
 ::selection{background:#fff;color:#000}
 h1,h2,h3,h4,h5,h6{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
 h2{font-family:'Oswald',sans-serif;font-size:70px;font-weight:400;line-height:1;letter-spacing:.05em;color:#fff;text-transform:uppercase;margin:0;padding:0 0 0 26px;position:relative;white-space:normal;word-wrap:break-word}
-h2 .get-behind{position:absolute;left:0;top:-28px;width:100%;text-align:center;font-size:100px;opacity:.15;white-space:nowrap;overflow-x:auto;box-sizing:border-box;padding-right:10px}
+h2 .get-behind{position:absolute;left:0;top:-28px;width:100%;font-size:100px;opacity:.15;text-align:center;white-space:nowrap;overflow-x:auto;box-sizing:border-box;padding-right:10px}
 h4{font-family:'Dosis',sans-serif;font-size:15px;font-weight:400;line-height:1;letter-spacing:.05em;color:#fff;text-transform:uppercase;margin:0;padding:0 0 0 26px}
 h5{font-family:'Dosis',sans-serif;font-size:20px;font-weight:400;line-height:1;letter-spacing:.35em;color:#fff;text-transform:uppercase;margin:12px auto 43px;padding:0 0 0 10px}
 h6{font-family:'Montserrat',sans-serif;font-size:30px;font-weight:700;line-height:1;letter-spacing:-.08em;color:#fff;text-transform:uppercase;margin:0;padding:0}
@@ -170,16 +170,17 @@ textarea{height:100px}
 :-ms-input-placeholder{font-size:12px;color:#999}
 input:-moz-placeholder{font-size:12px;color:#999}
 
-/* hero background */
+/* hero background (kenburnsy) */
 .hero-bg{position:fixed;transition:transform 1.5s ease;transform:scale(1.8);opacity:0;z-index:0}
 .hero-bg-show{transform:scale(1);opacity:1}
 .hero-fullscreen{position:fixed;width:100%;height:100%;overflow:hidden}
-
-/* kenburnsy (упрощён) */
+.kenburnsy{position:relative;width:100%;height:auto;overflow:hidden}
 .kenburnsy.fullscreen{position:fixed;top:0;right:0;bottom:0;left:0;z-index:0}
+.kenburnsy img{display:none}
+.kenburnsy .slide{position:absolute;top:0;right:0;bottom:0;left:0;background-position:center;background-size:cover;background-repeat:no-repeat;transform:translateZ(0);transform-origin:center}
 #kenburnsy-bg{overflow:hidden}
 
-/* stars (сокращённые box-shadow) */
+/* stars (полные версии) */
 #stars-1,#stars-2,#stars-3{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;background:transparent;border-radius:50%;animation:animStar linear infinite}
 #stars-1{width:1px;height:1px;box-shadow:1068px 1231px #FFF,65px 1230px #FFF,1415px 611px #FFF,1088px 1908px #FFF,962px 1746px #FFF,598px 793px #FFF,967px 564px #FFF,1499px 1615px #FFF,1770px 1312px #FFF,222px 1479px #FFF,218px 1348px #FFF,1466px 1804px #FFF,978px 716px #FFF,1409px 1594px #FFF,927px 1533px #FFF,1975px 651px #FFF,634px 1501px #FFF,268px 1922px #FFF,1032px 1220px #FFF,1153px 1344px #FFF,1346px 1222px #FFF,41px 152px #FFF,1270px 548px #FFF,153px 1950px #FFF,1555px 1166px #FFF,1090px 1407px #FFF,1830px 1634px #FFF,431px 1958px #FFF,137px 295px #FFF,1651px 1430px #FFF,436px 1231px #FFF,1060px 1688px #FFF,569px 107px #FFF,653px 1151px #FFF,1038px 78px #FFF,1860px 518px #FFF,1713px 1317px #FFF,598px 1819px #FFF,1328px 1611px #FFF,116px 268px #FFF,446px 1491px #FFF,1723px 547px #FFF,822px 193px #FFF,91px 911px #FFF,1103px 1491px #FFF,286px 1117px #FFF,771px 1852px #FFF,1082px 1638px #FFF,403px 1895px #FFF,735px 110px #FFF;animation-duration:50s}
 #stars-2{width:2px;height:2px;box-shadow:858px 1809px #FFF,351px 1136px #FFF,1146px 1826px #FFF,1231px 1125px #FFF,1936px 580px #FFF,51px 1811px #FFF,469px 1018px #FFF,607px 421px #FFF,732px 1562px #FFF,1214px 969px #FFF,385px 993px #FFF,633px 1095px #FFF,244px 401px #FFF,1057px 1820px #FFF,1926px 1146px #FFF,835px 403px #FFF,62px 1273px #FFF,510px 1058px #FFF,338px 736px #FFF,1962px 851px #FFF,1262px 412px #FFF,1712px 1504px #FFF,1727px 225px #FFF,193px 1112px #FFF,1456px 880px #FFF,382px 1873px #FFF,296px 435px #FFF,699px 15px #FFF,567px 1412px #FFF,821px 1575px #FFF,100px 1306px #FFF,1607px 540px #FFF,1676px 1436px #FFF,1787px 1559px #FFF,504px 743px #FFF,1298px 1452px #FFF,185px 1870px #FFF,935px 407px #FFF,1580px 1759px #FFF,1741px 1574px #FFF,286px 646px #FFF,423px 166px #FFF,1681px 982px #FFF,1532px 16px #FFF,176px 989px #FFF,815px 647px #FFF,386px 1987px #FFF,1806px 1940px #FFF,338px 1628px #FFF,232px 265px #FFF;animation-duration:100s}
@@ -247,7 +248,7 @@ h2 .get-behind{font-size:80px;top:-20px}
 }
 @media only screen and (max-width:640px){
 h2{font-size:36px;padding-left:8px;line-height:1.2}
-h2 .get-behind{font-size:42px;top:-16px;white-space:normal;word-break:break-word;padding:0 5px}
+h2 .get-behind{font-size:42px;top:-16px;white-space:normal;word-break:break-word;padding:0 5px;overflow-x:visible}
 .fin-heading{font-size:50px;margin:21px auto 24px}
 .services-padding{padding-left:15px}
 #main-menu{font-size:25px;width:226px}
