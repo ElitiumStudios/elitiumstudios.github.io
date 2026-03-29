@@ -75,7 +75,7 @@
 
     <!-- MAIN CONTENT: GUI PACKS -->
     <div class="upper-page current">
-        <!-- Копирайт в точности как в content.html -->
+        <!-- Копирайт в точности как в content.html (без дополнительных стилей) -->
         <div class="line-right right-position">
             <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
         </div>
@@ -130,7 +130,7 @@
                                 <h4><i class="fas fa-table"></i> Available versions</h4>
                                 <div class="table-responsive">
                                     <table class="packs-table">
-                                        <thead><tr><th>Minecraft Version</th><th>Pack Version</th><th>Download all colors</th></tr></thead>
+                                        <thead>大学<th>Minecraft Version</th><th>Pack Version</th><th>Download all colors</th> </thead>
                                         <tbody>
                                             <tr><td class="version-name"><i class="fas fa-cube"></i> 1.8+</td><td>v0.2.1</td><td><a href="https://www.planetminecraft.com/texture-pack/elitiumdesign-gui-rgb-1-8/" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td></tr>
                                             <tr><td class="version-name"><i class="fas fa-cube"></i> 1.12+</td><td>v0.4.1</td><td><a href="https://drive.google.com/file/d/1jeWDGFh660tkDL_2g3AKA7qGYAmkEc4Y/view?usp=drive_link" class="btn-download-all" target="_blank"><i class="fas fa-download"></i> Download all color</a></td></tr>
@@ -227,29 +227,7 @@
     </script>
 
     <style>
-        /* Копирайт в точности как в content.html (стили из общего CSS, но для гарантии дублируем) */
-        .line-right {
-            position: fixed;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%) rotate(90deg);
-            transform-origin: right center;
-            z-index: 1000;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 11px;
-            letter-spacing: 1px;
-            white-space: nowrap;
-        }
-        .line-right a {
-            color: rgba(255,255,255,0.5);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        .line-right a:hover {
-            color: #ffc107;
-        }
-
-        /* Остальные стили (галерея, таблица, блоки) — как в предыдущей версии */
+        /* Только стили, которые нужны для карусели и таблицы (не переопределяем line-right) */
         .gallery-section {
             margin: 30px 0;
             padding: 20px;
@@ -494,7 +472,6 @@
             .version-name { text-align: center; }
             .carousel-prev, .carousel-next { width: 36px; height: 36px; font-size: 18px; }
             .btn-download-all { padding: 6px 16px; font-size: 13px; }
-            .line-right { right: 10px; font-size: 9px; }
         }
     </style>
 </body>
