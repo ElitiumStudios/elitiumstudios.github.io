@@ -35,7 +35,6 @@
         </div>
         <div id="stars-1"></div><div id="stars-2"></div><div id="stars-3"></div>
         <div class="preload-content"></div>
-        <!-- Копирайт убран из preloader, теперь он будет в line-right -->
     </div>
     <div class="social-icons-wrapper bottom-position">
         <ul class="social-icons click">
@@ -76,7 +75,7 @@
 
     <!-- MAIN CONTENT: GUI PACKS -->
     <div class="upper-page current">
-        <!-- Восстанавливаем line-right с вертикальным копирайтом, статичный -->
+        <!-- Оригинальный вертикальный копирайт -->
         <div class="line-right right-position">
             <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
         </div>
@@ -96,7 +95,6 @@
 
                         <!-- MAIN BIG BLOCK -->
                         <div class="gui-mega-block">
-                            <!-- HEADER -->
                             <div class="block-header text-center">
                                 <img src="https://i.imgur.com/fJppuXr.png" alt="EScraft GUI Preview" class="main-preview">
                                 <p class="mt20">Minimalistic interface for Minecraft. In different colors, 2 languages (ENG/RUS). Improved fonts. Transparent background. Resolution 512x512.</p>
@@ -116,14 +114,14 @@
                                 <h4><i class="fas fa-images"></i> Screenshots</h4>
                                 <div class="carousel-container">
                                     <div class="carousel-slides" id="carouselSlides">
-                                        <div class="carousel-slide active"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1911/all-1552574413_lrg.png" alt="GUI screenshot all colors"></div>
-                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-23-18-44-15-1545578003_lrg.png" alt="GUI screenshot 1"></div>
-                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-23-18-30-11-1545577991_lrg.png" alt="GUI screenshot 2"></div>
-                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-01-16-51-19-1545577983_lrg.png" alt="GUI screenshot 3"></div>
-                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-37-53-1545577966_lrg.png" alt="GUI screenshot 4"></div>
-                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-01-16-49-02-1545579952_lrg.png" alt="GUI screenshot 5"></div>
-                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-38-33-1545577950_lrg.png" alt="GUI screenshot 6"></div>
-                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-38-09-1545577943_lrg.png" alt="GUI screenshot 7"></div>
+                                        <div class="carousel-slide active"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1911/all-1552574413_lrg.png" alt="all colors"></div>
+                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-23-18-44-15-1545578003_lrg.png" alt="1"></div>
+                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-23-18-30-11-1545577991_lrg.png" alt="2"></div>
+                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-01-16-51-19-1545577983_lrg.png" alt="3"></div>
+                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-37-53-1545577966_lrg.png" alt="4"></div>
+                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-01-16-49-02-1545579952_lrg.png" alt="5"></div>
+                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-38-33-1545577950_lrg.png" alt="6"></div>
+                                        <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-38-09-1545577943_lrg.png" alt="7"></div>
                                     </div>
                                     <button class="carousel-prev" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
                                     <button class="carousel-next" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
@@ -207,43 +205,33 @@
             const totalSlides = slides.length;
 
             function updateCarousel() {
-                slides.forEach((slide, index) => {
-                    slide.classList.toggle('active', index === currentIndex);
-                });
+                slides.forEach((slide, index) => slide.classList.toggle('active', index === currentIndex));
                 updateDots();
             }
-
             function updateDots() {
                 dotsContainer.innerHTML = '';
                 for (let i = 0; i < totalSlides; i++) {
                     const dot = document.createElement('span');
                     dot.classList.add('dot');
                     if (i === currentIndex) dot.classList.add('active');
-                    dot.addEventListener('click', () => {
-                        currentIndex = i;
-                        updateCarousel();
-                    });
+                    dot.addEventListener('click', () => { currentIndex = i; updateCarousel(); });
                     dotsContainer.appendChild(dot);
                 }
             }
-
             function nextSlide() { currentIndex = (currentIndex + 1) % totalSlides; updateCarousel(); }
             function prevSlide() { currentIndex = (currentIndex - 1 + totalSlides) % totalSlides; updateCarousel(); }
-
             prevBtn.addEventListener('click', prevSlide);
             nextBtn.addEventListener('click', nextSlide);
-
             let interval = setInterval(nextSlide, 5000);
             const container = document.querySelector('.carousel-container');
             container.addEventListener('mouseenter', () => clearInterval(interval));
             container.addEventListener('mouseleave', () => interval = setInterval(nextSlide, 5000));
-
             updateDots();
         });
     </script>
 
     <style>
-        /* line-right - вертикальный копирайт, статичный */
+        /* Вертикальный копирайт (как в оригинале) */
         .line-right {
             position: fixed;
             right: 20px;
@@ -265,9 +253,9 @@
             color: #ffc107;
         }
 
-        /* Carousel */
+        /* Галерея без тёмных полос */
         .gallery-section {
-            margin: 30px 0 30px;
+            margin: 30px 0;
             padding: 20px;
             background: rgba(0,0,0,0.3);
             border-radius: 20px;
@@ -298,15 +286,12 @@
             width: 100%;
             height: 100%;
             opacity: 0;
-            transition: opacity 0.6s ease-in-out;
+            transition: opacity 0.6s ease;
             display: flex;
             align-items: center;
             justify-content: center;
         }
-        .carousel-slide.active {
-            opacity: 1;
-            z-index: 1;
-        }
+        .carousel-slide.active { opacity: 1; z-index: 1; }
         .carousel-slide img {
             width: 100%;
             height: 100%;
@@ -327,7 +312,6 @@
             cursor: pointer;
             font-size: 24px;
             z-index: 10;
-            transition: all 0.3s ease;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -362,7 +346,7 @@
             transform: scale(1.2);
         }
 
-        /* Table */
+        /* Таблица */
         .packs-table-section {
             margin: 30px 0 20px;
             padding: 20px;
@@ -414,7 +398,6 @@
         .btn-download-all:hover {
             background: #0097a7;
             color: white;
-            text-decoration: none;
             transform: scale(1.02);
         }
         .note-text {
@@ -422,7 +405,7 @@
             color: #ccc;
         }
 
-        /* Общие стили */
+        /* Основные блоки */
         .gui-mega-block {
             background: rgba(0,0,0,0.65);
             border-radius: 20px;
@@ -504,7 +487,7 @@
             opacity: 0.8;
         }
 
-        /* Стили для заголовка */
+        /* Заголовок */
         .multicolor-sub {
             font-size: 0.55em;
             font-weight: 400;
@@ -525,38 +508,14 @@
 
         @media (max-width: 768px) {
             .gui-mega-block { padding: 20px 15px; }
-            .packs-table, .packs-table tbody, .packs-table tr, .packs-table td {
-                display: block;
-                width: 100%;
-            }
-            .packs-table tr {
-                margin-bottom: 20px;
-                border-bottom: 1px solid rgba(255,255,255,0.2);
-            }
-            .packs-table td {
-                text-align: center;
-                padding: 10px;
-            }
-            .version-name {
-                text-align: center;
-            }
-            .carousel-prev, .carousel-next {
-                width: 36px;
-                height: 36px;
-                font-size: 18px;
-            }
-            .btn-download-all {
-                padding: 6px 16px;
-                font-size: 13px;
-            }
-            .line-right {
-                right: 10px;
-                font-size: 9px;
-            }
-            .multicolor-sub {
-                font-size: 0.5em;
-                margin-left: 6px;
-            }
+            .packs-table, .packs-table tbody, .packs-table tr, .packs-table td { display: block; width: 100%; }
+            .packs-table tr { margin-bottom: 20px; border-bottom: 1px solid rgba(255,255,255,0.2); }
+            .packs-table td { text-align: center; padding: 10px; }
+            .version-name { text-align: center; }
+            .carousel-prev, .carousel-next { width: 36px; height: 36px; font-size: 18px; }
+            .btn-download-all { padding: 6px 16px; font-size: 13px; }
+            .line-right { right: 10px; font-size: 9px; }
+            .multicolor-sub { font-size: 0.5em; margin-left: 6px; }
         }
     </style>
 </body>
