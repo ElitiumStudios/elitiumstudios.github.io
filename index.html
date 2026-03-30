@@ -96,8 +96,8 @@
             left: 0;
             right: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.65);  /* полупрозрачный чёрный */
-            backdrop-filter: blur(6px);        /* лёгкое размытие фона */
+            background: rgba(0, 0, 0, 0.65);
+            backdrop-filter: blur(6px);
             color: #fff;
             text-align: center;
             padding: 12px 20px;
@@ -105,12 +105,11 @@
             font-weight: 600;
             font-size: 1.2rem;
             letter-spacing: 1px;
-            z-index: 5;                        /* выше фона (у фона z-index по умолчанию 0), но ниже контента */
+            z-index: 5;
             box-shadow: none;
             border-bottom: 1px solid rgba(255,255,255,0.2);
-            pointer-events: none;              /* чтобы кликать сквозь баннер на элементы под ним */
+            pointer-events: none;
         }
-        /* Лёгкая пульсация для привлечения внимания */
         @keyframes softPulse {
             0% { background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);}
             100% { background: rgba(0,0,0,0.75); backdrop-filter: blur(8px);}
@@ -125,21 +124,14 @@
             }
         }
         
-        /* ---------- Все интерактивные элементы и контент должны быть поверх баннера ---------- */
+        /* ---------- Соцсети, язык, меню и контент поверх баннера ---------- */
+        /* Просто поднимаем z-index, не трогая position */
         .social-icons-wrapper,
         .lang,
         .menu-trigger,
         #ui-layer,
         .upper-page {
-            position: relative;
-            z-index: 10;        /* выше, чем у баннера */
-        }
-        
-        /* Дополнительно: чтобы иконки соцсетей и язык тоже были поверх */
-        .social-icons-wrapper ul,
-        .lang ul {
-            position: relative;
-            z-index: 11;
+            z-index: 20 !important;
         }
         
         /* ---------- Скрываем полосу прокрутки ---------- */
@@ -174,7 +166,7 @@
     <script data-ad-client="ca-pub-7539190548863628" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-    <!-- Баннер только поверх фона, под контентом -->
+    <!-- Баннер только поверх фона -->
     <div class="construction-banner">
         <span>🚧</span> SITE UNDER CONSTRUCTION — CONTENT TEMPORARILY UNAVAILABLE <span>🚧</span>
     </div>
