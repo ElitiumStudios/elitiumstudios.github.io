@@ -89,6 +89,58 @@
             }
         }
         
+        /* ---------- НАДПИСЬ О НЕГОТОВНОСТИ САЙТА (яркая, фиксированная, не мешает) ---------- */
+        .under-construction {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.3rem;
+            padding: 12px 28px;
+            border-radius: 60px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(0,0,0,0.3), 0 0 0 4px rgba(255,255,255,0.2);
+            z-index: 100000;
+            backdrop-filter: blur(4px);
+            white-space: nowrap;
+            animation: blinkWarning 1.2s infinite alternate;
+            pointer-events: none; /* чтобы можно было кликать сквозь надпись на элементы за ней */
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+        @keyframes blinkWarning {
+            0% {
+                background: linear-gradient(135deg, #ff416c, #ff4b2b);
+                box-shadow: 0 0 10px rgba(0,0,0,0.3);
+                transform: translateX(-50%) scale(1);
+            }
+            100% {
+                background: linear-gradient(135deg, #ff6a3d, #ff1e4d);
+                box-shadow: 0 0 25px rgba(255,75,43,0.8);
+                transform: translateX(-50%) scale(1.02);
+            }
+        }
+        /* Для мобильных устройств уменьшаем шрифт и отступы */
+        @media (max-width: 700px) {
+            .under-construction {
+                font-size: 0.85rem;
+                padding: 8px 16px;
+                top: 12px;
+                white-space: nowrap;
+            }
+        }
+        @media (max-width: 550px) {
+            .under-construction {
+                font-size: 0.7rem;
+                padding: 6px 12px;
+                white-space: nowrap;
+            }
+        }
+        
         /* ---------- Скрываем полосу прокрутки ---------- */
         html, body {
             overflow-x: hidden;
@@ -126,6 +178,11 @@
     <script data-ad-client="ca-pub-7539190548863628" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
+
+    <!-- ЯРКАЯ НАДПИСЬ О НЕГОТОВНОСТИ (фиксированная, не мешает кликам) -->
+    <div class="under-construction">
+        ⚠️ UNDER CONSTRUCTION — CONTENT TEMPORARILY UNAVAILABLE ⚠️
+    </div>
 
     <div id="preloader">
         <div id="preloader-status">
