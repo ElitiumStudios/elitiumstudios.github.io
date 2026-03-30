@@ -89,41 +89,6 @@
             }
         }
         
-        /* ---------- Баннер поверх всего, полупрозрачный ---------- */
-        .construction-banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.75);
-            backdrop-filter: blur(8px);
-            color: #fff;
-            text-align: center;
-            padding: 14px 20px;
-            font-family: 'Montserrat', sans-serif;
-            font-weight: 600;
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            z-index: 99999;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            pointer-events: none;
-        }
-        @keyframes softPulse {
-            0% { background: rgba(0,0,0,0.7); backdrop-filter: blur(6px);}
-            100% { background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);}
-        }
-        .construction-banner {
-            animation: softPulse 1.8s infinite alternate;
-        }
-        @media (max-width: 600px) {
-            .construction-banner {
-                font-size: 0.85rem;
-                padding: 10px 12px;
-            }
-        }
-        
         /* ---------- Скрываем полосу прокрутки ---------- */
         html, body {
             overflow-x: hidden;
@@ -144,9 +109,9 @@
             padding-top: 0;
         }
         
-        /* ---------- ИСПРАВЛЕНИЕ: кнопка меню всегда выше оверлея (menu-nav) ---------- */
+        /* ---------- Кнопка меню всегда выше оверлея ---------- */
         .menu-trigger {
-            z-index: 1000000 !important;  /* выше любого оверлея меню */
+            z-index: 1000000 !important;
         }
     </style>
 
@@ -161,9 +126,6 @@
     <script data-ad-client="ca-pub-7539190548863628" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-    <div class="construction-banner">
-        <span>🚧</span> SITE UNDER CONSTRUCTION — CONTENT TEMPORARILY UNAVAILABLE <span>🚧</span>
-    </div>
 
     <div id="preloader">
         <div id="preloader-status">
@@ -186,6 +148,7 @@
         <div class="preload-content"></div>
     </div>
 
+    <!-- Иконки соц сетей -->
     <div class="social-icons-wrapper bottom-position">
         <ul class="social-icons click">
             <li><a class="fab fa-1-5x fa-vk" href="https://vk.com/elitiumstudios" target="_blank"></a></li>
@@ -200,6 +163,7 @@
         </ul>
     </div>
     
+    <!-- Выбор языка -->
     <div class="lang lang-position click">
         <ul class="lang-icons">
             <li><a href="../index.html" target="">ENG <img src="../img/lang/eng.png" alt="en"></a></li>
@@ -207,6 +171,7 @@
         </ul>
     </div>
 
+    <!-- Меню -->
     <div class="menu-trigger top-position click" id="menu">
         <h6 id="blink">
             <span id="main-menu-caller2">Menu</span>
@@ -232,6 +197,7 @@
         </div>
     </div>
     
+    <!-- Home -->
     <div class="upper-page current">
         <div class="logo top-position"></div>
         <div class="line-left left-position"></div>
