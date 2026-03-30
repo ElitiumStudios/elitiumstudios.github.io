@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Elitium Studios</title>
@@ -105,10 +105,10 @@
             font-weight: 600;
             font-size: 1.2rem;
             letter-spacing: 1px;
-            z-index: 5;                    /* выше фона, ниже контента */
+            z-index: 5;                    /* выше фона, ниже всего остального */
             box-shadow: none;
             border-bottom: 1px solid rgba(255,255,255,0.2);
-            pointer-events: none;          /* чтобы кликать сквозь баннер */
+            pointer-events: none;          /* клики проходят сквозь */
         }
         @keyframes softPulse {
             0% { background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);}
@@ -124,18 +124,9 @@
             }
         }
         
-        /* ---------- Элементы управления и контент — над баннером (без ломания работы меню) ---------- */
-        .social-icons-wrapper,
-        .lang,
-        .upper-page,
-        #ui-layer {
-            position: relative;
-            z-index: 10;                   /* выше баннера */
-        }
-        /* Кнопка меню — особенно высокий z-index, чтобы её можно было нажать при открытом оверлее */
+        /* ---------- ТОЛЬКО кнопка меню получает высокий z-index, чтобы быть поверх menu-nav ---------- */
         .menu-trigger {
-            position: relative;
-            z-index: 20;
+            z-index: 100 !important;       /* выше любого оверлея меню */
         }
         
         /* ---------- Скрываем полосу прокрутки ---------- */
@@ -170,7 +161,7 @@
     <script data-ad-client="ca-pub-7539190548863628" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-    <!-- Баннер только поверх фона -->
+    <!-- Баннер поверх фона -->
     <div class="construction-banner">
         <span>🚧</span> SITE UNDER CONSTRUCTION — CONTENT TEMPORARILY UNAVAILABLE <span>🚧</span>
     </div>
@@ -196,7 +187,7 @@
         <div class="preload-content"></div>
     </div>
 
-    <!-- Иконки соц сетей -->
+    <!-- Иконки соц сетей (стили без изменений) -->
     <div class="social-icons-wrapper bottom-position">
         <ul class="social-icons click">
             <li><a class="fab fa-1-5x fa-vk" href="https://vk.com/elitiumstudios" target="_blank"></a></li>
@@ -211,7 +202,7 @@
         </ul>
     </div>
     
-    <!-- Выбор языка -->
+    <!-- Выбор языка (стили без изменений) -->
     <div class="lang lang-position click">
         <ul class="lang-icons">
             <li><a href="../index.html" target="">ENG <img src="../img/lang/eng.png" alt="en"></a></li>
@@ -219,7 +210,7 @@
         </ul>
     </div>
 
-    <!-- Меню -->
+    <!-- Меню (кнопка меню получает высокий z-index) -->
     <div class="menu-trigger top-position click" id="menu">
         <h6 id="blink">
             <span id="main-menu-caller2">Menu</span>
