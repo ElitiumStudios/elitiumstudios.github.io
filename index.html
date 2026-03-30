@@ -89,31 +89,31 @@
             }
         }
         
-        /* ---------- Баннер поверх всего, полупрозрачный ---------- */
+        /* ---------- Баннер только поверх фона ---------- */
         .construction-banner {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.75);  /* полупрозрачный чёрный фон */
-            backdrop-filter: blur(8px);        /* размытие заднего фона */
+            background: rgba(0, 0, 0, 0.65);  /* полупрозрачный чёрный */
+            backdrop-filter: blur(6px);        /* лёгкое размытие фона */
             color: #fff;
             text-align: center;
-            padding: 14px 20px;
+            padding: 12px 20px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             font-size: 1.2rem;
             letter-spacing: 1px;
-            z-index: 99999;                   /* выше всего */
-            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+            z-index: 5;                        /* выше фона (у фона z-index по умолчанию 0), но ниже контента */
+            box-shadow: none;
             border-bottom: 1px solid rgba(255,255,255,0.2);
-            pointer-events: none;              /* чтобы клики проходили сквозь баннер (опционально) */
+            pointer-events: none;              /* чтобы кликать сквозь баннер на элементы под ним */
         }
-        /* Можно добавить лёгкую анимацию пульсации для привлечения внимания */
+        /* Лёгкая пульсация для привлечения внимания */
         @keyframes softPulse {
-            0% { background: rgba(0,0,0,0.7); backdrop-filter: blur(6px);}
-            100% { background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);}
+            0% { background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);}
+            100% { background: rgba(0,0,0,0.75); backdrop-filter: blur(8px);}
         }
         .construction-banner {
             animation: softPulse 1.8s infinite alternate;
@@ -121,29 +121,45 @@
         @media (max-width: 600px) {
             .construction-banner {
                 font-size: 0.85rem;
-                padding: 10px 12px;
+                padding: 8px 12px;
             }
         }
         
-        /* ---------- Скрываем полосу прокрутки, но оставляем возможность скролла ---------- */
+        /* ---------- Все интерактивные элементы и контент должны быть поверх баннера ---------- */
+        .social-icons-wrapper,
+        .lang,
+        .menu-trigger,
+        #ui-layer,
+        .upper-page {
+            position: relative;
+            z-index: 10;        /* выше, чем у баннера */
+        }
+        
+        /* Дополнительно: чтобы иконки соцсетей и язык тоже были поверх */
+        .social-icons-wrapper ul,
+        .lang ul {
+            position: relative;
+            z-index: 11;
+        }
+        
+        /* ---------- Скрываем полосу прокрутки ---------- */
         html, body {
             overflow-x: hidden;
             overflow-y: auto;
-            scrollbar-width: none;  /* Firefox */
-            -ms-overflow-style: none; /* IE/Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
         html::-webkit-scrollbar,
         body::-webkit-scrollbar {
-            display: none;  /* Chrome, Safari, Opera */
+            display: none;
         }
         
-        /* Убираем любые лишние отступы, так как баннер не занимает места в потоке */
         body {
             margin: 0;
             padding: 0;
         }
         .upper-page {
-            padding-top: 0;   /* больше не нужно, т.к. баннер плавающий */
+            padding-top: 0;
         }
     </style>
 
@@ -158,7 +174,7 @@
     <script data-ad-client="ca-pub-7539190548863628" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-    <!-- Баннер поверх всего, полупрозрачный, не влияет на контент -->
+    <!-- Баннер только поверх фона, под контентом -->
     <div class="construction-banner">
         <span>🚧</span> SITE UNDER CONSTRUCTION — CONTENT TEMPORARILY UNAVAILABLE <span>🚧</span>
     </div>
