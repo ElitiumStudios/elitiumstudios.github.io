@@ -96,8 +96,8 @@
             left: 0;
             right: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.75);  /* полупрозрачный чёрный фон */
-            backdrop-filter: blur(8px);        /* размытие заднего фона */
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
             color: #fff;
             text-align: center;
             padding: 14px 20px;
@@ -105,12 +105,11 @@
             font-weight: 600;
             font-size: 1.2rem;
             letter-spacing: 1px;
-            z-index: 99999;                   /* выше всего */
+            z-index: 99999;
             box-shadow: 0 2px 15px rgba(0,0,0,0.2);
             border-bottom: 1px solid rgba(255,255,255,0.2);
-            pointer-events: none;              /* чтобы клики проходили сквозь баннер (опционально) */
+            pointer-events: none;
         }
-        /* Можно добавить лёгкую анимацию пульсации для привлечения внимания */
         @keyframes softPulse {
             0% { background: rgba(0,0,0,0.7); backdrop-filter: blur(6px);}
             100% { background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);}
@@ -125,25 +124,29 @@
             }
         }
         
-        /* ---------- Скрываем полосу прокрутки, но оставляем возможность скролла ---------- */
+        /* ---------- Скрываем полосу прокрутки ---------- */
         html, body {
             overflow-x: hidden;
             overflow-y: auto;
-            scrollbar-width: none;  /* Firefox */
-            -ms-overflow-style: none; /* IE/Edge */
+            scrollbar-width: none;
+            -ms-overflow-style: none;
         }
         html::-webkit-scrollbar,
         body::-webkit-scrollbar {
-            display: none;  /* Chrome, Safari, Opera */
+            display: none;
         }
         
-        /* Убираем любые лишние отступы, так как баннер не занимает места в потоке */
         body {
             margin: 0;
             padding: 0;
         }
         .upper-page {
-            padding-top: 0;   /* больше не нужно, т.к. баннер плавающий */
+            padding-top: 0;
+        }
+        
+        /* ---------- ИСПРАВЛЕНИЕ: кнопка меню всегда выше оверлея (menu-nav) ---------- */
+        .menu-trigger {
+            z-index: 1000000 !important;  /* выше любого оверлея меню */
         }
     </style>
 
@@ -158,7 +161,6 @@
     <script data-ad-client="ca-pub-7539190548863628" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-    <!-- Баннер поверх всего, полупрозрачный, не влияет на контент -->
     <div class="construction-banner">
         <span>🚧</span> SITE UNDER CONSTRUCTION — CONTENT TEMPORARILY UNAVAILABLE <span>🚧</span>
     </div>
@@ -184,7 +186,6 @@
         <div class="preload-content"></div>
     </div>
 
-    <!-- Иконки соц сетей -->
     <div class="social-icons-wrapper bottom-position">
         <ul class="social-icons click">
             <li><a class="fab fa-1-5x fa-vk" href="https://vk.com/elitiumstudios" target="_blank"></a></li>
@@ -199,7 +200,6 @@
         </ul>
     </div>
     
-    <!-- Выбор языка -->
     <div class="lang lang-position click">
         <ul class="lang-icons">
             <li><a href="../index.html" target="">ENG <img src="../img/lang/eng.png" alt="en"></a></li>
@@ -207,7 +207,6 @@
         </ul>
     </div>
 
-    <!-- Меню -->
     <div class="menu-trigger top-position click" id="menu">
         <h6 id="blink">
             <span id="main-menu-caller2">Menu</span>
@@ -233,7 +232,6 @@
         </div>
     </div>
     
-    <!-- Home -->
     <div class="upper-page current">
         <div class="logo top-position"></div>
         <div class="line-left left-position"></div>
