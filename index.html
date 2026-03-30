@@ -21,7 +21,7 @@
     <!-- Гугл шрифты -->
     <link href="https://fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700,800|Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Oswald:200,300,400,500,600,700|Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap" rel="stylesheet">
     
-    <!-- Ускорение анимаций в 2 раза (все переходы и анимации работают быстрее) -->
+    <!-- Ускорение анимаций в 2 раза + стиль для заголовка "Our Works" -->
     <style>
         /* Общее ускорение переходов и анимаций для ключевых элементов сайта */
         #kenburnsy-bg img {
@@ -62,6 +62,34 @@
         /* эффекты наведения и прочие transition */
         a, button, .click, .social-icons li a, .lang-icons li a {
             transition-duration: 0.15s !important;
+        }
+        
+        /* Стиль для заголовка "Our Works" (Наши работы) */
+        .our-works-heading {
+            text-align: center;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 5;
+        }
+        .our-works-heading h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 600;
+            font-size: 1.8rem;
+            letter-spacing: 2px;
+            color: rgba(255,255,240,0.95);
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            background: rgba(0,0,0,0.35);
+            display: inline-block;
+            padding: 6px 22px;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
+            margin: 0;
+        }
+        @media (max-width: 768px) {
+            .our-works-heading h4 {
+                font-size: 1.3rem;
+                padding: 4px 16px;
+            }
         }
     </style>
 
@@ -113,12 +141,12 @@
         </ul>
     </div>
     
-    <!-- Выбор языка -->
+    <!-- Выбор языка: удалён украинский (UKR) -->
     <div class="lang lang-position click">
         <ul class="lang-icons">
             <li><a href="../index.html" target="">ENG <img src="../img/lang/eng.png" alt="en"></a></li>
             <li><a href="../rus/home.html" target="">RUS <img src="../img/lang/rus.png" alt="ru"></a></li>
-            <li><a href="../ukr/home.html" target="">UKR <img src="../img/lang/ukr.png" alt="ukr"></a></li>						
+            <!-- UKR пункт полностью убран по заданию -->					
         </ul>
     </div>
 
@@ -163,6 +191,12 @@
                     <div class="container sections">
                         <div class="row">
                             <div class="fin-wrapper introduction">
+                                
+                                <!-- НОВЫЙ ЗАГОЛОВОК "OUR WORKS" (Наши работы на английском) -->
+                                <div class="our-works-heading">
+                                    <h4>⚡ OUR WORKS ⚡</h4>
+                                </div>
+                                
                                 <div class="fin-slides-wrapper">
                                     <ul class="es-slides click">
                                         <li><h3><span id="fire4-es-block" title="🔥 EScraft : BLOCKS - Default Realism - Coarse and Smooth">🔥 EScraft : BLOCKS - Default Realism - Coarse and Smooth</span></h3></li>
