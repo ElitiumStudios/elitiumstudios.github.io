@@ -89,30 +89,31 @@
             }
         }
         
-        /* ---------- Баннер только поверх фона, не мешает кликам ---------- */
+        /* ---------- Баннер поверх всего, полупрозрачный ---------- */
         .construction-banner {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             width: 100%;
-            background: rgba(0, 0, 0, 0.65);
-            backdrop-filter: blur(6px);
+            background: rgba(0, 0, 0, 0.75);  /* полупрозрачный чёрный фон */
+            backdrop-filter: blur(8px);        /* размытие заднего фона */
             color: #fff;
             text-align: center;
-            padding: 12px 20px;
+            padding: 14px 20px;
             font-family: 'Montserrat', sans-serif;
             font-weight: 600;
             font-size: 1.2rem;
             letter-spacing: 1px;
-            z-index: 5;                    /* выше фона, ниже всего остального */
-            box-shadow: none;
+            z-index: 99999;                   /* выше всего */
+            box-shadow: 0 2px 15px rgba(0,0,0,0.2);
             border-bottom: 1px solid rgba(255,255,255,0.2);
-            pointer-events: none;          /* клики проходят сквозь */
+            pointer-events: none;              /* чтобы клики проходили сквозь баннер (опционально) */
         }
+        /* Можно добавить лёгкую анимацию пульсации для привлечения внимания */
         @keyframes softPulse {
-            0% { background: rgba(0,0,0,0.6); backdrop-filter: blur(5px);}
-            100% { background: rgba(0,0,0,0.75); backdrop-filter: blur(8px);}
+            0% { background: rgba(0,0,0,0.7); backdrop-filter: blur(6px);}
+            100% { background: rgba(0,0,0,0.8); backdrop-filter: blur(10px);}
         }
         .construction-banner {
             animation: softPulse 1.8s infinite alternate;
@@ -120,33 +121,29 @@
         @media (max-width: 600px) {
             .construction-banner {
                 font-size: 0.85rem;
-                padding: 8px 12px;
+                padding: 10px 12px;
             }
         }
         
-        /* ---------- ТОЛЬКО кнопка меню получает высокий z-index, чтобы быть поверх menu-nav ---------- */
-        .menu-trigger {
-            z-index: 100 !important;       /* выше любого оверлея меню */
-        }
-        
-        /* ---------- Скрываем полосу прокрутки ---------- */
+        /* ---------- Скрываем полосу прокрутки, но оставляем возможность скролла ---------- */
         html, body {
             overflow-x: hidden;
             overflow-y: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
+            scrollbar-width: none;  /* Firefox */
+            -ms-overflow-style: none; /* IE/Edge */
         }
         html::-webkit-scrollbar,
         body::-webkit-scrollbar {
-            display: none;
+            display: none;  /* Chrome, Safari, Opera */
         }
         
+        /* Убираем любые лишние отступы, так как баннер не занимает места в потоке */
         body {
             margin: 0;
             padding: 0;
         }
         .upper-page {
-            padding-top: 0;
+            padding-top: 0;   /* больше не нужно, т.к. баннер плавающий */
         }
     </style>
 
@@ -161,7 +158,7 @@
     <script data-ad-client="ca-pub-7539190548863628" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
-    <!-- Баннер поверх фона -->
+    <!-- Баннер поверх всего, полупрозрачный, не влияет на контент -->
     <div class="construction-banner">
         <span>🚧</span> SITE UNDER CONSTRUCTION — CONTENT TEMPORARILY UNAVAILABLE <span>🚧</span>
     </div>
@@ -187,7 +184,7 @@
         <div class="preload-content"></div>
     </div>
 
-    <!-- Иконки соц сетей (стили без изменений) -->
+    <!-- Иконки соц сетей -->
     <div class="social-icons-wrapper bottom-position">
         <ul class="social-icons click">
             <li><a class="fab fa-1-5x fa-vk" href="https://vk.com/elitiumstudios" target="_blank"></a></li>
@@ -202,7 +199,7 @@
         </ul>
     </div>
     
-    <!-- Выбор языка (стили без изменений) -->
+    <!-- Выбор языка -->
     <div class="lang lang-position click">
         <ul class="lang-icons">
             <li><a href="../index.html" target="">ENG <img src="../img/lang/eng.png" alt="en"></a></li>
@@ -210,7 +207,7 @@
         </ul>
     </div>
 
-    <!-- Меню (кнопка меню получает высокий z-index) -->
+    <!-- Меню -->
     <div class="menu-trigger top-position click" id="menu">
         <h6 id="blink">
             <span id="main-menu-caller2">Menu</span>
