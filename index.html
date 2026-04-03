@@ -1,169 +1,1050 @@
-            overflow-y: auto;
-            scrollbar-width: none;
-            -ms-overflow-style: none;
-        }
-        html::-webkit-scrollbar,
-        body::-webkit-scrollbar {
-            display: none;
-        }
-        
-        body {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Elitium Studios — All in One</title>
+    <link rel="shortcut icon" href="img/logo.png">
+    <meta name="description" content="Elitium Studios — Official site. Resource packs, GUI, media and contacts.">
+    <meta name="author" content="XopeRiys">
+
+    <!-- Font Awesome 6 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* ========== RESET & BASE ========== */
+        * {
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
         }
-        .upper-page {
-            padding-top: 0;
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            background: #000;
+        }
+        body {
+            font-family: 'Raleway', sans-serif;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #fff;
+            background: #000;
+            -webkit-font-smoothing: antialiased;
+            margin: 0;
+            padding: 0;
+            position: relative;
+        }
+        a {
+            text-decoration: none;
+            color: #34c5ba;
+            transition: all 0.3s ease;
+        }
+        a:hover {
+            color: #fff;
         }
         
-        /* ---------- Кнопка меню всегда выше оверлея ---------- */
-        .menu-trigger {
-            z-index: 1000000 !important;
+        /* ========== SCROLL AREA ========== */
+        .scroll-area {
+            position: fixed;
+            top: 110px;
+            left: 110px;
+            right: 110px;
+            bottom: 110px;
+            overflow-y: auto;
+            overflow-x: hidden;
+            z-index: 150;
+            padding: 20px;
+            scrollbar-width: none;
+            background: transparent;
         }
+        .scroll-area::-webkit-scrollbar { display: none; }
+        @media (max-width: 880px) {
+            .scroll-area {
+                position: relative;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                padding: 20px;
+                overflow-y: visible;
+            }
+            body { height: auto; overflow: auto; }
+        }
+        
+        /* ========== BORDERS ========== */
+        .transparent-borders {
+            position: fixed;
+            top: 110px;
+            left: 110px;
+            right: 110px;
+            bottom: 110px;
+            border: 10px solid rgba(0, 255, 255, 0.35);
+            box-shadow: 0 0 25px rgba(0,255,255,0.55), 0 0 50px rgba(0,255,255,0.3);
+            pointer-events: none;
+            z-index: 200;
+            animation: softGlow 4s ease-in-out infinite;
+        }
+        @keyframes softGlow {
+            0% { border-color: rgba(0,255,255,0.3); box-shadow: 0 0 15px rgba(0,255,255,0.2); }
+            50% { border-color: rgba(0,255,255,0.55); box-shadow: 0 0 35px rgba(0,255,255,0.5); }
+            100% { border-color: rgba(0,255,255,0.3); box-shadow: 0 0 15px rgba(0,255,255,0.2); }
+        }
+        @media (max-width: 880px) { .transparent-borders { display: none; } }
+        
+        /* ========== LOGO ========== */
+        .logo {
+            position: fixed;
+            width: 80px;
+            height: 80px;
+            left: 25px;
+            top: 11px;
+            background: url(img/logo.png) no-repeat center/contain;
+            z-index: 500;
+            transition: transform 0.3s;
+        }
+        .logo.top-position { transform: translateY(-200px); }
+        
+        /* ========== MENU ========== */
+        .menu-trigger {
+            position: fixed;
+            width: auto;
+            min-width: 80px;
+            height: auto;
+            right: 14px;
+            top: 4px;
+            cursor: pointer;
+            z-index: 1004;
+            transition: transform 0.3s;
+            background: transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .menu-trigger.top-position { transform: translateY(-200px); }
+        
+        .menu-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 16px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            color: #fff;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+        
+        .lines-button {
+            padding: 0.5rem 0.5rem;
+            cursor: pointer;
+            background: none;
+            border: none;
+        }
+        .lines {
+            position: relative;
+            display: inline-block;
+            width: 2.5rem;
+            height: 0.25rem;
+            background: #fff;
+            transition: 0.3s;
+        }
+        .lines:before, .lines:after {
+            content: '';
+            position: absolute;
+            width: 2.5rem;
+            height: 0.25rem;
+            background: #fff;
+            left: 0;
+            transition: 0.3s;
+        }
+        .lines:before { top: 0.7rem; }
+        .lines:after { top: -0.7rem; }
+        .lines-close .lines { background: transparent; }
+        .lines-close .lines:before { transform: rotate(45deg); top: 0; }
+        .lines-close .lines:after { transform: rotate(-45deg); top: 0; }
+        
+        /* Меню - очень прозрачное, выезжает справа */
+        #main-menu {
+            position: fixed;
+            font-family: 'Oswald', sans-serif;
+            font-size: 45px;
+            text-transform: uppercase;
+            font-weight: 400;
+            letter-spacing: 1px;
+            line-height: 1;
+            width: 426px;
+            height: 100%;
+            right: -100%;
+            top: 0;
+            margin: auto;
+            transition: right 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+            transform: skew(-25deg, 0deg);
+            z-index: 1003;
+            background: rgba(0, 255, 255, 0.15);
+            backdrop-filter: blur(12px);
+        }
+        #main-menu.activated { right: 0; }
+        
+        #main-menu ul {
+            width: 326px;
+            list-style: none;
+            padding: 0 0 0 47px;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        #main-menu li {
+            margin: 20px 0;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.4s cubic-bezier(0.77, 0, 0.18, 1);
+        }
+        #main-menu.activated li {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        #main-menu.activated li:nth-child(1) { transition-delay: 0.05s; }
+        #main-menu.activated li:nth-child(2) { transition-delay: 0.1s; }
+        #main-menu.activated li:nth-child(3) { transition-delay: 0.15s; }
+        #main-menu.activated li:nth-child(4) { transition-delay: 0.2s; }
+        #main-menu.activated li:nth-child(5) { transition-delay: 0.25s; }
+        
+        #main-menu a {
+            display: inline-block;
+            color: #fff;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            white-space: nowrap;
+        }
+        #main-menu a:hover {
+            color: #000;
+        }
+        #main-menu .credits {
+            font-size: 14px;
+            margin-top: 40px;
+        }
+        #main-menu .credits a {
+            font-size: 14px;
+        }
+        
+        .menu-nav-wrapper {
+            display: table;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        .menu-nav {
+            display: table-cell;
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+        }
+        
+        /* brackets animation */
+        .brackets a::before,
+        .brackets a::after {
+            display: inline-block;
+            opacity: 0;
+            transition: transform 0.3s, opacity 0.2s;
+        }
+        .brackets a::before {
+            content: '\00b7';
+            margin-right: 10px;
+            transform: translateX(20px);
+        }
+        .brackets a::after {
+            content: '\00b7';
+            margin-left: 10px;
+            transform: translateX(-20px);
+        }
+        .brackets a:hover::before,
+        .brackets a:hover::after {
+            opacity: 1;
+            transform: translateX(0px);
+        }
+        
+        @media (max-width: 880px) {
+            #main-menu { font-size: 35px; width: 326px; }
+            #main-menu ul { width: 326px; padding: 0 0 0 27px; }
+        }
+        @media (max-width: 640px) {
+            #main-menu { font-size: 25px; width: 260px; }
+            #main-menu ul { width: 260px; padding: 0 0 0 17px; }
+            #main-menu li { margin: 12px 0; }
+        }
+        
+        /* ========== SOCIAL & LANG ========== */
+        .social-icons-wrapper {
+            position: fixed;
+            left: 3%;
+            bottom: 28px;
+            z-index: 500;
+            transition: transform 0.3s;
+        }
+        .social-icons-wrapper.bottom-position { transform: translateY(200px); }
+        .social-icons {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            align-items: center;
+        }
+        .social-icons a {
+            color: #fff;
+            font-size: 28px;
+            transition: 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .social-icons a:hover { opacity: 0.4; color: #fff; }
+        .social-icons .social-label {
+            font-size: 14px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        /* Кнопки языка - с рамкой и текстом, иконка флага опционально */
+        .lang {
+            position: fixed;
+            right: 3%;
+            bottom: 28px;
+            z-index: 500;
+            transition: transform 0.3s;
+        }
+        .lang.lang-position { transform: translateY(200px); }
+        .lang-icons {
+            display: flex;
+            gap: 15px;
+            list-style: none;
+        }
+        .lang-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.6);
+            padding: 6px 14px;
+            border-radius: 40px;
+            border: 1px solid rgba(0,255,255,0.5);
+            font-family: 'Raleway', sans-serif;
+            font-weight: 700;
+            font-size: 14px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            backdrop-filter: blur(4px);
+        }
+        .lang-item:hover {
+            background: rgba(0,255,255,0.3);
+            border-color: #34c5ba;
+            color: #34c5ba;
+        }
+        .lang-item img {
+            width: 20px;
+            height: auto;
+            border-radius: 2px;
+        }
+        /* Если картинка не загрузилась, скрываем её и полагаемся только на текст */
+        .lang-item img[src=""] { display: none; }
+        
+        @media (max-width: 640px) {
+            .lang-item { padding: 4px 12px; font-size: 12px; gap: 4px; }
+            .lang-item img { width: 16px; }
+        }
+        
+        /* ========== TYPOGRAPHY ========== */
+        h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 70px;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding-left: 26px;
+            position: relative;
+        }
+        @media (max-width: 880px) { h2 { font-size: 50px; } }
+        @media (max-width: 640px) { h2 { font-size: 45px; } }
+        
+        h2 .get-behind {
+            position: absolute;
+            left: 10px;
+            top: -28px;
+            font-size: 100px;
+            opacity: 0.15;
+            pointer-events: none;
+        }
+        
+        .fin-heading {
+            font-family: 'Oswald', sans-serif;
+            font-size: 120px;
+            letter-spacing: 0.15em;
+            text-align: center;
+            text-transform: uppercase;
+            margin: 40px auto;
+            color: #34c5ba;
+            text-shadow: 0 0 20px #34c5ba, 0 0 40px rgba(52,197,186,0.5);
+            animation: glowPulse 2s ease-in-out infinite;
+        }
+        @keyframes glowPulse {
+            0% { text-shadow: 0 0 10px #34c5ba, 0 0 20px rgba(52,197,186,0.3); }
+            50% { text-shadow: 0 0 25px #34c5ba, 0 0 50px rgba(52,197,186,0.6); }
+            100% { text-shadow: 0 0 10px #34c5ba, 0 0 20px rgba(52,197,186,0.3); }
+        }
+        @media (max-width: 1200px) { .fin-heading { font-size: 90px; } }
+        @media (max-width: 880px) { .fin-heading { font-size: 60px; } }
+        @media (max-width: 640px) { .fin-heading { font-size: 50px; } }
+        
+        .our-works-heading { text-align: center; margin: 20px 0; }
+        .our-works-heading h4 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            background: rgba(0,0,0,0.35);
+            display: inline-block;
+            padding: 6px 22px;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
+            color: #34c5ba;
+            letter-spacing: 2px;
+        }
+        @media (max-width: 768px) { .our-works-heading h4 { font-size: 1.3rem; padding: 4px 16px; } }
+        
+        .donators-heading {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            background: rgba(0,0,0,0.35);
+            display: inline-block;
+            padding: 6px 22px;
+            border-radius: 40px;
+            backdrop-filter: blur(2px);
+            color: #34c5ba;
+            letter-spacing: 2px;
+            margin: 0 auto 20px;
+        }
+        @media (max-width: 768px) { .donators-heading { font-size: 1.3rem; padding: 4px 16px; } }
+        
+        .fin-slides-wrapper li h3 {
+            font-size: 25px;
+            font-family: 'Dosis', sans-serif;
+            letter-spacing: 0.25em;
+            font-weight: 600;
+            color: #fff;
+        }
+        @media (max-width: 880px) { .fin-slides-wrapper li h3 { font-size: 18px; } }
+        
+        /* Карусель для донатов */
+        .donate-carousel {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+            min-height: 120px;
+            position: relative;
+        }
+        .donate-slide {
+            font-family: 'Dosis', sans-serif;
+            font-size: 28px;
+            letter-spacing: 0.15em;
+            padding: 20px;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(52,197,186,0.5);
+            display: none;
+            font-weight: 600;
+        }
+        .donate-slide.active {
+            display: block;
+            animation: fadeSlide 0.5s ease;
+        }
+        .donate-slide i {
+            color: #34c5ba;
+            margin-right: 15px;
+            font-size: 32px;
+        }
+        @keyframes fadeSlide {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @media (max-width: 880px) { .donate-slide { font-size: 20px; } }
+        
+        /* UNDER CONSTRUCTION */
+        .under-construction {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: linear-gradient(135deg, #ff416c, #ff4b2b);
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1rem;
+            color: white;
+            z-index: 10000;
+            white-space: nowrap;
+            transition: transform 0.3s;
+            pointer-events: none;
+            font-family: 'Montserrat', sans-serif;
+            letter-spacing: 1px;
+            animation: constructionPulse 1.5s ease-in-out infinite;
+        }
+        @keyframes constructionPulse {
+            0%, 100% { transform: translateX(-50%) scale(1); opacity: 1; }
+            50% { transform: translateX(-50%) scale(1.02); opacity: 0.95; box-shadow: 0 0 20px rgba(255,65,108,0.5); }
+        }
+        .under-construction.top-position { transform: translateX(-50%) translateY(-200px); animation: none; }
+        @media (max-width: 700px) { 
+            .under-construction { 
+                font-size: 0.7rem; 
+                padding: 6px 12px; 
+            } 
+        }
+        
+        /* ========== CAROUSEL ========== */
+        .carousel-container {
+            position: relative;
+            margin: 0 auto;
+            overflow: hidden;
+            border-radius: 16px;
+            max-width: 800px;
+        }
+        .carousel-slides {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%;
+        }
+        .carousel-slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.6s ease;
+        }
+        .carousel-slide.active { opacity: 1; z-index: 1; }
+        .carousel-slide img { width: 100%; height: 100%; object-fit: cover; border-radius: 16px; }
+        .carousel-prev, .carousel-next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            font-size: 24px;
+        }
+        .carousel-prev:hover, .carousel-next:hover { background: rgba(0,0,0,0.8); }
+        .carousel-prev { left: 20px; }
+        .carousel-next { right: 20px; }
+        .carousel-dots { text-align: center; margin-top: 15px; }
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            margin: 0 6px;
+            background: rgba(255,255,255,0.5);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+        .dot.active { background: #34c5ba; transform: scale(1.2); }
+        
+        /* ========== PACKS TABLE ========== */
+        .packs-table {
+            width: 100%;
+            background: rgba(0,0,0,0.6);
+            border-radius: 12px;
+            border-collapse: collapse;
+            color: #fff;
+        }
+        .packs-table th, .packs-table td {
+            padding: 14px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            text-align: center;
+        }
+        .packs-table th { background: rgba(0,0,0,0.5); color: #34c5ba; font-family: 'Oswald', sans-serif; font-weight: 700; }
+        .version-name { font-weight: 800; text-align: left; }
+        .version-name i { color: #34c5ba; margin-right: 6px; }
+        .btn-download-all {
+            background: #34c5ba;
+            padding: 6px 18px;
+            border-radius: 40px;
+            color: #000;
+            font-weight: 800;
+            display: inline-block;
+            transition: 0.3s;
+        }
+        .btn-download-all:hover { background: #2a9d8f; color: #fff; transform: scale(1.02); }
+        
+        .specs {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap;
+        }
+        .specs i { color: #34c5ba; margin-right: 5px; }
+        .warning { color: #ffc107; font-weight: 800; }
+        .block-footer { margin-top: 30px; text-align: center; }
+        .dividerOT { margin: 40px auto; }
+        .mt20 { margin-top: 20px; }
+        .text-center { text-align: center; }
+        
+        /* ========== CONTACT ========== */
+        .row { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 30px; }
+        .col-md-4 { flex: 1; min-width: 200px; text-align: center; }
+        .awesome-contact { font-size: 3rem; display: block; color: #34c5ba; margin-bottom: 15px; }
+        
+        /* ========== BACKGROUND ========== */
+        .hero-fullscreen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 0;
+            background: #000;
+        }
+        .kenburnsy {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        .kenburnsy .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1.5s ease;
+        }
+        .preload-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.55);
+            z-index: 1;
+        }
+        
+        /* Preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.5s, visibility 0.5s;
+        }
+        .preloader-effect {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 3px solid #34c5ba;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+        }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        #preloader.hidden { opacity: 0; visibility: hidden; }
+        
+        .page-content { animation: fadeSlidePage 0.4s ease; }
+        @keyframes fadeSlidePage {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .photos-gallery img {
+            border-radius: 12px;
+            transition: transform 0.2s;
+            width: 30%;
+            min-width: 150px;
+        }
+        .photos-gallery img:hover { transform: scale(1.02); }
+        
+        .install-big-img { max-width: 100%; border-radius: 12px; }
+        .gallery-section h4, .packs-table-section h4 { margin-bottom: 20px; color: #34c5ba; font-family: 'Montserrat', sans-serif; font-weight: 800; }
+        .click { cursor: pointer; }
+        .discord-link { margin-top: 15px; font-weight: 600; }
+        .discord-link i { color: #34c5ba; }
+        .install-text-full h4 { color: #34c5ba; font-weight: 800; }
+        .license-info summary { font-weight: 800; color: #34c5ba; }
+        
+        .donate-slide:not(.active) { display: none; }
     </style>
-
-    <!-- Гугл аналитика -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-150455057-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'UA-150455057-1');
-    </script>
-    <script data-ad-client="ca-pub-7539190548863628" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 </head>
 <body>
 
-    <!-- ЯРКАЯ НАДПИСЬ О НЕГОТОВНОСТИ (фиксированная, не мешает кликам) -->
-    <div class="under-construction">
-        ⚠️ UNDER CONSTRUCTION — CONTENT TEMPORARILY UNAVAILABLE ⚠️
-    </div>
+<div class="under-construction top-position">⚠️ UNDER CONSTRUCTION — CONTENT TEMPORARILY UNAVAILABLE ⚠️</div>
+<div class="transparent-borders"></div>
 
-    <div id="preloader">
-        <div id="preloader-status">
-            <div class="preloader-position preloader-effect">
-                <span></span>
-            </div>
-        </div>
-    </div>
-    
-    <div class="hero-fullscreen hero-bg">
-        <div id="kenburnsy-bg">
-            <img alt="Background" src="../img/background/1.png"> 
-            <img alt="Background" src="../img/background/2.png"> 
-            <img alt="Background" src="../img/background/3.png"> 
-            <img alt="Background" src="../img/background/4.png">
-        </div>
-        <div id="stars-1"></div>
-        <div id="stars-2"></div>
-        <div id="stars-3"></div>
-        <div class="preload-content"></div>
-    </div>
-
-    <!-- Иконки соц сетей -->
-    <div class="social-icons-wrapper bottom-position">
-        <ul class="social-icons click">
-            <li><a class="fab fa-1-5x fa-vk" href="https://vk.com/elitiumstudios" target="_blank"></a></li>
-            <li></li>
-            <li><a class="fab fa-1-5x fa-discord" href="https://discordapp.com/invite/8xTAn6A" target="_blank"></a></li>
-            <li></li>
-            <li><a class="fab fa-1-5x fa-youtube" href="https://www.youtube.com/channel/UCWPKMLhGCq4qo-KXN-c9zGw" target="_blank"></a></li>
-            <li></li>
-            <li><a class="fas fa-1-5x fa-globe" href="https://www.planetminecraft.com/member/elitium_studios" target="_blank"></a></li>
-            <li></li>
-            <li><a class="fas fa-1-5x fa-donate" href="https://www.donationalerts.com/r/xoperiys" target="_blank"></a></li>
-        </ul>
-    </div>
-    
-    <!-- Выбор языка -->
-    <div class="lang lang-position click">
-        <ul class="lang-icons">
-            <li><a href="../index.html" target="">ENG <img src="../img/lang/eng.png" alt="en"></a></li>
-            <li><a href="../rus/home.html" target="">RUS <img src="../img/lang/rus.png" alt="ru"></a></li>				
-        </ul>
-    </div>
-
-    <!-- Меню -->
-    <div class="menu-trigger top-position click" id="menu">
-        <h6 id="blink">
-            <span id="main-menu-caller2">Menu</span>
-        </h6>
-        <button class="lines-button minus menu-toggle" id="main-menu-caller1" type="button"><span class="lines"></span></button>
-    </div>
-    
-    <div id="ui-layer">
-        <div id="menu-wrapper">
-            <div id="main-menu">
-                <div class="menu-nav-wrapper">
-                    <nav class="menu-nav">
-                        <ul class="brackets click">
-                            <li><a title="Home page." class="menu-state active" href="eng/home.html">Home</a></li>
-                            <li><a title="ALL Resource / Texture packs from Elitium Studios. And the official download." class="menu-state" href="eng/packs.html">Packs</a></li>
-                            <li><a title="Pictures, videos, media, and more..." class="menu-state" href="eng/content.html">Content</a></li>
-                            <li><a title="All our contacts, social networks and communication with us." class="menu-state" href="eng/contact.html">Contact</a></li>
-                            <li class="menu credits"><a href="#">&copy;2019-2026 All Rights Reserved.</a></li>
+<div class="scroll-area" id="scrollArea">
+    <div class="logo top-position"></div>
+    <div class="center-container-home">
+        <div class="center-block-home">
+            <div class="container sections" style="max-width: 1200px; margin: 0 auto;">
+                
+                <!-- HOME PAGE -->
+                <div id="home-page" class="page-content" style="display: block;">
+                    <div class="our-works-heading"><h4>⚡ OUR WORKS ⚡</h4></div>
+                    <div class="fin-slides-wrapper">
+                        <ul class="es-slides click" style="text-align:center; list-style:none;">
+                            <li><h3>🔥 EScraft : BLOCKS - Default Realism - Coarse and Smooth</h3></li>
+                            <li><h3>EScraft: GUI - RGB</h3></li>
+                            <li><h3>EScraft: ITEMS - Default Realism - PVP</h3></li>
+                            <li><h3>Inventory - Animation</h3></li>
                         </ul>
-                    </nav>
+                    </div>
+                    <div class="fin-heading">Elitium Studios</div>
+                    <div class="click" style="text-align:center;"><div class="donators-heading">⭐ DONATORS ⭐</div></div>
+                    
+                    <div class="donate-carousel" id="donateCarousel">
+                        <div class="donate-slide active"><i class="fas fa-heart"></i> SUPPORT US ON DONATIONALERTS!</div>
+                        <div class="donate-slide"><i class="fas fa-gem"></i> BECOME A SPONSOR TODAY!</div>
+                        <div class="donate-slide"><i class="fas fa-star"></i> YOUR NAME COULD BE HERE!</div>
+                        <div class="donate-slide"><i class="fas fa-gift"></i> DONATE AND GET REWARDS!</div>
+                        <div class="donate-slide"><i class="fas fa-crown"></i> HELP US GROW THE PROJECT!</div>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
-    
-    <!-- Home -->
-    <div class="upper-page current">
-        <div class="logo top-position"></div>
-        <div class="line-left left-position"></div>
-        <div class="line-right right-position">
-            <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
-        </div>
-        <div class="transparent-borders OFF"></div>
-
-        <div class="center-container-home">
-            <div class="center-block-home">
-                <div class="upper-content">
-                    <div class="container sections">
-                        <div class="row">
-                            <div class="fin-wrapper introduction">
-                                
-                                <div class="our-works-heading">
-                                    <h4>⚡ OUR WORKS ⚡</h4>
+                
+                <!-- PACKS PAGE -->
+                <div id="packs-page" class="page-content" style="display: none;">
+                    <div class="gui-mega-block">
+                        <div class="block-header text-center">
+                            <img src="img/pack/Info.png" alt="EScraft GUI Info" style="max-width:100%; border-radius:12px;" 
+                                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <p class="mt20">Minimalistic interface for Minecraft. In different colors, 2 languages (ENG/RUS). Improved fonts. Transparent background. Resolution 512x512.</p>
+                            <div class="specs">
+                                <span><i class="fas fa-cube"></i> Minecraft 1.8 – 1.15+</span>
+                                <span><i class="fas fa-fill-drip"></i> Transparent</span>
+                                <span><i class="fas fa-expand-alt"></i> 512x512</span>
+                                <span><i class="fas fa-language"></i> ENG/RUS</span>
+                            </div>
+                            <div class="discord-link"><i class="fab fa-discord"></i> Follow development on <a href="#">Discord server</a></div>
+                        </div>
+                        
+                        <div class="gallery-section">
+                            <h4 style="text-align:center;"><i class="fas fa-images"></i> SCREENSHOTS</h4>
+                            <div class="carousel-container" id="packs-carousel-container">
+                                <div class="carousel-slides" id="carouselSlides">
+                                    <div class="carousel-slide active"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1911/all-1552574413_lrg.png" alt="all colors" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-23-18-44-15-1545578003_lrg.png" alt="1" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-23-18-30-11-1545577991_lrg.png" alt="2" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-01-16-51-19-1545577983_lrg.png" alt="3" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-37-53-1545577966_lrg.png" alt="4" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-01-16-49-02-1545579952_lrg.png" alt="5" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-38-33-1545577950_lrg.png" alt="6" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-38-09-1545577943_lrg.png" alt="7" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
                                 </div>
-                                
-                                <div class="fin-slides-wrapper">
-                                    <ul class="es-slides click">
-                                        <li><h3><span id="fire4-es-block" title="🔥 EScraft : BLOCKS - Default Realism - Coarse and Smooth">🔥 EScraft : BLOCKS - Default Realism - Coarse and Smooth</span></h3></li>
-                                        <li><h3><span>EScraft: GUI - RGB</span></h3></li>
-                                        <li><h3><span>EScraft: ITEMS - Default Realism - PVP</span></h3></li>
-                                        <li><h3><span>Inventory - Animation</span></h3></li>
-                                    </ul>
-                                </div>
-                                <div class="fin-heading">
-                                    <h1 id="blink" class="fin-heading">Elitium Studios</h1>
-                                </div>
-                                
-                                <div class="click">
-                                    <h6 class="es-donat-wrapper">Donators</h6>
-                                </div>
-                                <div class="es-wrapper introduction">
-                                    <div class="es-donat-wrapper">
-                                        <ul class="es-slides click">
-                                            <li><h3><span href="https://www.donationalerts.com/r/xoperiys" title="Support us on DonationAlerts">There may be your nickname, message and link to you !</span></h3></li>
-                                            <li><h3><span href="https://www.donationalerts.com/r/xoperiys" title="Support us on DonationAlerts">There may be your nickname, message and link to you !</span></h3></li>
-                                            <li><h3><span href="https://www.donationalerts.com/r/xoperiys" title="Support us on DonationAlerts">There may be your nickname, message and link to you !</span></h3></li>
-                                            <li><h3><span href="https://www.donationalerts.com/r/xoperiys" title="Support us on DonationAlerts">There may be your nickname, message and link to you !</span></h3></li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                <button class="carousel-prev" id="packsPrevBtn"><i class="fas fa-chevron-left"></i></button>
+                                <button class="carousel-next" id="packsNextBtn"><i class="fas fa-chevron-right"></i></button>
+                                <div class="carousel-dots" id="packsCarouselDots"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="packs-table-section">
+                            <h4 style="text-align:center;"><i class="fas fa-table"></i> AVAILABLE VERSIONS</h4>
+                            <div class="table-responsive">
+                                <table class="packs-table">
+                                    <thead>
+                                        <tr><th>Minecraft Version</th><th>Pack Version</th><th>Download all colors</th></tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td class="version-name"><i class="fas fa-cube"></i> 1.8+</td><td>v0.2.1</td><td><a href="#" class="btn-download-all"><i class="fas fa-download"></i> Download all color</a></td></tr>
+                                        <tr><td class="version-name"><i class="fas fa-cube"></i> 1.12+</td><td>v0.4.1</td><td><a href="#" class="btn-download-all"><i class="fas fa-download"></i> Download all color</a></td></tr>
+                                        <tr><td class="version-name"><i class="fas fa-cube"></i> 1.13+</td><td>v0.5.1</td><td><a href="#" class="btn-download-all"><i class="fas fa-download"></i> Download all color</a></td></tr>
+                                        <tr><td class="version-name"><i class="fas fa-cube"></i> 1.14+</td><td>v0.6.5</td><td><a href="#" class="btn-download-all"><i class="fas fa-download"></i> Download all color</a></td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        
+                        <div class="install-block">
+                            <div class="install-centered-image text-center">
+                                <img src="img/pack/Install.png" alt="Installation" class="install-big-img" 
+                                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            </div>
+                            <div class="install-text-full">
+                                <h4><i class="fas fa-wrench"></i> HOW TO INSTALL</h4>
+                                <ol>
+                                    <li>Install Optifine or [ESF] Entity Sound Features, [EMF] Entity Model Features, [ETF] Entity Texture Features if you are not using OPTIFINE.</li>
+                                    <li>Move file from archive to resource folder.</li>
+                                    <li>Start the game, select the resource pack (putting it on top of the others).</li>
+                                    <li><span class="warning">Warning:</span> this module must be located <strong>below</strong> the modules: BLOCKS.</li>
+                                    <li>Go to the language selection menu and select the desired language.</li>
+                                    <li>Done!</li>
+                                </ol>
+                            </div>
+                            <div class="license-info">
+                                <details><summary><i class="fas fa-balance-scale"></i> License agreement (click to reveal)</summary>
+                                <p><strong>Prohibited:</strong> copying resource pack for financial gain; reassembly or any changes without permission; use files in other bundles under your name.</p>
+                                <p><strong>Allowed:</strong> copying for personal use; use of files on your website with link to source.</p>
+                                <p>Elitium Studios is not responsible for any damage. © 2019-2026 Elitium Studios.</p>
+                                </details>
+                            </div>
+                            <div class="block-footer">
+                                <a href="#"><i class="fab fa-vk"></i> VK</a> | 
+                                <a href="#"><i class="fas fa-globe"></i> Site</a> | 
+                                <a href="#"><i class="fab fa-discord"></i> Discord</a>
+                                <p class="mt20">Version Submissions design 2.2 | Designed by XopeRiys & Rodoto</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                
+                <!-- CONTENT PAGE -->
+                <div id="content-page" class="page-content" style="display: none;">
+                    <h4>//</h4>
+                    <h2>Photos <span class="get-behind">Photos</span></h2>
+                    <div class="dividerOT"></div>
+                    <div class="photos-gallery">
+                        <div style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
+                            <a class="popup-photo" href="img/photos/large/1.jpg"><img src="img/photos/small/1.png" alt="Photo 1" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
+                            <a class="popup-photo" href="img/photos/large/2.jpg"><img src="img/photos/small/2.png" alt="Photo 2" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
+                            <a class="popup-photo" href="img/photos/large/3.jpg"><img src="img/photos/small/3.png" alt="Photo 3" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
+                            <a class="popup-photo" href="img/photos/large/4.jpg"><img src="img/photos/small/4.png" alt="Photo 4" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
+                            <a class="popup-photo" href="img/photos/large/5.jpg"><img src="img/photos/small/5.png" alt="Photo 5" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
+                            <a class="popup-photo" href="img/photos/large/6.jpg"><img src="img/photos/small/6.png" alt="Photo 6" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
+                        </div>
+                    </div>
+                    <div class="dividerOT"></div>
+                </div>
+                
+                <!-- CONTACT PAGE -->
+                <div id="contact-page" class="page-content" style="display: none;">
+                    <h4>//</h4>
+                    <h2>Contact <span class="get-behind">Contact</span></h2>
+                    <div class="dividerOT"></div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="awesome-contact"><i class="fab fa-vk"></i></span>
+                            <p><a href="https://vk.com/elitiumstudios" target="_blank">Group VK.com</a><br><a href="https://vk.com/elitiumstudios" target="_blank">Message with group</a></p>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="awesome-contact"><i class="fas fa-globe"></i></span>
+                            <p><a href="https://www.planetminecraft.com/member/elitium_studios" target="_blank">We on Planet Minecraft</a><br><a href="https://www.planetminecraft.com/account/pms/new/elitium_studios" target="_blank">Message via PMC</a></p>
+                        </div>
+                        <div class="col-md-4">
+                            <span class="awesome-contact"><i class="fas fa-paper-plane"></i></span>
+                            <p><a href="mailto:xoperiys444@gmail.com" target="_blank">xoperiys444@gmail.com</a><br><a href="https://vk.com/xoperiys" target="_blank">vk.com/xoperiys</a></p>
+                        </div>
+                    </div>
+                    <div class="dividerOT"></div>
+                </div>
             </div>
         </div>
     </div>
+</div>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://code.jquery.com/jquery-migrate-3.1.0.js"></script>
-    <script src="../js/plugins.js" type="text/javascript"></script>
-    <script src="../js/style.js" type="text/javascript"></script>
+<!-- PRELOADER -->
+<div id="preloader"><div class="preloader-effect"></div></div>
+
+<!-- BACKGROUND -->
+<div class="hero-fullscreen">
+    <div id="kenburnsy-bg" class="kenburnsy">
+        <div class="slide" style="background-image: url('img/background/1.png'); opacity:1;"></div>
+        <div class="slide" style="background-image: url('img/background/2.png');"></div>
+        <div class="slide" style="background-image: url('img/background/3.png');"></div>
+        <div class="slide" style="background-image: url('img/background/4.png');"></div>
+    </div>
+    <div class="preload-content"></div>
+</div>
+
+<!-- SOCIAL ICONS -->
+<div class="social-icons-wrapper bottom-position">
+    <ul class="social-icons click">
+        <li><a class="fab fa-vk" href="https://vk.com/elitiumstudios" target="_blank"></a></li>
+        <li><a class="fab fa-discord" href="https://discordapp.com/invite/8xTAn6A" target="_blank"></a></li>
+        <li><a class="fab fa-youtube" href="https://www.youtube.com/channel/UCWPKMLhGCq4qo-KXN-c9zGw" target="_blank"></a></li>
+        <li><a class="fas fa-globe" href="https://www.planetminecraft.com/member/elitium_studios" target="_blank"><span class="social-label">PLANET MINECRAFT</span></a></li>
+        <li><a class="fas fa-donate" href="https://www.donationalerts.com/r/xoperiys" target="_blank"></a></li>
+    </ul>
+</div>
+
+<!-- LANGUAGE - теперь всегда видимый текст с рамкой, иконка флага опциональна -->
+<div class="lang lang-position click">
+    <ul class="lang-icons">
+        <li><a href="#" class="lang-item" id="lang-en">ENG <img src="img/lang/eng.png" alt="en" onerror="this.onerror=null; this.style.display='none'"></a></li>
+        <li><a href="#" class="lang-item" id="lang-ru">RUS <img src="img/lang/rus.png" alt="ru" onerror="this.onerror=null; this.style.display='none'"></a></li>
+    </ul>
+</div>
+
+<!-- MENU BUTTON -->
+<div class="menu-trigger top-position click" id="menu">
+    <span class="menu-label">MENU</span>
+    <button class="lines-button minus menu-toggle" id="main-menu-caller1" type="button"><span class="lines"></span></button>
+</div>
+
+<!-- MENU WRAPPER -->
+<div id="ui-layer">
+    <div id="menu-wrapper" style="display:none;">
+        <div id="main-menu">
+            <div class="menu-nav-wrapper">
+                <nav class="menu-nav">
+                    <ul class="brackets click" id="nav-menu">
+                        <li><a title="Home" data-page="home" class="menu-state active" href="#">Home</a></li>
+                        <li><a title="Resource packs" data-page="packs" class="menu-state" href="#">Packs</a></li>
+                        <li><a title="Media content" data-page="content" class="menu-state" href="#">Content</a></li>
+                        <li><a title="Contacts" data-page="contact" class="menu-state" href="#">Contact</a></li>
+                        <li class="menu credits"><a href="#">&copy;2019-2026 All Rights Reserved.</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+(function($) {
+    "use strict";
+    
+    setTimeout(function() { $('#preloader').addClass('hidden'); }, 1500);
+    
+    setTimeout(function() {
+        $('.logo, .menu-trigger, .under-construction').removeClass('top-position');
+        $('.social-icons-wrapper, .lang').removeClass('bottom-position');
+    }, 200);
+    
+    // Навигация
+    const pages = {
+        home: $('#home-page'),
+        packs: $('#packs-page'),
+        content: $('#content-page'),
+        contact: $('#contact-page')
+    };
+    
+    $('#nav-menu a').on('click', function(e) {
+        e.preventDefault();
+        let page = $(this).data('page');
+        if(page && pages[page]) {
+            $('.page-content').hide();
+            pages[page].fadeIn(300);
+            $('#nav-menu a').removeClass('active');
+            $(this).addClass('active');
+            $('#scrollArea').scrollTop(0);
+        }
+    });
+    
+    // Карусель для донатов
+    let donateSlides = $('.donate-slide');
+    let donateCurrent = 0;
+    let donateTotal = donateSlides.length;
+    
+    function updateDonateCarousel() {
+        donateSlides.removeClass('active');
+        donateSlides.eq(donateCurrent).addClass('active');
+    }
+    
+    if(donateTotal > 0) {
+        updateDonateCarousel();
+        let donateInterval = setInterval(function() {
+            donateCurrent = (donateCurrent + 1) % donateTotal;
+            updateDonateCarousel();
+        }, 4000);
+        
+        $('#donateCarousel').on('mouseenter', function() { clearInterval(donateInterval); });
+        $('#donateCarousel').on('mouseleave', function() {
+            donateInterval = setInterval(function() {
+                donateCurrent = (donateCurrent + 1) % donateTotal;
+                updateDonateCarousel();
+            }, 4000);
+        });
+    }
+    
+    // Карусель для скриншотов Packs
+    let currentSlide = 0;
+    const slides = $('#carouselSlides .carousel-slide');
+    const totalSlides = slides.length;
+    
+    function updateCarousel() {
+        slides.removeClass('active').eq(currentSlide).addClass('active');
+        $('.dot').removeClass('active').eq(currentSlide).addClass('active');
+    }
+    
+    $('#packsPrevBtn').on('click', function() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        updateCarousel();
+    });
+    
+    $('#packsNextBtn').on('click', function() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    });
+    
+    let dotsContainer = $('#packsCarouselDots');
+    for(let i = 0; i < totalSlides; i++) {
+        dotsContainer.append('<span class="dot"></span>');
+    }
+    $('.dot').on('click', function() {
+        currentSlide = $(this).index();
+        updateCarousel();
+    });
+    updateCarousel();
+    
+    let autoInterval = setInterval(function() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        updateCarousel();
+    }, 5000);
+    
+    $('#packs-carousel-container').on('mouseenter', function() { clearInterval(autoInterval); });
+    $('#packs-carousel-container').on('mouseleave', function() {
+        autoInterval = setInterval(function() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateCarousel();
+        }, 5000);
+    });
+    
+    // Меню при наведении - плавное выезжание справа
+    let menu = $('#menu');
+    let menuWrapper = $('#menu-wrapper');
+    let mainMenu = $('#main-menu');
+    let closeTimeout = null;
+    
+    menu.on('mouseenter', function() {
+        if(closeTimeout) clearTimeout(closeTimeout);
+        mainMenu.addClass('activated');
+        $('.lines-button .lines, #main-menu-caller1, .menu-label').addClass('lines-close');
+        menuWrapper.show();
+    });
+    
+    menuWrapper.on('mouseleave', function() {
+        closeTimeout = setTimeout(function() {
+            mainMenu.removeClass('activated');
+            $('.lines-button .lines, #main-menu-caller1, .menu-label').removeClass('lines-close');
+            menuWrapper.hide();
+        }, 150);
+    });
+    
+    menuWrapper.on('mouseenter', function() {
+        if(closeTimeout) clearTimeout(closeTimeout);
+    });
+    
+    // Кенбёрнс эффект для фона
+    let bgSlides = $('.kenburnsy .slide');
+    let bgIndex = 0;
+    setInterval(function() {
+        bgSlides.css('opacity', '0');
+        bgSlides.eq(bgIndex).css('opacity', '1');
+        bgIndex = (bgIndex + 1) % bgSlides.length;
+    }, 6000);
+    
+})(jQuery);
+</script>
 </body>
 </html>
