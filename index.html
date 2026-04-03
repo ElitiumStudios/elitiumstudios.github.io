@@ -307,7 +307,7 @@
             text-transform: uppercase;
         }
         
-        /* Кнопки языка - с рамкой и текстом, иконка флага опционально */
+        /* Кнопки языка */
         .lang {
             position: fixed;
             right: 3%;
@@ -319,41 +319,21 @@
         .lang-icons {
             display: flex;
             gap: 15px;
+            font-size: 18px;
             list-style: none;
         }
         .lang-item {
-            display: flex;
+            display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: rgba(0,0,0,0.6);
-            padding: 6px 14px;
-            border-radius: 40px;
-            border: 1px solid rgba(0,255,255,0.5);
+            gap: 6px;
+            cursor: pointer;
             font-family: 'Raleway', sans-serif;
-            font-weight: 700;
-            font-size: 14px;
+            font-weight: 500;
             color: #fff;
             text-decoration: none;
-            transition: all 0.3s;
-            backdrop-filter: blur(4px);
         }
-        .lang-item:hover {
-            background: rgba(0,255,255,0.3);
-            border-color: #34c5ba;
-            color: #34c5ba;
-        }
-        .lang-item img {
-            width: 20px;
-            height: auto;
-            border-radius: 2px;
-        }
-        /* Если картинка не загрузилась, скрываем её и полагаемся только на текст */
-        .lang-item img[src=""] { display: none; }
-        
-        @media (max-width: 640px) {
-            .lang-item { padding: 4px 12px; font-size: 12px; gap: 4px; }
-            .lang-item img { width: 16px; }
-        }
+        .lang-item:hover { opacity: 0.7; }
+        .lang-item img { width: 20px; }
         
         /* ========== TYPOGRAPHY ========== */
         h2 {
@@ -686,6 +666,20 @@
         .license-info summary { font-weight: 800; color: #34c5ba; }
         
         .donate-slide:not(.active) { display: none; }
+        
+        /* Заглушка для изображений — градиентный фон через атрибут onerror */
+        .fallback-img {
+            background: linear-gradient(135deg, #1a1a2e, #16213e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #34c5ba;
+            font-size: 14px;
+            font-family: monospace;
+            text-align: center;
+            min-height: 100%;
+            width: 100%;
+        }
     </style>
 </head>
 <body>
@@ -876,11 +870,11 @@
     </ul>
 </div>
 
-<!-- LANGUAGE - теперь всегда видимый текст с рамкой, иконка флага опциональна -->
+<!-- LANGUAGE -->
 <div class="lang lang-position click">
     <ul class="lang-icons">
-        <li><a href="#" class="lang-item" id="lang-en">ENG <img src="img/lang/eng.png" alt="en" onerror="this.onerror=null; this.style.display='none'"></a></li>
-        <li><a href="#" class="lang-item" id="lang-ru">RUS <img src="img/lang/rus.png" alt="ru" onerror="this.onerror=null; this.style.display='none'"></a></li>
+        <li><a href="#" class="lang-item">ENG <img src="img/lang/eng.png" alt="en" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2015%22%3E%3Crect%20width%3D%2220%22%20height%3D%2215%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2210%22%20y%3D%2210%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20font-size%3D%228%22%3EEN%3C%2Ftext%3E%3C%2Fsvg%3E'"></a></li>
+        <li><a href="#" class="lang-item">RUS <img src="img/lang/rus.png" alt="ru" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2020%2015%22%3E%3Crect%20width%3D%2220%22%20height%3D%2215%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2210%22%20y%3D%2210%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20font-size%3D%228%22%3ERU%3C%2Ftext%3E%3C%2Fsvg%3E'"></a></li>
     </ul>
 </div>
 
