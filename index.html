@@ -8,31 +8,30 @@
     <meta name="description" content="Elitium Studios — Official site. Resource packs, GUI, media and contacts.">
     <meta name="author" content="XopeRiys">
 
-    <!-- Font Awesome 6 (иконки) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
-    <!-- Google Fonts (шрифты) -->
-    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Oswald:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-    
-    <!-- Основной файл стилей -->
+    <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200;300;400;500;600;700;800&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&family=Oswald:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ==================== БЛОК 1: ПРЕДУПРЕЖДЕНИЕ О СТРОИТЕЛЬСТВЕ ==================== -->
-<div class="under-construction top-position">⚠️ UNDER CONSTRUCTION — CONTENT TEMPORARILY UNAVAILABLE ⚠️</div>
+<!-- ПРЕДУПРЕЖДЕНИЕ -->
+<div class="under-construction top-position" id="constructionWarning">
+    <div class="warning-content">
+        <i class="fas fa-hard-hat"></i>
+        <span class="warning-text">⚠️ UNDER CONSTRUCTION ⚠️</span>
+        <i class="fas fa-tools"></i>
+    </div>
+</div>
 
-<!-- ==================== БЛОК 2: ПРОЗРАЧНАЯ РАМКА ПО ПЕРИМЕТРУ ==================== -->
 <div class="transparent-borders"></div>
 
-<!-- ==================== БЛОК 3: ОСНОВНАЯ ПРОКРУЧИВАЕМАЯ ОБЛАСТЬ ==================== -->
 <div class="scroll-area" id="scrollArea">
     <div class="logo top-position"></div>
     <div class="center-container-home">
         <div class="center-block-home">
             <div class="container sections" style="max-width: 1200px; margin: 0 auto;">
                 
-                <!-- ==================== СТРАНИЦА: ГЛАВНАЯ (HOME) ==================== -->
+                <!-- ГЛАВНАЯ -->
                 <div id="home-page" class="page-content" style="display: block;">
                     <div class="our-works-heading"><h4>⚡ OUR WORKS ⚡</h4></div>
                     <div class="fin-slides-wrapper">
@@ -54,12 +53,11 @@
                     </div>
                 </div>
                 
-                <!-- ==================== СТРАНИЦА: РЕСУРС-ПАКИ (PACKS) ==================== -->
+                <!-- РЕСУРС-ПАКИ -->
                 <div id="packs-page" class="page-content" style="display: none;">
                     <div class="gui-mega-block">
                         <div class="block-header text-center">
-                            <img src="img/pack/Info.png" alt="EScraft GUI Info" style="max-width:100%; border-radius:12px;" 
-                                 onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                            <img src="img/pack/Info.png" alt="EScraft GUI Info" style="max-width:100%; border-radius:12px;" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'">
                             <p class="mt20">Minimalistic interface for Minecraft. In different colors, 2 languages (ENG/RUS). Improved fonts. Transparent background. Resolution 512x512.</p>
                             <div class="specs">
                                 <span><i class="fas fa-cube"></i> Minecraft 1.8 – 1.15+</span>
@@ -74,14 +72,14 @@
                             <h4 style="text-align:center;"><i class="fas fa-images"></i> SCREENSHOTS</h4>
                             <div class="carousel-container" id="packs-carousel-container">
                                 <div class="carousel-slides" id="carouselSlides">
-                                    <div class="carousel-slide active"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1911/all-1552574413_lrg.png" alt="all colors" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
-                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-23-18-44-15-1545578003_lrg.png" alt="1" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
-                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-23-18-30-11-1545577991_lrg.png" alt="2" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
-                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-01-16-51-19-1545577983_lrg.png" alt="3" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
-                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-37-53-1545577966_lrg.png" alt="4" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
-                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-01-16-49-02-1545579952_lrg.png" alt="5" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
-                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-38-33-1545577950_lrg.png" alt="6" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
-                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-38-09-1545577943_lrg.png" alt="7" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide active"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1911/all-1552574413_lrg.png" alt="all colors" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-23-18-44-15-1545578003_lrg.png" alt="1" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-23-18-30-11-1545577991_lrg.png" alt="2" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-01-16-51-19-1545577983_lrg.png" alt="3" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-37-53-1545577966_lrg.png" alt="4" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-01-16-49-02-1545579952_lrg.png" alt="5" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-38-33-1545577950_lrg.png" alt="6" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
+                                    <div class="carousel-slide"><img src="https://static.planetminecraft.com/files/resource_media/screenshot/1851/2018-12-04-16-38-09-1545577943_lrg.png" alt="7" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20450%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2220%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></div>
                                 </div>
                                 <button class="carousel-prev" id="packsPrevBtn"><i class="fas fa-chevron-left"></i></button>
                                 <button class="carousel-next" id="packsNextBtn"><i class="fas fa-chevron-right"></i></button>
@@ -93,9 +91,7 @@
                             <h4 style="text-align:center;"><i class="fas fa-table"></i> AVAILABLE VERSIONS</h4>
                             <div class="table-responsive">
                                 <table class="packs-table">
-                                    <thead>
-                                        <tr><th>Minecraft Version</th><th>Pack Version</th><th>Download all colors</th></tr>
-                                    </thead>
+                                    <thead><tr><th>Minecraft Version</th><th>Pack Version</th><th>Download all colors</th></tr></thead>
                                     <tbody>
                                         <tr><td class="version-name"><i class="fas fa-cube"></i> 1.8+</td><td>v0.2.1</td><td><a href="#" class="btn-download-all"><i class="fas fa-download"></i> Download all color</a></td></tr>
                                         <tr><td class="version-name"><i class="fas fa-cube"></i> 1.12+</td><td>v0.4.1</td><td><a href="#" class="btn-download-all"><i class="fas fa-download"></i> Download all color</a></td></tr>
@@ -108,8 +104,7 @@
                         
                         <div class="install-block">
                             <div class="install-centered-image text-center">
-                                <img src="img/pack/Install.png" alt="Installation" class="install-big-img" 
-                                     onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'">
+                                <img src="img/pack/Install.png" alt="Installation" class="install-big-img" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'">
                             </div>
                             <div class="install-text-full">
                                 <h4><i class="fas fa-wrench"></i> HOW TO INSTALL</h4>
@@ -139,25 +134,25 @@
                     </div>
                 </div>
                 
-                <!-- ==================== СТРАНИЦА: МЕДИА КОНТЕНТ (CONTENT) ==================== -->
+                <!-- МЕДИА КОНТЕНТ -->
                 <div id="content-page" class="page-content" style="display: none;">
                     <h4>//</h4>
                     <h2>Photos <span class="get-behind">Photos</span></h2>
                     <div class="dividerOT"></div>
                     <div class="photos-gallery">
                         <div class="photos-grid">
-                            <a class="popup-photo" href="img/photos/large/1.jpg"><img src="img/photos/small/1.png" alt="Photo 1" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
-                            <a class="popup-photo" href="img/photos/large/2.jpg"><img src="img/photos/small/2.png" alt="Photo 2" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
-                            <a class="popup-photo" href="img/photos/large/3.jpg"><img src="img/photos/small/3.png" alt="Photo 3" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
-                            <a class="popup-photo" href="img/photos/large/4.jpg"><img src="img/photos/small/4.png" alt="Photo 4" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
-                            <a class="popup-photo" href="img/photos/large/5.jpg"><img src="img/photos/small/5.png" alt="Photo 5" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
-                            <a class="popup-photo" href="img/photos/large/6.jpg"><img src="img/photos/small/6.png" alt="Photo 6" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
+                            <a class="popup-photo" href="img/photos/large/1.jpg"><img src="img/photos/small/1.png" alt="Photo 1" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
+                            <a class="popup-photo" href="img/photos/large/2.jpg"><img src="img/photos/small/2.png" alt="Photo 2" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
+                            <a class="popup-photo" href="img/photos/large/3.jpg"><img src="img/photos/small/3.png" alt="Photo 3" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
+                            <a class="popup-photo" href="img/photos/large/4.jpg"><img src="img/photos/small/4.png" alt="Photo 4" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
+                            <a class="popup-photo" href="img/photos/large/5.jpg"><img src="img/photos/small/5.png" alt="Photo 5" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
+                            <a class="popup-photo" href="img/photos/large/6.jpg"><img src="img/photos/small/6.png" alt="Photo 6" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22%231a1a2e%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
                         </div>
                     </div>
                     <div class="dividerOT"></div>
                 </div>
                 
-                <!-- ==================== СТРАНИЦА: КОНТАКТЫ (CONTACT) ==================== -->
+                <!-- КОНТАКТЫ -->
                 <div id="contact-page" class="page-content" style="display: none;">
                     <h4>//</h4>
                     <h2>Contact <span class="get-behind">Contact</span></h2>
@@ -183,10 +178,8 @@
     </div>
 </div>
 
-<!-- ==================== ПРЕЛОАДЕР (ЭКРАН ЗАГРУЗКИ) ==================== -->
 <div id="preloader"><div class="preloader-effect"></div></div>
 
-<!-- ==================== ФОНОВЫЕ ЭФФЕКТЫ ==================== -->
 <div class="hero-fullscreen">
     <div id="kenburnsy-bg" class="kenburnsy">
         <div class="slide" style="background-image: url('img/background/1.png'); opacity:1;"></div>
@@ -197,12 +190,10 @@
     <div class="preload-content"></div>
 </div>
 
-<!-- ==================== ВЕРТИКАЛЬНАЯ НАДПИСЬ КОПИРАЙТА ==================== -->
 <div class="line-right right-position">
     <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
 </div>
 
-<!-- ==================== ПАНЕЛЬ СОЦИАЛЬНЫХ ИКОНОК ==================== -->
 <div class="social-icons-wrapper bottom-position">
     <ul class="social-icons click">
         <li><a class="fab fa-vk" href="https://vk.com/elitiumstudios" target="_blank"></a></li>
@@ -213,7 +204,6 @@
     </ul>
 </div>
 
-<!-- ==================== ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА ==================== -->
 <div class="lang click">
     <ul class="lang-icons">
         <li><a href="#" class="lang-item" id="lang-en">ENG <img src="img/lang/eng.png" alt="en" onerror="this.style.display='none'"></a></li>
@@ -221,16 +211,18 @@
     </ul>
 </div>
 
-<!-- ==================== КНОПКА ВЫЗОВА МЕНЮ ==================== -->
 <div class="menu-trigger top-position click" id="menu">
     <span class="menu-label">MENU</span>
     <button class="lines-button minus menu-toggle" id="main-menu-caller1" type="button"><span class="lines"></span></button>
 </div>
 
-<!-- ==================== ВЫДВИЖНАЯ ПАНЕЛЬ НАВИГАЦИИ ==================== -->
 <div id="ui-layer">
+    <div id="menu-overlay" style="display:none;"></div>
     <div id="menu-wrapper" style="display:none;">
         <div id="main-menu">
+            <button class="menu-close-btn" id="menuCloseBtn">
+                <i class="fas fa-times"></i>
+            </button>
             <div class="menu-nav-wrapper">
                 <nav class="menu-nav">
                     <ul class="brackets click" id="nav-menu">
