@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, viewport-fit=cover">
     <title>Elitium Studios — All in One</title>
     <link rel="shortcut icon" href="img/logo.png">
     <meta name="description" content="Elitium Studios — Official site. Resource packs, GUI, media and contacts.">
@@ -34,22 +34,17 @@
                 
                 <!-- ==================== СТРАНИЦА: ГЛАВНАЯ (HOME) ==================== -->
                 <div id="home-page" class="page-content" style="display: block;">
-                    <!-- Заголовок "OUR WORKS" -->
                     <div class="our-works-heading"><h4>⚡ OUR WORKS ⚡</h4></div>
-					<!-- Список работ (слайдер) -->
-					<div class="fin-slides-wrapper">
-						<ul class="es-slides click" style="text-align:center; list-style:none;">
-							<li><h3>🧱 EScraft : BLOCKS - Default Realism - Coarse and Smooth</h3></li>
-							<li><h3>🎨 EScraft: GUI - RGB</h3></li>
-							<li><h3>⚔️ EScraft: ITEMS - Default Realism - PVP</h3></li>
-							<li><h3>🎬 Inventory - Animation</h3></li>
-						</ul>
-					</div>
-                    <!-- Главный заголовок с анимацией свечения -->
+                    <div class="fin-slides-wrapper">
+                        <ul class="es-slides click" style="text-align:center; list-style:none;">
+                            <li><h3>🧱 EScraft : BLOCKS - Default Realism - Coarse and Smooth</h3></li>
+                            <li><h3>🎨 EScraft: GUI - RGB</h3></li>
+                            <li><h3>⚔️ EScraft: ITEMS - Default Realism - PVP</h3></li>
+                            <li><h3>🎬 Inventory - Animation</h3></li>
+                        </ul>
+                    </div>
                     <div class="fin-heading">Elitium Studios</div>
-                    <!-- Заголовок блока донатеров -->
                     <div class="click" style="text-align:center;"><div class="donators-heading">⭐ DONATORS ⭐</div></div>
-                    <!-- Карусель с призывами к донату -->
                     <div class="donate-carousel" id="donateCarousel">
                         <div class="donate-slide active"><i class="fas fa-heart"></i> SUPPORT US ON DONATIONALERTS!</div>
                         <div class="donate-slide"><i class="fas fa-gem"></i> BECOME A SPONSOR TODAY!</div>
@@ -62,7 +57,6 @@
                 <!-- ==================== СТРАНИЦА: РЕСУРС-ПАКИ (PACKS) ==================== -->
                 <div id="packs-page" class="page-content" style="display: none;">
                     <div class="gui-mega-block">
-                        <!-- Шапка блока с информацией о паках -->
                         <div class="block-header text-center">
                             <img src="img/pack/Info.png" alt="EScraft GUI Info" style="max-width:100%; border-radius:12px;" 
                                  onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20800%20400%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2224%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'">
@@ -76,7 +70,6 @@
                             <div class="discord-link"><i class="fab fa-discord"></i> Follow development on <a href="#">Discord server</a></div>
                         </div>
                         
-                        <!-- Блок галереи скриншотов (карусель) -->
                         <div class="gallery-section">
                             <h4 style="text-align:center;"><i class="fas fa-images"></i> SCREENSHOTS</h4>
                             <div class="carousel-container" id="packs-carousel-container">
@@ -96,7 +89,6 @@
                             </div>
                         </div>
                         
-                        <!-- Таблица доступных версий -->
                         <div class="packs-table-section">
                             <h4 style="text-align:center;"><i class="fas fa-table"></i> AVAILABLE VERSIONS</h4>
                             <div class="table-responsive">
@@ -114,7 +106,6 @@
                             </div>
                         </div>
                         
-                        <!-- Блок инструкции по установке -->
                         <div class="install-block">
                             <div class="install-centered-image text-center">
                                 <img src="img/pack/Install.png" alt="Installation" class="install-big-img" 
@@ -154,7 +145,7 @@
                     <h2>Photos <span class="get-behind">Photos</span></h2>
                     <div class="dividerOT"></div>
                     <div class="photos-gallery">
-                        <div style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
+                        <div class="photos-grid">
                             <a class="popup-photo" href="img/photos/large/1.jpg"><img src="img/photos/small/1.png" alt="Photo 1" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
                             <a class="popup-photo" href="img/photos/large/2.jpg"><img src="img/photos/small/2.png" alt="Photo 2" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
                             <a class="popup-photo" href="img/photos/large/3.jpg"><img src="img/photos/small/3.png" alt="Photo 3" onerror="this.onerror=null; this.src='data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20300%20200%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x1%3D%220%25%22%20y1%3D%220%25%22%20x2%3D%22100%25%22%20y2%3D%22100%25%22%3E%3Cstop%20offset%3D%220%25%20stop-color%3D%22%231a1a2e%22%2F%3E%3Cstop%20offset%3D%22100%25%20stop-color%3D%22%232d2d4a%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url(%23g)%22%2F%3E%3Ctext%20x%3D%2250%25%22%20y%3D%2250%25%22%20fill%3D%22%2334c5ba%22%20text-anchor%3D%22middle%22%20dy%3D%22.3em%22%20font-family%3D%22monospace%22%20font-size%3D%2214%22%3ENo%20Image%3C%2Ftext%3E%3C%2Fsvg%3E'"></a>
@@ -197,18 +188,16 @@
 
 <!-- ==================== ФОНОВЫЕ ЭФФЕКТЫ ==================== -->
 <div class="hero-fullscreen">
-    <!-- Кенбёрнс-слайдер (анимированный фон) -->
     <div id="kenburnsy-bg" class="kenburnsy">
         <div class="slide" style="background-image: url('img/background/1.png'); opacity:1;"></div>
         <div class="slide" style="background-image: url('img/background/2.png');"></div>
         <div class="slide" style="background-image: url('img/background/3.png');"></div>
         <div class="slide" style="background-image: url('img/background/4.png');"></div>
     </div>
-    <!-- Затемнение поверх фона -->
     <div class="preload-content"></div>
 </div>
 
-<!-- ==================== ВЕРТИКАЛЬНАЯ НАДПИСЬ КОПИРАЙТА (line-right из оригинала) ==================== -->
+<!-- ==================== ВЕРТИКАЛЬНАЯ НАДПИСЬ КОПИРАЙТА ==================== -->
 <div class="line-right right-position">
     <a href="#">&copy;2019-2026 Elitium Studios. All Rights Reserved.</a>
 </div>
@@ -257,7 +246,6 @@
     </div>
 </div>
 
-<!-- ==================== ПОДКЛЮЧЕНИЕ СКРИПТОВ ==================== -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="plugin.js"></script>
 
