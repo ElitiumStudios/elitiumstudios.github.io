@@ -1,15 +1,7 @@
-/**
- * ===================================================================
- * ФАЙЛ: plugin.js
- * ОПИСАНИЕ: JavaScript функционал для сайта Elitium Studios (Адаптивная версия)
- * АВТОР: XopeRiys
- * ===================================================================
- */
-
 (function($) {
     "use strict";
     
-    // ========== БЛОК 1: ПРЕЛОАДЕР (ЭКРАН ЗАГРУЗКИ) ==========
+    // ПРЕЛОАДЕР
     setTimeout(function() { 
         $('#preloader').addClass('hidden'); 
     }, 1500);
@@ -20,7 +12,7 @@
         $('.line-right').removeClass('right-position');
     }, 200);
     
-    // ========== БЛОК 2: НАВИГАЦИЯ МЕЖДУ СТРАНИЦАМИ ==========
+    // НАВИГАЦИЯ
     const pages = {
         home: $('#home-page'),
         packs: $('#packs-page'),
@@ -64,7 +56,7 @@
     
     switchToPage('home');
     
-    // ========== БЛОК 3: КАРУСЕЛЬ ДЛЯ ДОНАТОВ ==========
+    // КАРУСЕЛЬ ДОНАТОВ
     let donateSlides = $('.donate-slide');
     let donateCurrent = 0;
     let donateTotal = donateSlides.length;
@@ -92,7 +84,7 @@
         });
     }
     
-    // ========== БЛОК 4: КАРУСЕЛЬ ДЛЯ СКРИНШОТОВ (PACKS) ==========
+    // КАРУСЕЛЬ СКРИНШОТОВ
     let currentSlide = 0;
     const slides = $('#carouselSlides .carousel-slide');
     const totalSlides = slides.length;
@@ -139,32 +131,109 @@
         }, 5000);
     });
     
-    // ========== БЛОК 5: ВЫДВИЖНОЕ МЕНЮ ==========
+    // ========== МЕНЮ: ДЕСКТОП - ПО НАВЕДЕНИЮ, МОБИЛЬНЫЕ - ПО КЛИКУ ==========
     let menu = $('#menu');
     let menuWrapper = $('#menu-wrapper');
     let mainMenu = $('#main-menu');
+    let menuOverlay = $('#menu-overlay');
     let closeTimeout = null;
     
-    menu.on('mouseenter touchstart', function() {
-        if(closeTimeout) clearTimeout(closeTimeout);
+    // Проверка на мобильное устройство
+    function checkIsMobile() {
+        return window.innerWidth <= 880;
+    }
+    
+    // Функция открытия меню
+    function openMenu() {
+        if (closeTimeout) clearTimeout(closeTimeout);
         mainMenu.addClass('activated');
         $('.lines-button .lines, #main-menu-caller1, .menu-label').addClass('lines-close');
         menuWrapper.show();
+        if (menuOverlay.length) menuOverlay.show();
+        document.body.style.overflow = 'hidden';
+    }
+    
+    // Функция закрытия меню
+    function closeMenu() {
+        mainMenu.removeClass('activated');
+        $('.lines-button .lines, #main-menu-caller1, .menu-label').removeClass('lines-close');
+        menuWrapper.hide();
+        if (menuOverlay.length) menuOverlay.hide();
+        document.body.style.overflow = '';
+    }
+    
+    // ДЕСКТОП: открытие по наведению
+    menu.on('mouseenter', function() {
+        if (!checkIsMobile()) {
+            openMenu();
+        }
     });
     
-    menuWrapper.on('mouseleave touchend', function() {
-        closeTimeout = setTimeout(function() {
-            mainMenu.removeClass('activated');
-            $('.lines-button .lines, #main-menu-caller1, .menu-label').removeClass('lines-close');
-            menuWrapper.hide();
-        }, 150);
+    // МОБИЛЬНЫЕ: открытие/закрытие по клику
+    menu.on('click', function(e) {
+        e.stopPropagation();
+        if (checkIsMobile()) {
+            if (mainMenu.hasClass('activated')) {
+                closeMenu();
+            } else {
+                openMenu();
+            }
+        }
     });
     
-    menuWrapper.on('mouseenter touchstart', function() {
-        if(closeTimeout) clearTimeout(closeTimeout);
+    // Закрытие при уходе мыши (только для десктопа)
+    menuWrapper.on('mouseleave', function() {
+        if (!checkIsMobile()) {
+            closeTimeout = setTimeout(function() {
+                closeMenu();
+            }, 150);
+        }
     });
     
-    // ========== БЛОК 6: КЕНБЁРНС ЭФФЕКТ ДЛЯ ФОНА ==========
+    menuWrapper.on('mouseenter', function() {
+        if (closeTimeout) clearTimeout(closeTimeout);
+    });
+    
+    // КНОПКА ЗАКРЫТИЯ (КРЕСТИК) - работает на всех устройствах
+    $('#menuCloseBtn').on('click', function(e) {
+        e.stopPropagation();
+        closeMenu();
+    });
+    
+    // Закрытие по клику на оверлей
+    if (menuOverlay.length) {
+        menuOverlay.on('click', function(e) {
+            e.stopPropagation();
+            closeMenu();
+        });
+    }
+    
+    // Закрытие по нажатию на пункт меню (на мобильных)
+    $('#nav-menu a').on('click', function() {
+        if (checkIsMobile()) {
+            setTimeout(function() {
+                closeMenu();
+            }, 300);
+        }
+    });
+    
+    // Закрытие по кнопке ESC
+    $(document).on('keydown', function(e) {
+        if (e.key === 'Escape' && mainMenu.hasClass('activated')) {
+            closeMenu();
+        }
+    });
+    
+    // Обновление при изменении размера окна
+    $(window).on('resize', function() {
+        if (!checkIsMobile() && mainMenu.hasClass('activated')) {
+            // Если стали десктопом с открытым меню - оставляем открытым
+        } else if (checkIsMobile() && mainMenu.hasClass('activated')) {
+            // На мобильных оставляем как есть
+        }
+    });
+    
+    // ФОНОВЫЙ СЛАЙДЕР
     let bgSlides = $('.kenburnsy .slide');
     let bgIndex = 0;
     
@@ -174,31 +243,26 @@
         bgIndex = (bgIndex + 1) % bgSlides.length;
     }, 6000);
     
-    // ========== БЛОК 7: ДИНАМИЧЕСКАЯ АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ==========
+    // АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ
     function adjustForMobile() {
         const width = $(window).width();
         const warning = $('.under-construction');
+        const logo = $('.logo');
+        const menuTrigger = $('.menu-trigger');
         
         if (width <= 880) {
-            if (!warning.hasClass('mobile-optimized')) {
-                warning.addClass('mobile-optimized');
-            }
+            warning.css({ 'top': '8px', 'padding': '4px 12px' });
             if (width <= 640) {
-                warning.css({
-                    'font-size': '0.65rem',
-                    'padding': '5px 10px',
-                    'top': '8px'
-                });
+                logo.css('top', '10px');
+                menuTrigger.css('top', '8px');
+            } else {
+                logo.css('top', '12px');
+                menuTrigger.css('top', '10px');
             }
         } else {
-            if (warning.hasClass('mobile-optimized')) {
-                warning.removeClass('mobile-optimized');
-            }
-            warning.css({
-                'font-size': '',
-                'padding': '',
-                'top': ''
-            });
+            warning.css({ 'top': '', 'padding': '' });
+            logo.css('top', '');
+            menuTrigger.css('top', '');
         }
     }
     
@@ -206,20 +270,31 @@
         adjustForMobile();
     });
     
+    // ПРОВЕРКА ПЕРЕКРЫТИЯ
     function checkOverlap() {
         const warning = $('.under-construction')[0];
-        const menu = $('.menu-trigger')[0];
+        const menuBtn = $('.menu-trigger')[0];
+        const logo = $('.logo')[0];
         
-        if (warning && menu) {
+        if (warning && menuBtn && logo) {
             const warningRect = warning.getBoundingClientRect();
-            const menuRect = menu.getBoundingClientRect();
+            const menuRect = menuBtn.getBoundingClientRect();
+            const logoRect = logo.getBoundingClientRect();
             
-            if (!(warningRect.right < menuRect.left || 
-                  warningRect.left > menuRect.right || 
-                  warningRect.bottom < menuRect.top || 
-                  warningRect.top > menuRect.bottom)) {
+            const overlapsMenu = !(warningRect.right < menuRect.left || 
+                                   warningRect.left > menuRect.right || 
+                                   warningRect.bottom < menuRect.top || 
+                                   warningRect.top > menuRect.bottom);
+            
+            const overlapsLogo = !(warningRect.right < logoRect.left || 
+                                   warningRect.left > logoRect.right || 
+                                   warningRect.bottom < logoRect.top || 
+                                   warningRect.top > logoRect.bottom);
+            
+            if (overlapsMenu || overlapsLogo) {
+                $('.under-construction').css('top', '5px');
                 if ($(window).width() <= 640) {
-                    $('.under-construction').css('top', '5px');
+                    $('.under-construction .warning-text').css('font-size', '0.5rem');
                 }
             }
         }
@@ -227,7 +302,7 @@
     
     setInterval(checkOverlap, 100);
     
-    // ========== БЛОК 8: ОБРАБОТКА СЕНСОРНОГО ВВОДА ==========
+    // СЕНСОРНОЕ УПРАВЛЕНИЕ
     if('ontouchstart' in window) {
         $('.btn-download-all, .carousel-prev, .carousel-next, .lang-item, .social-icons a, .menu-trigger').on('touchstart', function() {
             $(this).addClass('touch-active');
