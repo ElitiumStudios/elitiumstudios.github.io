@@ -1,10 +1,9 @@
 /* ===================================================================
    ФАЙЛ: style.css
-   ОПИСАНИЕ: Основные стили для сайта Elitium Studios
+   ОПИСАНИЕ: Основные стили для сайта Elitium Studios (Адаптивная версия)
    АВТОР: XopeRiys
    =================================================================== */
 
-/* ========== БЛОК 1: СБРОС СТИЛЕЙ (RESET) ========== */
 * {
     margin: 0;
     padding: 0;
@@ -30,7 +29,6 @@ body {
     position: relative;
 }
 
-/* Ссылки */
 a {
     text-decoration: none;
     color: #34c5ba;
@@ -40,7 +38,6 @@ a:hover {
     color: #fff;
 }
 
-/* ========== БЛОК 2: ОСНОВНАЯ ПРОКРУЧИВАЕМАЯ ОБЛАСТЬ ========== */
 .scroll-area {
     position: fixed;
     top: 110px;
@@ -55,30 +52,48 @@ a:hover {
     background: transparent;
 }
 .scroll-area::-webkit-scrollbar { display: none; }
+.scroll-area.home-active { overflow-y: hidden; }
 
-/* Когда активна главная страница - отключаем прокрутку */
-.scroll-area.home-active {
-    overflow-y: hidden;
+@media (max-width: 1024px) {
+    .scroll-area {
+        top: 90px;
+        left: 80px;
+        right: 80px;
+        bottom: 80px;
+        padding: 15px;
+    }
 }
 
-/* Адаптивность для мобильных устройств */
 @media (max-width: 880px) {
     .scroll-area {
         position: relative;
-        top: 0;
+        top: 70px;
         left: 0;
         right: 0;
         bottom: 0;
-        padding: 20px;
+        padding: 15px;
         overflow-y: visible;
+        height: auto;
+        min-height: calc(100vh - 70px);
     }
-    .scroll-area.home-active {
-        overflow-y: visible;
-    }
+    .scroll-area.home-active { overflow-y: visible; }
     body { height: auto; overflow: auto; }
 }
 
-/* ========== БЛОК 3: ПРОЗРАЧНАЯ РАМКА ПО ПЕРИМЕТРУ ========== */
+@media (max-width: 640px) {
+    .scroll-area {
+        top: 60px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scroll-area {
+        top: 50px;
+        padding: 10px;
+    }
+}
+
 .transparent-borders {
     position: fixed;
     top: 110px;
@@ -91,14 +106,27 @@ a:hover {
     z-index: 200;
     animation: softGlow 4s ease-in-out infinite;
 }
+
 @keyframes softGlow {
     0% { border-color: rgba(0,255,255,0.3); box-shadow: 0 0 15px rgba(0,255,255,0.2); }
     50% { border-color: rgba(0,255,255,0.55); box-shadow: 0 0 35px rgba(0,255,255,0.5); }
     100% { border-color: rgba(0,255,255,0.3); box-shadow: 0 0 15px rgba(0,255,255,0.2); }
 }
-@media (max-width: 880px) { .transparent-borders { display: none; } }
 
-/* ========== БЛОК 4: ЛОГОТИП ========== */
+@media (max-width: 1024px) {
+    .transparent-borders {
+        top: 90px;
+        left: 80px;
+        right: 80px;
+        bottom: 80px;
+        border-width: 6px;
+    }
+}
+
+@media (max-width: 880px) { 
+    .transparent-borders { display: none; } 
+}
+
 .logo {
     position: fixed;
     width: 80px;
@@ -111,7 +139,42 @@ a:hover {
 }
 .logo.top-position { transform: translateY(-200px); }
 
-/* ========== БЛОК 5: КНОПКА МЕНЮ ========== */
+@media (max-width: 1024px) {
+    .logo {
+        width: 60px;
+        height: 60px;
+        left: 20px;
+        top: 15px;
+    }
+}
+
+@media (max-width: 880px) {
+    .logo {
+        width: 50px;
+        height: 50px;
+        left: 15px;
+        top: 10px;
+    }
+}
+
+@media (max-width: 640px) {
+    .logo {
+        width: 40px;
+        height: 40px;
+        left: 10px;
+        top: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 35px;
+        height: 35px;
+        left: 8px;
+        top: 5px;
+    }
+}
+
 .menu-trigger {
     position: fixed;
     width: 100px;
@@ -129,7 +192,6 @@ a:hover {
 }
 .menu-trigger.top-position { transform: translateY(-200px); }
 
-/* Крупная и заметная надпись MENU */
 .menu-label {
     font-family: 'Oswald', sans-serif;
     font-size: 28px;
@@ -148,7 +210,6 @@ a:hover {
     animation: menuPulse 1s ease-in-out infinite;
 }
 
-/* Яркая анимация пульсации */
 @keyframes menuPulse {
     0%, 100% { 
         text-shadow: 0 0 10px #34c5ba, 0 0 20px rgba(52,197,186,0.5);
@@ -160,7 +221,6 @@ a:hover {
     }
 }
 
-/* Иконка-гамбургер */
 .lines-button {
     padding: 0;
     cursor: pointer;
@@ -195,7 +255,42 @@ a:hover {
 .lines-close .lines:before { transform: rotate(45deg); top: 0; }
 .lines-close .lines:after { transform: rotate(-45deg); top: 0; }
 
-/* ========== БЛОК 6: ВЫДВИЖНОЕ МЕНЮ ========== */
+@media (max-width: 1024px) {
+    .menu-trigger { width: 90px; height: 90px; right: 8px; top: 5px; }
+    .menu-label { font-size: 24px; letter-spacing: 4px; top: -18px; }
+    .lines { width: 55px; height: 6px; }
+    .lines:before, .lines:after { width: 55px; height: 6px; }
+    .lines:before { top: 18px; }
+    .lines:after { top: -18px; }
+}
+
+@media (max-width: 880px) {
+    .menu-trigger { width: 80px; height: 80px; right: 5px; top: 5px; }
+    .menu-label { font-size: 20px; letter-spacing: 3px; top: -12px; margin-bottom: 8px; }
+    .lines { width: 45px; height: 5px; }
+    .lines:before, .lines:after { width: 45px; height: 5px; }
+    .lines:before { top: 14px; }
+    .lines:after { top: -14px; }
+}
+
+@media (max-width: 640px) {
+    .menu-trigger { width: 65px; height: 65px; right: 5px; top: 5px; }
+    .menu-label { font-size: 16px; letter-spacing: 2px; top: -10px; margin-bottom: 5px; }
+    .lines { width: 35px; height: 3px; }
+    .lines:before, .lines:after { width: 35px; height: 3px; }
+    .lines:before { top: 12px; }
+    .lines:after { top: -12px; }
+}
+
+@media (max-width: 480px) {
+    .menu-trigger { width: 55px; height: 55px; right: 3px; top: 3px; }
+    .menu-label { font-size: 14px; letter-spacing: 1px; top: -8px; margin-bottom: 3px; }
+    .lines { width: 28px; height: 2.5px; }
+    .lines:before, .lines:after { width: 28px; height: 2.5px; }
+    .lines:before { top: 10px; }
+    .lines:after { top: -10px; }
+}
+
 #main-menu {
     position: fixed;
     font-family: 'Oswald', sans-serif;
@@ -216,7 +311,6 @@ a:hover {
     backdrop-filter: blur(12px);
 }
 #main-menu.activated { right: 0; }
-
 #main-menu ul {
     width: 326px;
     list-style: none;
@@ -235,13 +329,11 @@ a:hover {
     opacity: 1;
     transform: translateX(0);
 }
-/* Задержки для появления пунктов меню */
 #main-menu.activated li:nth-child(1) { transition-delay: 0.05s; }
 #main-menu.activated li:nth-child(2) { transition-delay: 0.1s; }
 #main-menu.activated li:nth-child(3) { transition-delay: 0.15s; }
 #main-menu.activated li:nth-child(4) { transition-delay: 0.2s; }
 #main-menu.activated li:nth-child(5) { transition-delay: 0.25s; }
-
 #main-menu a {
     display: inline-block;
     color: #fff;
@@ -255,8 +347,6 @@ a:hover {
     margin-top: 40px;
 }
 #main-menu .credits a { font-size: 14px; }
-
-/* Вертикальное выравнивание меню */
 .menu-nav-wrapper {
     display: table;
     width: 100%;
@@ -269,8 +359,6 @@ a:hover {
     height: 100%;
     vertical-align: middle;
 }
-
-/* Анимация скобок при наведении на пункты меню */
 .brackets a::before,
 .brackets a::after {
     display: inline-block;
@@ -293,32 +381,26 @@ a:hover {
     transform: translateX(0px);
 }
 
-/* Адаптивность для планшетов */
+@media (max-width: 1024px) {
+    #main-menu { font-size: 40px; width: 380px; }
+    #main-menu ul { width: 290px; padding: 0 0 0 40px; }
+    #main-menu li { margin: 18px 0; }
+}
+
 @media (max-width: 880px) {
     #main-menu { font-size: 35px; width: 326px; }
-    #main-menu ul { width: 326px; padding: 0 0 0 27px; }
-    .menu-trigger { width: 85px; height: 85px; right: 8px; top: 2px; }
-    .menu-label { font-size: 24px; letter-spacing: 4px; top: -16px; }
-    .lines { width: 55px; height: 6px; }
-    .lines:before, .lines:after { width: 55px; height: 6px; }
-    .lines:before { top: 18px; }
-    .lines:after { top: -18px; }
+    #main-menu ul { width: 260px; padding: 0 0 0 27px; }
+    #main-menu li { margin: 15px 0; }
 }
 
-/* Адаптивность для телефонов */
 @media (max-width: 640px) {
-    #main-menu { font-size: 25px; width: 260px; }
-    #main-menu ul { width: 260px; padding: 0 0 0 17px; }
+    #main-menu { font-size: 28px; width: 280px; transform: skew(-15deg, 0deg); }
+    #main-menu ul { width: 220px; padding: 0 0 0 20px; }
     #main-menu li { margin: 12px 0; }
-    .menu-trigger { width: 75px; height: 75px; right: 6px; top: 0; }
-    .menu-label { font-size: 20px; letter-spacing: 3px; top: -14px; }
-    .lines { width: 48px; height: 5px; }
-    .lines:before, .lines:after { width: 48px; height: 5px; }
-    .lines:before { top: 15px; }
-    .lines:after { top: -15px; }
+    #main-menu .credits { font-size: 11px; margin-top: 30px; }
+    #main-menu .credits a { font-size: 11px; }
 }
 
-/* ========== БЛОК 7: ПАНЕЛЬ СОЦИАЛЬНЫХ ИКОНОК ========== */
 .social-icons-wrapper {
     position: fixed;
     left: 3%;
@@ -333,7 +415,6 @@ a:hover {
     list-style: none;
     align-items: center;
 }
-/* Каждая иконка — inline-block, чтобы трансформация не влияла на соседей */
 .social-icons li {
     display: inline-block;
     transition: all 0.3s;
@@ -344,24 +425,17 @@ a:hover {
     transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     display: inline-block;
 }
-/* Эффект при наведении */
 .social-icons a:hover {
     opacity: 1;
     color: #34c5ba;
     transform: scale(1.1);
     text-shadow: 0 0 10px rgba(52,197,186,0.6);
 }
-/* Для иконки с текстом Planet Minecraft — дополнительные отступы */
-.social-icons .planet-item {
-    margin-left: 30px;
-    margin-right: 10px;
-}
-/* НАДПИСЬ PLANET MINECRAFT — такой же шрифт как у Elitium Studios */
 .social-icons a .social-label {
-    font-family: 'Dosis', sans-serif;     /* Такой же как у Elitium Studios */
-    font-size: 16px;                      /* Чуть увеличен для читаемости */
-    font-weight: 700;                     /* Жирный */
-    letter-spacing: 0.5px;                /* Минимальный межбуквенный интервал */
+    font-family: 'Dosis', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
     transition: all 0.3s ease;
     margin-left: 5px;
@@ -379,25 +453,32 @@ a:hover {
     color: #34c5ba;
 }
 
-/* Адаптивность для планшетов */
-@media (max-width: 880px) {
-    .social-icons { gap: 15px; }
+@media (max-width: 1024px) {
+    .social-icons-wrapper { left: 2%; bottom: 20px; }
+    .social-icons { gap: 18px; }
     .social-icons a { font-size: 32px; }
-    .social-icons a:hover { transform: scale(1.08); }
-    .social-icons .planet-item { margin-left: 20px; margin-right: 8px; }
-    .social-icons a .social-label { font-size: 14px; letter-spacing: 0.3px; }
+    .social-icons a .social-label { font-size: 14px; }
 }
 
-/* Адаптивность для телефонов */
-@media (max-width: 640px) {
-    .social-icons { gap: 12px; }
+@media (max-width: 880px) {
+    .social-icons-wrapper { left: 2%; bottom: 15px; }
+    .social-icons { gap: 15px; }
     .social-icons a { font-size: 28px; }
-    .social-icons a:hover { transform: scale(1.05); }
-    .social-icons .planet-item { margin-left: 15px; margin-right: 5px; }
-    .social-icons a .social-label { font-size: 11px; letter-spacing: 0px; }
+    .social-icons a .social-label { font-size: 12px; letter-spacing: 0.3px; }
 }
 
-/* ========== БЛОК 8: ПЕРЕКЛЮЧАТЕЛЬ ЯЗЫКА ========== */
+@media (max-width: 640px) {
+    .social-icons-wrapper { 
+        left: 50%; 
+        bottom: 10px;
+        transform: translateX(-50%);
+    }
+    .social-icons-wrapper.bottom-position { transform: translateY(200px) translateX(-50%); }
+    .social-icons { gap: 12px; }
+    .social-icons a { font-size: 24px; }
+    .social-icons a .social-label { font-size: 10px; letter-spacing: 0px; }
+}
+
 .lang {
     position: fixed;
     right: 3%;
@@ -440,13 +521,32 @@ a:hover {
     border-radius: 4px;
     display: inline-block;
 }
-@media (max-width: 640px) {
-    .lang-item { padding: 8px 16px; font-size: 15px; gap: 8px; }
-    .lang-item img { width: 22px; }
+
+@media (max-width: 1024px) {
+    .lang { right: 2%; bottom: 20px; }
+    .lang-item { padding: 8px 18px; font-size: 16px; }
+    .lang-item img { width: 24px; }
     .lang-icons { gap: 15px; }
 }
 
-/* ========== БЛОК 9: ТИПОГРАФИКА ========== */
+@media (max-width: 880px) {
+    .lang { right: 2%; bottom: 15px; }
+    .lang-item { padding: 8px 16px; font-size: 15px; gap: 8px; }
+    .lang-item img { width: 22px; }
+    .lang-icons { gap: 12px; }
+}
+
+@media (max-width: 640px) {
+    .lang { 
+        right: 50%;
+        bottom: 60px;
+        transform: translateX(50%);
+    }
+    .lang-item { padding: 6px 14px; font-size: 13px; gap: 6px; }
+    .lang-item img { width: 18px; }
+    .lang-icons { gap: 10px; }
+}
+
 h2 {
     font-family: 'Oswald', sans-serif;
     font-size: 70px;
@@ -455,10 +555,10 @@ h2 {
     padding-left: 26px;
     position: relative;
 }
+@media (max-width: 1024px) { h2 { font-size: 60px; } }
 @media (max-width: 880px) { h2 { font-size: 50px; } }
-@media (max-width: 640px) { h2 { font-size: 45px; } }
+@media (max-width: 640px) { h2 { font-size: 40px; } }
 
-/* Теневой текст за заголовком */
 h2 .get-behind {
     position: absolute;
     left: 10px;
@@ -467,36 +567,30 @@ h2 .get-behind {
     opacity: 0.15;
     pointer-events: none;
 }
+@media (max-width: 880px) { h2 .get-behind { font-size: 70px; top: -20px; } }
+@media (max-width: 640px) { h2 .get-behind { font-size: 50px; top: -15px; } }
 
-/* Главный заголовок с эффектом свечения - белый, жирный, мягкий шрифт */
 .fin-heading {
-    font-family: 'Dosis', sans-serif;     /* Мягкий округлый шрифт */
+    font-family: 'Dosis', sans-serif;
     font-size: 120px;
-    font-weight: 800;                     /* Жирный (800 - очень жирный) */
+    font-weight: 800;
     letter-spacing: 0.15em;
     text-align: center;
     text-transform: uppercase;
     margin: 40px auto;
-    color: #fff;                          /* Белый цвет текста */
+    color: #fff;
     text-shadow: 0 0 20px #34c5ba, 0 0 40px rgba(52,197,186,0.5);
     animation: glowPulse 2s ease-in-out infinite;
 }
 @keyframes glowPulse {
-    0% { 
-        text-shadow: 0 0 10px #34c5ba, 0 0 20px rgba(52,197,186,0.3);
-    }
-    50% { 
-        text-shadow: 0 0 25px #34c5ba, 0 0 50px rgba(52,197,186,0.6);
-    }
-    100% { 
-        text-shadow: 0 0 10px #34c5ba, 0 0 20px rgba(52,197,186,0.3);
-    }
+    0% { text-shadow: 0 0 10px #34c5ba, 0 0 20px rgba(52,197,186,0.3); }
+    50% { text-shadow: 0 0 25px #34c5ba, 0 0 50px rgba(52,197,186,0.6); }
+    100% { text-shadow: 0 0 10px #34c5ba, 0 0 20px rgba(52,197,186,0.3); }
 }
 @media (max-width: 1200px) { .fin-heading { font-size: 90px; } }
-@media (max-width: 880px) { .fin-heading { font-size: 60px; } }
-@media (max-width: 640px) { .fin-heading { font-size: 50px; } }
+@media (max-width: 880px) { .fin-heading { font-size: 60px; letter-spacing: 0.1em; } }
+@media (max-width: 640px) { .fin-heading { font-size: 40px; letter-spacing: 0.08em; margin: 20px auto; } }
 
-/* Заголовки секций (OUR WORKS, DONATORS) */
 .our-works-heading { text-align: center; margin: 20px 0; }
 .our-works-heading h4 {
     font-family: 'Montserrat', sans-serif;
@@ -510,7 +604,9 @@ h2 .get-behind {
     color: #34c5ba;
     letter-spacing: 2px;
 }
-@media (max-width: 768px) { .our-works-heading h4 { font-size: 1.3rem; padding: 4px 16px; } }
+@media (max-width: 1024px) { .our-works-heading h4 { font-size: 1.5rem; padding: 5px 18px; } }
+@media (max-width: 768px) { .our-works-heading h4 { font-size: 1.2rem; padding: 4px 16px; } }
+@media (max-width: 640px) { .our-works-heading h4 { font-size: 1rem; padding: 3px 12px; letter-spacing: 1px; } }
 
 .donators-heading {
     text-align: center;
@@ -526,9 +622,10 @@ h2 .get-behind {
     letter-spacing: 2px;
     margin: 0 auto 20px;
 }
-@media (max-width: 768px) { .donators-heading { font-size: 1.3rem; padding: 4px 16px; } }
+@media (max-width: 1024px) { .donators-heading { font-size: 1.5rem; padding: 5px 18px; } }
+@media (max-width: 768px) { .donators-heading { font-size: 1.2rem; padding: 4px 16px; } }
+@media (max-width: 640px) { .donators-heading { font-size: 1rem; padding: 3px 12px; letter-spacing: 1px; } }
 
-/* Текст в слайдере работ */
 .fin-slides-wrapper li h3 {
     font-size: 25px;
     font-family: 'Dosis', sans-serif;
@@ -536,9 +633,10 @@ h2 .get-behind {
     font-weight: 600;
     color: #fff;
 }
-@media (max-width: 880px) { .fin-slides-wrapper li h3 { font-size: 18px; } }
+@media (max-width: 1024px) { .fin-slides-wrapper li h3 { font-size: 20px; } }
+@media (max-width: 880px) { .fin-slides-wrapper li h3 { font-size: 18px; letter-spacing: 0.15em; } }
+@media (max-width: 640px) { .fin-slides-wrapper li h3 { font-size: 14px; letter-spacing: 0.1em; } }
 
-/* ========== БЛОК 10: КАРУСЕЛЬ ДЛЯ ДОНАТОВ ========== */
 .donate-carousel {
     max-width: 900px;
     margin: 0 auto;
@@ -569,9 +667,14 @@ h2 .get-behind {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
 }
-@media (max-width: 880px) { .donate-slide { font-size: 20px; } }
+@media (max-width: 1024px) { .donate-slide { font-size: 24px; } }
+@media (max-width: 880px) { .donate-slide { font-size: 20px; letter-spacing: 0.1em; } }
+@media (max-width: 640px) { 
+    .donate-slide { font-size: 16px; letter-spacing: 0.05em; padding: 15px; }
+    .donate-slide i { font-size: 24px; margin-right: 10px; }
+    .donate-carousel { min-height: 100px; }
+}
 
-/* ========== БЛОК 11: ПРЕДУПРЕЖДЕНИЕ О СТРОИТЕЛЬСТВЕ ========== */
 .under-construction {
     position: fixed;
     top: 20px;
@@ -593,41 +696,69 @@ h2 .get-behind {
     box-shadow: 0 0 30px rgba(255,65,108,0.6);
     border: 2px solid rgba(255,255,255,0.3);
 }
+@keyframes constructionPulse {
+    0%, 100% { 
+        transform: translateX(-50%) scale(1); 
+        opacity: 1; 
+        box-shadow: 0 0 30px rgba(255,65,108,0.6);
+    }
+    50% { 
+        transform: translateX(-50%) scale(1.03);
+        opacity: 0.97;
+        box-shadow: 0 0 50px rgba(255,65,108,0.8);
+    }
+}
+.under-construction.top-position { transform: translateX(-50%) translateY(-200px); animation: none; }
 
-/* ПЛАНШЕТЫ (ширина до 880px) — баннер становится короче, отступ сверху меньше */
+@media (max-width: 1024px) { 
+    .under-construction { 
+        font-size: 1.2rem; 
+        padding: 14px 30px; 
+        letter-spacing: 1.5px;
+        top: 15px;
+    }
+}
+
 @media (max-width: 880px) { 
     .under-construction { 
-        font-size: 0.9rem;           /* Читаемый размер */
-        padding: 6px 18px;           /* Умеренные отступы */
-        top: 10px;                   /* Сдвинут выше */
-        letter-spacing: 1px;
+        font-size: 0.85rem; 
+        padding: 8px 16px; 
         white-space: nowrap;
-        border-width: 1px;
-        box-shadow: 0 0 15px rgba(255,65,108,0.5);
+        letter-spacing: 1px;
+        top: 10px;
+        z-index: 9999;
     }
 }
 
-/* ТЕЛЕФОНЫ (ширина до 640px) — ещё компактнее, но не слишком мелко */
 @media (max-width: 640px) {
-    .under-construction {
-        font-size: 0.8rem;
-        padding: 5px 14px;
-        top: 8px;
+    .under-construction { 
+        font-size: 0.7rem; 
+        padding: 6px 12px; 
         letter-spacing: 0.5px;
-        border-radius: 40px;
+        top: 8px;
+        white-space: nowrap;
+        max-width: 90%;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
 }
 
-/* Очень маленькие телефоны (ширина до 480px) */
 @media (max-width: 480px) {
     .under-construction {
-        font-size: 0.7rem;
-        padding: 4px 10px;
-        top: 6px;
+        font-size: 0.6rem;
+        padding: 5px 10px;
+        top: 5px;
     }
 }
 
-/* ========== БЛОК 12: ГАЛЕРЕЯ (КАРУСЕЛЬ СКРИНШОТОВ) ========== */
+@media (max-width: 880px) and (orientation: landscape) {
+    .under-construction {
+        font-size: 0.7rem;
+        padding: 4px 12px;
+        top: 5px;
+    }
+}
+
 .carousel-container {
     position: relative;
     margin: 0 auto;
@@ -664,8 +795,9 @@ h2 .get-behind {
     cursor: pointer;
     z-index: 10;
     font-size: 24px;
+    transition: all 0.3s;
 }
-.carousel-prev:hover, .carousel-next:hover { background: rgba(0,0,0,0.8); }
+.carousel-prev:hover, .carousel-next:hover { background: rgba(0,0,0,0.8); transform: translateY(-50%) scale(1.05); }
 .carousel-prev { left: 20px; }
 .carousel-next { right: 20px; }
 .carousel-dots { text-align: center; margin-top: 15px; }
@@ -677,12 +809,29 @@ h2 .get-behind {
     background: rgba(255,255,255,0.5);
     border-radius: 50%;
     cursor: pointer;
+    transition: all 0.3s;
 }
 .dot.active { background: #34c5ba; transform: scale(1.2); }
 
-/* ========== БЛОК 13: ТАБЛИЦА ВЕРСИЙ РЕСУРС-ПАКОВ ========== */
+@media (max-width: 1024px) {
+    .carousel-prev, .carousel-next { width: 40px; height: 40px; font-size: 20px; }
+    .carousel-prev { left: 15px; }
+    .carousel-next { right: 15px; }
+}
+@media (max-width: 640px) {
+    .carousel-prev, .carousel-next { width: 32px; height: 32px; font-size: 16px; }
+    .carousel-prev { left: 10px; }
+    .carousel-next { right: 10px; }
+    .dot { width: 8px; height: 8px; margin: 0 4px; }
+}
+
+.table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
 .packs-table {
     width: 100%;
+    min-width: 600px;
     background: rgba(0,0,0,0.6);
     border-radius: 12px;
     border-collapse: collapse;
@@ -704,10 +853,16 @@ h2 .get-behind {
     font-weight: 800;
     display: inline-block;
     transition: 0.3s;
+    white-space: nowrap;
 }
 .btn-download-all:hover { background: #2a9d8f; color: #fff; transform: scale(1.02); }
 
-/* ========== БЛОК 14: ВСПОМОГАТЕЛЬНЫЕ СТИЛИ ========== */
+@media (max-width: 640px) {
+    .packs-table th, .packs-table td { padding: 10px 8px; font-size: 12px; }
+    .btn-download-all { padding: 4px 12px; font-size: 11px; }
+    .version-name i { margin-right: 3px; }
+}
+
 .specs {
     display: flex;
     gap: 20px;
@@ -722,12 +877,37 @@ h2 .get-behind {
 .mt20 { margin-top: 20px; }
 .text-center { text-align: center; }
 
-/* ========== БЛОК 15: СТРАНИЦА КОНТАКТОВ ========== */
-.row { display: flex; flex-wrap: wrap; gap: 30px; justify-content: center; margin-top: 30px; }
-.col-md-4 { flex: 1; min-width: 200px; text-align: center; }
-.awesome-contact { font-size: 3rem; display: block; color: #34c5ba; margin-bottom: 15px; }
+@media (max-width: 640px) {
+    .specs { gap: 10px; font-size: 12px; }
+    .specs span { display: block; }
+    .block-footer { font-size: 12px; }
+}
 
-/* ========== БЛОК 16: ФОНОВЫЕ ЭФФЕКТЫ ========== */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    margin-top: 30px;
+}
+.col-md-4 {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+}
+.awesome-contact {
+    font-size: 3rem;
+    display: block;
+    color: #34c5ba;
+    margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+    .row { flex-direction: column; align-items: center; gap: 20px; }
+    .col-md-4 { width: 100%; max-width: 300px; }
+    .awesome-contact { font-size: 2.5rem; }
+}
+
 .hero-fullscreen {
     position: fixed;
     top: 0;
@@ -765,7 +945,6 @@ h2 .get-behind {
     z-index: 1;
 }
 
-/* ========== БЛОК 17: ПРЕЛОАДЕР (ЭКРАН ЗАГРУЗКИ) ========== */
 #preloader {
     position: fixed;
     top: 0;
@@ -790,35 +969,48 @@ h2 .get-behind {
 @keyframes spin { to { transform: rotate(360deg); } }
 #preloader.hidden { opacity: 0; visibility: hidden; }
 
-/* ========== БЛОК 18: АНИМАЦИЯ ПОЯВЛЕНИЯ СТРАНИЦ ========== */
+@media (max-width: 640px) {
+    .preloader-effect { width: 100px; height: 100px; border-width: 2px; }
+}
+
 .page-content { animation: fadeSlidePage 0.4s ease; }
 @keyframes fadeSlidePage {
     from { opacity: 0; transform: translateY(15px); }
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ========== БЛОК 19: СТИЛИ ДЛЯ ГАЛЕРЕИ ФОТОГРАФИЙ ========== */
+.photos-gallery .photos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
 .photos-gallery img {
     border-radius: 12px;
     transition: transform 0.2s;
-    width: 30%;
-    min-width: 150px;
+    width: 100%;
+    max-width: 200px;
+    height: auto;
 }
 .photos-gallery img:hover { transform: scale(1.02); }
 
-/* ========== БЛОК 20: ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ========== */
+@media (max-width: 768px) {
+    .photos-gallery .photos-grid { gap: 10px; }
+    .photos-gallery img { max-width: 150px; }
+}
+@media (max-width: 480px) {
+    .photos-gallery img { max-width: calc(50% - 10px); }
+}
+
 .install-big-img { max-width: 100%; border-radius: 12px; }
 .gallery-section h4, .packs-table-section h4 { margin-bottom: 20px; color: #34c5ba; font-family: 'Montserrat', sans-serif; font-weight: 800; }
 .click { cursor: pointer; }
 .discord-link { margin-top: 15px; font-weight: 600; }
 .discord-link i { color: #34c5ba; }
 .install-text-full h4 { color: #34c5ba; font-weight: 800; }
-.license-info summary { font-weight: 800; color: #34c5ba; }
-
-/* Скрываем неактивные слайды в карусели донатов */
+.license-info summary { font-weight: 800; color: #34c5ba; cursor: pointer; }
 .donate-slide:not(.active) { display: none; }
 
-/* ========== БЛОК 21: ВЕРТИКАЛЬНАЯ НАДПИСЬ КОПИРАЙТА (line-right) ========== */
 .line-right {
     visibility: visible;
     display: block;
@@ -842,50 +1034,24 @@ h2 .get-behind {
     transition: all 0.3s;
     z-index: 500;
 }
-
 .line-right.right-position {
     -webkit-transform: translateX(200px) rotate(-90deg);
     transform: translateX(200px) rotate(-90deg);
 }
+.line-right a { color: #fff; text-decoration: none; }
+.line-right a:hover { color: #fff; text-decoration: none; }
 
-.line-right a {
-    color: #fff;
-    text-decoration: none;
+@media (max-width: 1024px) {
+    .line-right { font-size: 13px; width: 300px; right: 25px; margin-top: -150px; }
 }
-
-.line-right a:hover {
-    color: #fff;
-    text-decoration: none;
-}
-
-/* Адаптивность для мобильных */
 @media (max-width: 880px) {
-    .line-right {
-        font-size: 12px;
-        width: 280px;
-        right: 20px;
-        margin-top: -140px;
-    }
+    .line-right { font-size: 12px; width: 280px; right: 20px; margin-top: -140px; }
 }
+@media (max-width: 640px) { .line-right { display: none; } }
 
-@media (max-width: 640px) {
-    .line-right {
-        display: none;
-    }
-}
+.page-content { display: none !important; }
+.page-content.active-page { display: block !important; }
 
-/* ========== БЛОК 22: УПРАВЛЕНИЕ СТРАНИЦАМИ И ЦЕНТРИРОВАНИЕ ========== */
-/* Все страницы по умолчанию скрыты */
-.page-content {
-    display: none !important;
-}
-
-/* Активная страница показывается */
-.page-content.active-page {
-    display: block !important;
-}
-
-/* Только для home-page делаем центрирование через flex, когда она активна */
 #home-page.active-page {
     display: flex !important;
     flex-direction: column;
@@ -895,14 +1061,12 @@ h2 .get-behind {
     width: 100%;
 }
 
-/* Для остальных страниц - нормальное отображение */
 #packs-page.active-page,
 #content-page.active-page,
 #contact-page.active-page {
     display: block !important;
 }
 
-/* Контейнер для контента на главной странице */
 #home-page.active-page .our-works-heading,
 #home-page.active-page .fin-slides-wrapper,
 #home-page.active-page .fin-heading,
@@ -912,28 +1076,43 @@ h2 .get-behind {
     max-width: 1200px;
 }
 
-/* Отступы для элементов на главной */
-#home-page.active-page .our-works-heading {
-    margin-bottom: 30px;
-}
+#home-page.active-page .our-works-heading { margin-bottom: 30px; }
+#home-page.active-page .fin-heading { margin: 30px auto; }
+#home-page.active-page .donators-heading { margin: 20px auto; }
+#home-page.active-page .donate-carousel { margin-top: 20px; }
 
-#home-page.active-page .fin-heading {
-    margin: 30px auto;
-}
-
-#home-page.active-page .donators-heading {
-    margin: 20px auto;
-}
-
-#home-page.active-page .donate-carousel {
-    margin-top: 20px;
-}
-
-/* Адаптивность для мобильных */
 @media (max-width: 880px) {
     #home-page.active-page {
         min-height: auto;
         display: block !important;
         padding: 40px 0;
     }
+}
+
+@media (max-width: 768px) {
+    body { font-size: 13px; }
+    .container { padding: 0 10px; }
+    .mt20 { margin-top: 15px; }
+    .dividerOT { margin: 30px auto; }
+}
+
+@media (max-width: 480px) {
+    body { font-size: 12px; }
+    .scroll-area { padding: 10px; }
+    .our-works-heading, .donators-heading { margin: 15px 0; }
+    .fin-heading { margin: 20px auto; }
+}
+
+@media (hover: none) and (pointer: coarse) {
+    .btn-download-all,
+    .carousel-prev,
+    .carousel-next,
+    .lang-item,
+    .social-icons a,
+    .menu-trigger {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    .social-icons a { padding: 8px; }
+    .lang-item { padding: 8px 16px; }
 }
