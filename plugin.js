@@ -1,7 +1,7 @@
 /**
  * ===================================================================
  * ФАЙЛ: plugin.js
- * ОПИСАНИЕ: JavaScript функционал для сайта Elitium Studios
+ * ОПИСАНИЕ: JavaScript функционал для сайта Elitium Studios (Адаптивная версия)
  * АВТОР: XopeRiys
  * ===================================================================
  */
@@ -10,102 +10,81 @@
     "use strict";
     
     // ========== БЛОК 1: ПРЕЛОАДЕР (ЭКРАН ЗАГРУЗКИ) ==========
-    // Скрываем прелоадер через 1.5 секунды после загрузки страницы
     setTimeout(function() { 
         $('#preloader').addClass('hidden'); 
     }, 1500);
     
-    // Анимация появления элементов после загрузки
     setTimeout(function() {
         $('.logo, .menu-trigger, .under-construction').removeClass('top-position');
         $('.social-icons-wrapper').removeClass('bottom-position');
         $('.line-right').removeClass('right-position');
     }, 200);
     
-// ========== БЛОК 2: НАВИГАЦИЯ МЕЖДУ СТРАНИЦАМИ (ПРИ НАВЕДЕНИИ) ==========
-// Объект со всеми страницами
-const pages = {
-    home: $('#home-page'),
-    packs: $('#packs-page'),
-    content: $('#content-page'),
-    contact: $('#contact-page')
-};
-
-// Функция обновления прокрутки
-function updateScrollOverflow(pageId) {
-    if (pageId === 'home') {
-        $('.scroll-area').addClass('home-active');
-    } else {
-        $('.scroll-area').removeClass('home-active');
-    }
-}
-
-// Функция переключения страниц
-function switchToPage(pageId) {
-    // Убираем класс active-page у всех страниц
-    $('.page-content').removeClass('active-page');
-    // Добавляем класс активной странице
-    pages[pageId].addClass('active-page');
-    // Обновляем прокрутку
-    updateScrollOverflow(pageId);
-    // Прокручиваем вверх
-    $('#scrollArea').scrollTop(0);
-}
-
-// Переменная для debounce (чтобы не переключалось слишком часто)
-let hoverTimeout = null;
-
-// Обработчик наведения на пункты меню
-$('#nav-menu a').on('mouseenter', function(e) {
-    // Очищаем предыдущий таймер
-    if (hoverTimeout) clearTimeout(hoverTimeout);
+    // ========== БЛОК 2: НАВИГАЦИЯ МЕЖДУ СТРАНИЦАМИ ==========
+    const pages = {
+        home: $('#home-page'),
+        packs: $('#packs-page'),
+        content: $('#content-page'),
+        contact: $('#contact-page')
+    };
     
-    // Небольшая задержка перед переключением (чтобы случайное наведение не переключало)
-    hoverTimeout = setTimeout(() => {
-        let page = $(this).data('page');
-        if(page && pages[page]) {
-            // Обновляем активный пункт меню
-            $('#nav-menu a').removeClass('active');
-            $(this).addClass('active');
-            // Переключаем страницу
-            switchToPage(page);
+    function updateScrollOverflow(pageId) {
+        if (pageId === 'home') {
+            $('.scroll-area').addClass('home-active');
+        } else {
+            $('.scroll-area').removeClass('home-active');
         }
-    }, 150);
-});
-
-// Если мышь уходит с меню - отменяем переключение
-$('#nav-menu').on('mouseleave', function() {
-    if (hoverTimeout) clearTimeout(hoverTimeout);
-});
-
-// При загрузке страницы - главная активна
-switchToPage('home');
+    }
+    
+    function switchToPage(pageId) {
+        $('.page-content').removeClass('active-page');
+        pages[pageId].addClass('active-page');
+        updateScrollOverflow(pageId);
+        $('#scrollArea').scrollTop(0);
+    }
+    
+    let hoverTimeout = null;
+    
+    $('#nav-menu a').on('mouseenter touchstart', function(e) {
+        if (hoverTimeout) clearTimeout(hoverTimeout);
+        
+        hoverTimeout = setTimeout(() => {
+            let page = $(this).data('page');
+            if(page && pages[page]) {
+                $('#nav-menu a').removeClass('active');
+                $(this).addClass('active');
+                switchToPage(page);
+            }
+        }, 150);
+    });
+    
+    $('#nav-menu').on('mouseleave', function() {
+        if (hoverTimeout) clearTimeout(hoverTimeout);
+    });
+    
+    switchToPage('home');
+    
     // ========== БЛОК 3: КАРУСЕЛЬ ДЛЯ ДОНАТОВ ==========
     let donateSlides = $('.donate-slide');
     let donateCurrent = 0;
     let donateTotal = donateSlides.length;
     
-    // Функция обновления активного слайда
     function updateDonateCarousel() {
         donateSlides.removeClass('active');
         donateSlides.eq(donateCurrent).addClass('active');
     }
     
-    // Запускаем карусель, если есть слайды
     if(donateTotal > 0) {
         updateDonateCarousel();
-        // Автоматическая смена слайдов каждые 4 секунды
         let donateInterval = setInterval(function() {
             donateCurrent = (donateCurrent + 1) % donateTotal;
             updateDonateCarousel();
         }, 4000);
         
-        // Останавливаем автопрокрутку при наведении мыши
-        $('#donateCarousel').on('mouseenter', function() { 
+        $('#donateCarousel').on('mouseenter touchstart', function() { 
             clearInterval(donateInterval); 
         });
-        // Возобновляем автопрокрутку при уходе мыши
-        $('#donateCarousel').on('mouseleave', function() {
+        $('#donateCarousel').on('mouseleave touchend', function() {
             donateInterval = setInterval(function() {
                 donateCurrent = (donateCurrent + 1) % donateTotal;
                 updateDonateCarousel();
@@ -118,13 +97,11 @@ switchToPage('home');
     const slides = $('#carouselSlides .carousel-slide');
     const totalSlides = slides.length;
     
-    // Функция обновления активного слайда в галерее
     function updateCarousel() {
         slides.removeClass('active').eq(currentSlide).addClass('active');
         $('.dot').removeClass('active').eq(currentSlide).addClass('active');
     }
     
-    // Кнопки навигации
     $('#packsPrevBtn').on('click', function() {
         currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
         updateCarousel();
@@ -135,55 +112,47 @@ switchToPage('home');
         updateCarousel();
     });
     
-    // Создание точек (dots) для навигации
     let dotsContainer = $('#packsCarouselDots');
     for(let i = 0; i < totalSlides; i++) {
         dotsContainer.append('<span class="dot"></span>');
     }
     
-    // Обработчик клика по точкам
     $('.dot').on('click', function() {
         currentSlide = $(this).index();
         updateCarousel();
     });
     
-    // Инициализация карусели
     updateCarousel();
     
-    // Автоматическая смена слайдов каждые 5 секунд
     let autoInterval = setInterval(function() {
         currentSlide = (currentSlide + 1) % totalSlides;
         updateCarousel();
     }, 5000);
     
-    // Останавливаем автопрокрутку при наведении на галерею
-    $('#packs-carousel-container').on('mouseenter', function() { 
+    $('#packs-carousel-container').on('mouseenter touchstart', function() { 
         clearInterval(autoInterval); 
     });
-    // Возобновляем автопрокрутку при уходе мыши
-    $('#packs-carousel-container').on('mouseleave', function() {
+    $('#packs-carousel-container').on('mouseleave touchend', function() {
         autoInterval = setInterval(function() {
             currentSlide = (currentSlide + 1) % totalSlides;
             updateCarousel();
         }, 5000);
     });
-
-    // ========== БЛОК 5: ВЫДВИЖНОЕ МЕНЮ (ПРИ НАВЕДЕНИИ) ==========
+    
+    // ========== БЛОК 5: ВЫДВИЖНОЕ МЕНЮ ==========
     let menu = $('#menu');
     let menuWrapper = $('#menu-wrapper');
     let mainMenu = $('#main-menu');
     let closeTimeout = null;
     
-    // Открытие меню при наведении на кнопку
-    menu.on('mouseenter', function() {
+    menu.on('mouseenter touchstart', function() {
         if(closeTimeout) clearTimeout(closeTimeout);
         mainMenu.addClass('activated');
         $('.lines-button .lines, #main-menu-caller1, .menu-label').addClass('lines-close');
         menuWrapper.show();
     });
     
-    // Закрытие меню при уходе мыши с области меню
-    menuWrapper.on('mouseleave', function() {
+    menuWrapper.on('mouseleave touchend', function() {
         closeTimeout = setTimeout(function() {
             mainMenu.removeClass('activated');
             $('.lines-button .lines, #main-menu-caller1, .menu-label').removeClass('lines-close');
@@ -191,8 +160,7 @@ switchToPage('home');
         }, 150);
     });
     
-    // Отмена закрытия, если мышь вернулась на меню
-    menuWrapper.on('mouseenter', function() {
+    menuWrapper.on('mouseenter touchstart', function() {
         if(closeTimeout) clearTimeout(closeTimeout);
     });
     
@@ -200,11 +168,72 @@ switchToPage('home');
     let bgSlides = $('.kenburnsy .slide');
     let bgIndex = 0;
     
-    // Смена фоновых слайдов каждые 6 секунд
     setInterval(function() {
         bgSlides.css('opacity', '0');
         bgSlides.eq(bgIndex).css('opacity', '1');
         bgIndex = (bgIndex + 1) % bgSlides.length;
     }, 6000);
+    
+    // ========== БЛОК 7: ДИНАМИЧЕСКАЯ АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ==========
+    function adjustForMobile() {
+        const width = $(window).width();
+        const warning = $('.under-construction');
+        
+        if (width <= 880) {
+            if (!warning.hasClass('mobile-optimized')) {
+                warning.addClass('mobile-optimized');
+            }
+            if (width <= 640) {
+                warning.css({
+                    'font-size': '0.65rem',
+                    'padding': '5px 10px',
+                    'top': '8px'
+                });
+            }
+        } else {
+            if (warning.hasClass('mobile-optimized')) {
+                warning.removeClass('mobile-optimized');
+            }
+            warning.css({
+                'font-size': '',
+                'padding': '',
+                'top': ''
+            });
+        }
+    }
+    
+    $(window).on('load resize orientationchange', function() {
+        adjustForMobile();
+    });
+    
+    function checkOverlap() {
+        const warning = $('.under-construction')[0];
+        const menu = $('.menu-trigger')[0];
+        
+        if (warning && menu) {
+            const warningRect = warning.getBoundingClientRect();
+            const menuRect = menu.getBoundingClientRect();
+            
+            if (!(warningRect.right < menuRect.left || 
+                  warningRect.left > menuRect.right || 
+                  warningRect.bottom < menuRect.top || 
+                  warningRect.top > menuRect.bottom)) {
+                if ($(window).width() <= 640) {
+                    $('.under-construction').css('top', '5px');
+                }
+            }
+        }
+    }
+    
+    setInterval(checkOverlap, 100);
+    
+    // ========== БЛОК 8: ОБРАБОТКА СЕНСОРНОГО ВВОДА ==========
+    if('ontouchstart' in window) {
+        $('.btn-download-all, .carousel-prev, .carousel-next, .lang-item, .social-icons a, .menu-trigger').on('touchstart', function() {
+            $(this).addClass('touch-active');
+        }).on('touchend', function() {
+            setTimeout(() => $(this).removeClass('touch-active'), 150);
+        });
+    }
     
 })(jQuery);
