@@ -167,7 +167,7 @@ switchToPage('home');
             updateCarousel();
         }, 5000);
     });
-    
+
     // ========== БЛОК 5: ВЫДВИЖНОЕ МЕНЮ (ПРИ НАВЕДЕНИИ) ==========
     let menu = $('#menu');
     let menuWrapper = $('#menu-wrapper');
